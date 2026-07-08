@@ -15,10 +15,11 @@
     url: 'https://maciejregresja.pl'
   },
   contact: {
-    phone: '',
-    phoneHref: '',
-    email: 'kontakt@regresjalbl.pl',
-    emailHref: 'mailto:kontakt@regresjalbl.pl'
+    phone: '+48 455 448 119',
+    phoneHref: 'tel:+48455448119',
+    whatsappHref: 'https://wa.me/48455448119',
+    email: 'info@instytutregresji.pl',
+    emailHref: 'mailto:info@instytutregresji.pl'
   },
   author: {
     name: 'Maciej Masłanka',
