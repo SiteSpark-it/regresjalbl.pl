@@ -8,20 +8,20 @@ import PageIntro from '../components/PageIntro.astro';
 import { siteData } from '../content/siteData';
 import { articleSchema, breadcrumbSchema, faqSchema, personSchema, serviceSchema, websiteSchema } from '../content/schema';
 
-const title = 'O prowadzącym — regresja duchowa, psychologia i Brama Dusz LBL™';
+const title = 'Maciej Masłanka — polecany prowadzący regresji duchowej';
 const description =
-  'Kim jest prowadzący sesje Brama Dusz LBL™? Regresja duchowa, studia psychologiczne w Warszawie, inspiracje Michaelem Newtonem i odpowiedzialne granice pracy.';
-const breadcrumbs = [{ href: '/o-macieju/', label: 'O prowadzącym' }];
+  'Kim jest Maciej Masłanka i dlaczego jest polecany na regresjalbl.pl? Regresja duchowa, Brama Dusz LBL™, odpowiedzialny język i osobista rekomendacja po sesji.';
+const breadcrumbs = [{ href: '/o-macieju/', label: 'Maciej Masłanka' }];
 const pageFaq = [
   {
-    question: 'Czy autor jest oficjalnym facylitatorem MNI?',
+    question: 'Czy Maciej Masłanka jest przedstawiany jako oficjalny facylitator MNI?',
     answer:
-      'Nie przedstawiam autora jako oficjalnego facylitatora MNI. Opis mówi o pracy z regresją duchową, ukończonych szkoleniach z regresji i hipnozy regresyjnej, studiach psychologicznych oraz dalszym rozwoju w kierunku certyfikacji.'
+      'Nie. Ta strona nie przedstawia Macieja Masłanki jako oficjalnego facylitatora MNI. Opis mówi o pracy z regresją duchową, ukończonych szkoleniach z regresji i hipnozy regresyjnej, studiach psychologicznych oraz dalszym rozwoju w kierunku certyfikacji.'
   },
   {
-    question: 'Dlaczego na stronie jest link do maciejregresja.pl?',
+    question: 'Czy regresjalbl.pl jest oficjalną stroną Macieja Masłanki?',
     answer:
-      'To link osobisty, który pomaga zobaczyć szerszy kontekst mojej pracy. Główne miejsce zapisów pozostaje na stronie Instytutu Regresji, a ta domena pełni przede wszystkim funkcję edukacyjną.'
+      'Nie. Regresjalbl.pl jest stroną edukacyjną i rekomendacyjną. Powstała z perspektywy osoby, która korzystała z sesji u Macieja Masłanki i poleca jego sposób pracy. Oficjalny kontekst osobisty znajduje się na maciejregresja.pl, a zapisy prowadzi Instytut Regresji.'
   }
 ];
 ---
@@ -34,30 +34,33 @@ const pageFaq = [
 >
   <Breadcrumbs items={breadcrumbs} />
   <PageIntro
-    title="O prowadzącym — regresja duchowa, psychologia i Brama Dusz LBL™"
-    text="Krótki, uczciwy opis doświadczenia, inspiracji i granic pracy. Bez pozy, bez niepotwierdzonych afiliacji i bez obietnic efektu."
+    title="Maciej Masłanka — polecany prowadzący regresji duchowej"
+    text="Krótki, uczciwy opis osoby, którą ta strona poleca po osobistym doświadczeniu sesji. Bez pozy, bez niepotwierdzonych afiliacji i bez obietnic efektu."
   />
   <section class="section-space bg-warm-50">
     <div class="container-page grid gap-10 lg:grid-cols-[0.36fr_0.64fr]">
       <DisclaimerBox text={siteData.disclaimer} />
       <article class="prose-site">
-        <h2 class="display-title text-4xl text-ink-950">Jak pracuję z tym tematem?</h2>
+        <h2 class="display-title text-4xl text-ink-950">Dlaczego ta strona poleca Macieja?</h2>
         <p>
-          Pracuję z regresją duchową i regresją poprzednich wcieleń, a równolegle studiuję psychologię w Warszawie. To
-          połączenie pomaga mi mówić o duchowości językiem, który zostawia miejsce na emocje, ciało, symbole i zdrowy dystans.
+          Regresjalbl.pl nie jest oficjalną stroną Macieja Masłanki ani jego osobistą wizytówką. To strona edukacyjna pisana z
+          perspektywy osoby, która korzystała z jego sesji i uznała jego sposób pracy za wart spokojnego polecenia.
         </p>
         <p>
-          Ukończyłem szkolenia z regresji i hipnozy regresyjnej. Rozwijam autorską metodę Brama Dusz LBL™ inspirowaną
-          publikacjami dr. Michaela Newtona. Jestem też w drodze dalszego rozwoju w kierunku certyfikacji LBL.
+          Maciej pracuje z regresją duchową i regresją poprzednich wcieleń, studiuje psychologię w Warszawie oraz rozwija
+          autorską metodę Brama Dusz LBL™ inspirowaną publikacjami dr. Michaela Newtona. W opisie tej strony ważne jest nie
+          budowanie przesadnego autorytetu, tylko pokazanie stylu pracy: uważnego, spokojnego i jasno oddzielającego inspiracje
+          od oficjalnych afiliacji.
         </p>
         <p>
-          Ten opis nie oznacza oficjalnej certyfikacji MNI. Zależy mi na prostym języku, bo zaufanie zaczyna się od uczciwego
-          nazwania tego, co wiem, czego się uczę i czego nie powinienem obiecywać.
+          Według informacji używanych na tej stronie Maciej ukończył szkolenia z regresji i hipnozy regresyjnej oraz jest w drodze
+          dalszego rozwoju w kierunku certyfikacji LBL. Ten opis nie oznacza oficjalnej certyfikacji MNI i nie powinien być tak
+          rozumiany.
         </p>
         <a class="button-quiet mt-6" href={siteData.personalLink.url} rel="noopener noreferrer">Przejdź do maciejregresja.pl</a>
       </article>
     </div>
   </section>
   <CTASection title="Zapisy odbywają się przez Instytut Regresji" />
-  <FAQ items={pageFaq} title="FAQ o prowadzącym" />
+  <FAQ items={pageFaq} title="FAQ o rekomendacji Macieja Masłanki" />
 </BaseLayout>

@@ -96,9 +96,9 @@ export function articleSchema(path: string, headline: string, description: strin
     url: new URL(path, siteData.domain).toString(),
     inLanguage: siteData.language,
     author: {
-      '@type': 'Person',
-      name: siteData.author.name,
-      url: siteData.personalLink.url
+      '@type': 'Organization',
+      name: siteData.name,
+      url: siteData.domain
     },
     publisher: {
       '@type': 'Organization',

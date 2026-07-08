@@ -21,9 +21,9 @@
     emailHref: 'mailto:kontakt@regresjalbl.pl'
   },
   author: {
-    name: 'Maciej',
+    name: 'Maciej Masłanka',
     description:
-      'Pracuję z regresją duchową i regresją poprzednich wcieleń, studiuję psychologię w Warszawie i rozwijam autorską metodę Brama Dusz LBL™ inspirowaną publikacjami dr. Michaela Newtona. Staram się łączyć duchowość z trzeźwym, odpowiedzialnym językiem.'
+      'Maciej Masłanka pracuje z regresją duchową i regresją poprzednich wcieleń, studiuje psychologię w Warszawie i rozwija autorską metodę Brama Dusz LBL™ inspirowaną publikacjami dr. Michaela Newtona. Ta strona opisuje temat edukacyjnie i poleca jego pracę z perspektywy osoby, która korzystała z sesji.'
   },
   externalLinks: {
     mni: 'https://michaelnewton.org',
@@ -41,7 +41,7 @@
     { href: '/life-between-lives/', label: 'Life Between Lives®' },
     { href: '/regresja-miedzy-wcieleniami/', label: 'Między wcieleniami' },
     { href: '/brama-dusz-lbl/', label: 'Brama Dusz LBL™' },
-    { href: '/o-macieju/', label: 'O Macieju' },
+    { href: '/o-macieju/', label: 'Maciej Masłanka' },
     { href: '/sesja/', label: 'Sesja' },
     { href: '/artykuly/', label: 'Baza wiedzy' },
     { href: '/faq/', label: 'FAQ' }
@@ -52,7 +52,7 @@
     { href: '/regresja-poprzednich-wcielen/', label: 'Regresja poprzednich wcieleń' },
     { href: '/regresja-miedzy-wcieleniami/', label: 'Regresja między wcieleniami' },
     { href: '/brama-dusz-lbl/', label: 'Brama Dusz LBL™' },
-    { href: '/o-macieju/', label: 'O prowadzącym' },
+    { href: '/o-macieju/', label: 'Polecany prowadzący' },
     { href: '/sesja/', label: 'Sesja i zapisy' },
     { href: '/faq/', label: 'FAQ' }
   ],
