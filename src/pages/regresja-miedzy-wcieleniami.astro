@@ -1,0 +1,78 @@
+﻿---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import CTASection from '../components/CTASection.astro';
+import FAQ from '../components/FAQ.astro';
+import PageIntro from '../components/PageIntro.astro';
+import { articleSchema, breadcrumbSchema, faqSchema, personSchema, serviceSchema, websiteSchema } from '../content/schema';
+
+const title = 'Regresja między wcieleniami — LBL, sens i integracja';
+const description =
+  'Regresja między wcieleniami wyjaśniona spokojnie: czym różni się od PLR, jak rozumieć symbole i czym jest integracja duchowa.';
+const breadcrumbs = [{ href: '/regresja-miedzy-wcieleniami/', label: 'Regresja między wcieleniami' }];
+const pageFaq = [
+  {
+    question: 'Czym jest regresja między wcieleniami?',
+    answer:
+      'Regresja między wcieleniami to praca z doświadczeniem opisywanym jako przestrzeń pomiędzy wcieleniami. Może obejmować symbole, poczucie celu, relacje duszy i integrację znaczeń. Nie wymaga traktowania każdego obrazu jako literalnego faktu.'
+  },
+  {
+    question: 'Czy regresja między wcieleniami jest tym samym co LBL?',
+    answer:
+      'W praktyce te pojęcia bywają używane blisko siebie, ale warto zachować ostrożność. Life Between Lives® odnosi się do konkretnego kontekstu publikacji i źródeł, a LBL bywa używane jako skrót opisowy. Regresja między wcieleniami może też oznaczać szerszy obszar pracy.'
+  },
+  {
+    question: 'Czy taka sesja jest dla każdego?',
+    answer:
+      'Nie zawsze. Sesja wymaga stabilności, gotowości do spokojnej pracy i uczciwej rozmowy o oczekiwaniach. Jeżeli ktoś jest w ostrym kryzysie, potrzebuje najpierw odpowiedniego wsparcia medycznego lub psychoterapeutycznego.'
+  }
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  path="/regresja-miedzy-wcieleniami/"
+  schema={[websiteSchema(), personSchema(), serviceSchema('/regresja-miedzy-wcieleniami/'), breadcrumbSchema(breadcrumbs), articleSchema('/regresja-miedzy-wcieleniami/', title, description), faqSchema(pageFaq)]}
+>
+  <Breadcrumbs items={breadcrumbs} />
+  <PageIntro
+    title="Regresja między wcieleniami — LBL, sens i integracja"
+    text="Przewodnik po pracy z przestrzenią między wcieleniami, napisany bez przesady, bez presji i bez podszywania się pod oficjalne źródła."
+  />
+  <section class="section-space bg-warm-50">
+    <div class="container-page grid gap-12 lg:grid-cols-[0.4fr_0.6fr]">
+      <h2 class="display-title text-4xl text-ink-950">Między wcieleniami, czyli gdzie?</h2>
+      <article class="prose-site">
+        <p>
+          W języku regresji duchowej „między wcieleniami” oznacza przestrzeń, w której uczestnik może doświadczać symboli,
+          relacji, przewodnictwa, poczucia celu lub szerszej perspektywy na własne życie. Nie trzeba tego narzucać jako
+          obiektywnego opisu rzeczywistości.
+        </p>
+        <p>
+          Dla wielu osób ważniejsze jest to, czy takie doświadczenie pomaga spokojniej zrozumieć emocje, relacje i wybory.
+          Dlatego w tej pracy potrzebna jest delikatność, zwykły ludzki język i gotowość do integracji po sesji.
+        </p>
+      </article>
+    </div>
+  </section>
+  <section class="section-space bg-white" aria-labelledby="integration-title">
+    <div class="container-page grid gap-12 lg:grid-cols-[0.42fr_0.58fr]">
+      <div>
+        <div class="gold-line"></div>
+        <h2 id="integration-title" class="display-title mt-5 text-4xl text-ink-950 md:text-5xl">Integracja bez pośpiechu</h2>
+      </div>
+      <article class="prose-site">
+        <p>
+          Integracja oznacza powrót do codzienności z większą uważnością, a nie natychmiastową zmianę całego życia. Po sesji
+          warto zapisać najważniejsze obrazy, odpocząć, nie podejmować gwałtownych decyzji i wrócić do tego, co było naprawdę istotne.
+        </p>
+        <p>
+          Taki sposób pracy chroni przed nadinterpretacją. Pozwala zostawić miejsce zarówno na duchowość, jak i na zdrowy dystans.
+        </p>
+      </article>
+    </div>
+  </section>
+  <CTASection title="Chcesz porozmawiać o sesji między wcieleniami?" />
+  <FAQ items={pageFaq} title="FAQ o regresji między wcieleniami" />
+</BaseLayout>

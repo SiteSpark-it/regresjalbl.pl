@@ -1,0 +1,48 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import CTASection from '../components/CTASection.astro';
+import FAQ from '../components/FAQ.astro';
+import PageIntro from '../components/PageIntro.astro';
+import { homeFaq, peopleAlsoAsk, siteData } from '../content/siteData';
+import { breadcrumbSchema, faqSchema, personSchema, serviceSchema, websiteSchema } from '../content/schema';
+
+const title = 'FAQ — regresja LBL, Life Between Lives® i Brama Dusz LBL™';
+const description =
+  'Najczęstsze pytania o regresję LBL, Life Between Lives®, PLR, sesje online, przygotowanie i autorską metodę Brama Dusz LBL™.';
+const breadcrumbs = [{ href: '/faq/', label: 'FAQ' }];
+const allFaq = [...homeFaq, ...peopleAlsoAsk];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  path="/faq/"
+  schema={[websiteSchema(), personSchema(), serviceSchema('/faq/'), breadcrumbSchema(breadcrumbs), faqSchema(allFaq)]}
+>
+  <Breadcrumbs items={breadcrumbs} />
+  <PageIntro
+    title="FAQ — pytania o regresję LBL i Brama Dusz LBL™"
+    text="Krótkie odpowiedzi na pytania, które zwykle pojawiają się przed pierwszym spokojnym wejściem w temat LBL, PLR i regresji między wcieleniami."
+  />
+  <section class="section-space bg-white" aria-labelledby="guide-title">
+    <div class="container-page grid gap-12 lg:grid-cols-[0.38fr_0.62fr]">
+      <div>
+        <div class="gold-line"></div>
+        <h2 id="guide-title" class="display-title mt-5 text-4xl text-ink-950 md:text-5xl">Jak czytać te odpowiedzi?</h2>
+      </div>
+      <article class="prose-site">
+        <p>
+          FAQ nie ma zastąpić rozmowy z prowadzącym. Ma pomóc Ci uporządkować język: czym różni się PLR od LBL,
+          gdzie zaczyna się metoda autorska i dlaczego tak ważne jest uczciwe oddzielenie inspiracji od oficjalnej afiliacji.
+        </p>
+        <p>
+          Jeśli po lekturze czujesz, że temat Cię dotyczy, możesz zajrzeć do zapisów w Instytucie Regresji. Więcej informacji
+          o prowadzącym znajdziesz też na stronie <a href={siteData.personalLink.url} rel="noopener noreferrer">maciejregresja.pl</a>.
+        </p>
+      </article>
+    </div>
+  </section>
+  <FAQ items={allFaq} title="Pytania i odpowiedzi" />
+  <CTASection title="Masz po lekturze własne pytania?" text="Nie musisz mieć wszystkiego poukładanego od razu. Jeśli chcesz spokojnie sprawdzić formę pracy i dostępne terminy, zajrzyj do Instytutu Regresji." />
+</BaseLayout>

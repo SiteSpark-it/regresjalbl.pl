@@ -1,0 +1,211 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import DisclaimerBox from '../components/DisclaimerBox.astro';
+import CTASection from '../components/CTASection.astro';
+import FAQ from '../components/FAQ.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import ArticleCard from '../components/ArticleCard.astro';
+import { articleCards, homeFaq, serviceCards, siteData, snippetAnswers } from '../content/siteData';
+import { breadcrumbSchema, faqSchema, organizationSchema, personSchema, serviceSchema, websiteSchema } from '../content/schema';
+
+const title = 'Regresja LBL — Life Between Lives® i Brama Dusz LBL™';
+const description =
+  'Czym jest regresja LBL i Life Between Lives®? Spokojne wyjaśnienie pracy między wcieleniami oraz autorskiej metody Brama Dusz LBL™.';
+const breadcrumbs = [{ href: '/', label: 'Regresja LBL' }];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  path="/"
+  schema={[websiteSchema(), organizationSchema(), personSchema(), serviceSchema('/'), breadcrumbSchema(breadcrumbs), faqSchema(homeFaq)]}
+>
+  <Hero
+    title="Regresja LBL — czym jest i czym różni się od autorskich metod?"
+    subtitle="Spokojne wyjaśnienie pojęcia LBL, Life Between Lives® i regresji między wcieleniami. Bez podszywania się pod oficjalne źródła, z miejscem na metodę Brama Dusz LBL™ jako pracę autorską."
+    ctaLabel={siteData.cta.label}
+    ctaHref={siteData.cta.url}
+    secondaryLabel="Najpierw wyjaśnienie"
+    secondaryHref="#co-oznacza-lbl"
+  />
+
+  <section class="bg-ink-950 pb-12">
+    <div class="container-page">
+      <DisclaimerBox tone="dark" text={siteData.disclaimer} />
+    </div>
+  </section>
+
+  <section class="section-space bg-warm-50" id="co-oznacza-lbl" aria-labelledby="co-oznacza-lbl-title">
+    <div class="container-page grid gap-12 lg:grid-cols-[0.34fr_0.66fr]">
+      <div>
+        <div class="gold-line"></div>
+        <h2 id="co-oznacza-lbl-title" class="display-title mt-5 text-4xl text-ink-950 md:text-5xl">Co oznacza LBL?</h2>
+      </div>
+      <article class="prose-site">
+        <p>
+          LBL jest najczęściej kojarzone z angielskim określeniem Life Between Lives®, czyli z pracą dotyczącą życia
+          „między wcieleniami”. W polskim języku obok tego pojęcia pojawiają się też określenia: regresja między wcieleniami,
+          regresja duszy i regresja duchowa.
+        </p>
+        <p>
+          Najważniejsze jest proste rozróżnienie: czym jest samo pojęcie LBL, gdzie szukać oficjalnych
+          źródeł The Michael Newton Institute i czym są metody autorskie, które mogą być inspirowane publikacjami dr. Michaela
+          Newtona, ale nie są przez to oficjalną usługą MNI.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section-space bg-white" aria-labelledby="snippet-title">
+    <div class="container-page">
+      <div class="max-w-3xl">
+        <div class="gold-line"></div>
+        <h2 id="snippet-title" class="display-title mt-5 text-4xl text-ink-950 md:text-5xl">Krótkie odpowiedzi na najważniejsze pytania</h2>
+        <p class="mt-6 lead-text">
+          Te odpowiedzi mają uporządkować pojęcia bez presji i bez obietnic. Potraktuj je jak spokojny początek, zanim wejdziesz głębiej w temat.
+        </p>
+      </div>
+      <div class="mt-10 grid gap-5 md:grid-cols-2">
+        {snippetAnswers.map((item) => (
+          <article class="rounded-md border border-ink-950/10 bg-warm-50 p-6">
+            <h3 class="text-xl font-bold text-ink-950">{item.question}</h3>
+            <p class="mt-3 text-sm leading-7 text-slate-600">{item.answer}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-space bg-warm-50" aria-labelledby="newton-title">
+    <div class="container-page grid gap-12 lg:grid-cols-[0.48fr_0.52fr] lg:items-start">
+      <div>
+        <h2 id="newton-title" class="display-title text-4xl text-ink-950 md:text-5xl">Life Between Lives® i dr Michael Newton</h2>
+        <p class="mt-6 text-base leading-8 text-slate-600">
+          Dr Michael Newton opisywał w swoich publikacjach relacje osób pracujących z głębokim transem i symboliką życia
+          pomiędzy wcieleniami. Dla wielu czytelników stało się to językiem do rozmowy o sensie, relacjach duszy i doświadczeniach,
+          które trudno opisać zwykłym, codziennym słownictwem.
+        </p>
+      </div>
+      <article class="rounded-md border border-ink-950/10 bg-white p-7">
+        <h3 class="text-xl font-bold text-ink-950">Dlaczego ostrożność językowa jest ważna?</h3>
+        <p class="mt-4 text-sm leading-7 text-slate-600">
+          Odniesienie do książek, pojęć i historii LBL nie oznacza oficjalnej afiliacji. Jeśli zależy Ci na oficjalnej ścieżce,
+          sprawdzaj aktualne informacje bezpośrednio u źródła. Jeżeli interesuje Cię metoda autorska, szukaj jasnego opisu
+          inspiracji, kwalifikacji i granic pracy.
+        </p>
+        <a class="mt-5 inline-flex text-sm font-bold text-gold-700 hover:text-ink-950" href="/life-between-lives/">Zobacz kontekst Life Between Lives®</a>
+      </article>
+    </div>
+  </section>
+
+  <section class="section-space bg-white" aria-labelledby="plr-title">
+    <div class="container-page">
+      <div class="max-w-3xl">
+        <div class="gold-line"></div>
+        <h2 id="plr-title" class="display-title mt-5 text-4xl text-ink-950 md:text-5xl">Regresja LBL a regresja poprzednich wcieleń</h2>
+        <p class="mt-6 lead-text">
+          Regresja poprzednich wcieleń zwykle zaczyna się od konkretnej historii, sceny lub emocji. LBL prowadzi uwagę szerzej:
+          ku temu, co uczestnik rozumie z relacji, wyborów, symboli i poczucia celu.
+        </p>
+      </div>
+      <div class="mt-10 grid gap-5 md:grid-cols-3">
+        <article class="rounded-md border border-ink-950/10 bg-warm-50 p-6">
+          <h3 class="font-bold text-ink-950">Cel pracy</h3>
+          <p class="mt-3 text-sm leading-7 text-slate-600">PLR porządkuje doświadczenie poprzedniego wcielenia. LBL częściej pyta o szerszy sens, relacje i to, co z takiej pracy można zabrać do życia.</p>
+        </article>
+        <article class="rounded-md border border-ink-950/10 bg-warm-50 p-6">
+          <h3 class="font-bold text-ink-950">Język sesji</h3>
+          <p class="mt-3 text-sm leading-7 text-slate-600">Obie formy korzystają z symboliki, narracji i pracy z wyobraźnią. Odpowiedzialne prowadzenie nie narzuca jednej interpretacji.</p>
+        </article>
+        <article class="rounded-md border border-ink-950/10 bg-warm-50 p-6">
+          <h3 class="font-bold text-ink-950">Integracja</h3>
+          <p class="mt-3 text-sm leading-7 text-slate-600">Najważniejsze jest to, co uczestnik rozumie po sesji i jak spokojnie odnosi to do codzienności, relacji i własnych decyzji.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-space bg-ink-900 text-warm-50" aria-labelledby="oficjalne-autorskie-title">
+    <div class="container-page grid gap-12 lg:grid-cols-[0.4fr_0.6fr]">
+      <div>
+        <div class="gold-line"></div>
+        <h2 id="oficjalne-autorskie-title" class="display-title mt-5 text-4xl md:text-5xl">Ścieżka oficjalna a metody autorskie</h2>
+      </div>
+      <div class="grid gap-6">
+        <article class="border-l border-gold-500/45 pl-6">
+          <h3 class="text-xl font-bold">Oficjalna ścieżka</h3>
+          <p class="mt-3 text-sm leading-7 text-warm-100/76">
+            Jeśli ktoś szuka pracy prowadzonej w ramach konkretnego instytutu, powinien sprawdzać listy, standardy i aktualne
+            informacje bezpośrednio na stronach tej organizacji.
+          </p>
+        </article>
+        <article class="border-l border-gold-500/45 pl-6">
+          <h3 class="text-xl font-bold">Metoda autorska</h3>
+          <p class="mt-3 text-sm leading-7 text-warm-100/76">
+            Metoda autorska może czerpać z literatury, praktyki regresji, hipnozy regresyjnej, psychologii i duchowości.
+            Powinna jednak mówić o tym wprost: jako własna forma pracy, nie jako oficjalna usługa MNI.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-space bg-white" aria-labelledby="brama-title">
+    <div class="container-page grid gap-12 lg:grid-cols-[0.42fr_0.58fr]">
+      <div>
+        <div class="gold-line"></div>
+        <h2 id="brama-title" class="display-title mt-5 text-4xl text-ink-950 md:text-5xl">Brama Dusz LBL™</h2>
+        <p class="mt-6 lead-text">Brama Dusz LBL™ to autorska metoda regresji duchowej inspirowana publikacjami dr. Michaela Newtona, prowadzona spokojnym i odpowiedzialnym językiem.</p>
+      </div>
+      <article class="prose-site">
+        <p>
+          W tej pracy nie chodzi o udowadnianie komukolwiek, co „naprawdę” wydarzyło się w przeszłości. Chodzi o uważne
+          spotkanie z obrazami, emocjami, symbolami, ciszą i pytaniami, które mogą pojawić się w stanie głębokiego skupienia.
+        </p>
+        <p>
+          Autor pracuje z regresją duchową i regresją poprzednich wcieleń, ukończył szkolenia z regresji i hipnozy regresyjnej,
+          studiuje psychologię w Warszawie i jest w drodze dalszego rozwoju w kierunku certyfikacji LBL. To nie oznacza
+          oficjalnej certyfikacji MNI.
+        </p>
+        <a class="button-quiet mt-6" href="/brama-dusz-lbl/">Zobacz, czym jest Brama Dusz LBL™</a>
+      </article>
+    </div>
+  </section>
+
+  <section class="section-space bg-warm-50" aria-labelledby="facylitator-title">
+    <div class="container-page grid gap-12 lg:grid-cols-[0.48fr_0.52fr]">
+      <h2 id="facylitator-title" class="display-title text-4xl text-ink-950 md:text-5xl">Jak sprawdzić oficjalnego facylitatora MNI?</h2>
+      <article class="prose-site">
+        <p>
+          Najbezpieczniej korzystać z aktualnych źródeł. Jeśli zależy Ci na osobie prowadzącej oficjalną ścieżkę Life Between
+          Lives®, sprawdź listę i kryteria bezpośrednio na stronie The Michael Newton Institute.
+        </p>
+        <p>
+          Ta strona ma charakter edukacyjny. Pomaga rozumieć pojęcia i spokojnie odróżniać oficjalne źródła od autorskich
+          metod pracy z doświadczeniem wewnętrznym.
+        </p>
+        <a class="button-quiet mt-6" href={siteData.externalLinks.mni} rel="noopener noreferrer">Przejdź do michaelnewton.org</a>
+      </article>
+    </div>
+  </section>
+
+  <section class="section-space bg-white" aria-labelledby="topics-title">
+    <div class="container-page">
+      <div class="max-w-3xl">
+        <div class="gold-line"></div>
+        <h2 id="topics-title" class="display-title mt-5 text-4xl text-ink-950 md:text-5xl">Najważniejsze tematy</h2>
+        <p class="mt-6 lead-text">To główne ścieżki lektury dla osób, które chcą zrozumieć LBL bez pośpiechu i bez mieszania pojęć.</p>
+      </div>
+      <div class="mt-10 grid gap-5 md:grid-cols-3">
+        {serviceCards.map((card, index) => <ServiceCard {...card} index={index + 1} />)}
+      </div>
+      <div class="mt-12 grid gap-4 md:grid-cols-2">
+        {articleCards.map((card) => <ArticleCard {...card} />)}
+      </div>
+    </div>
+  </section>
+
+  <CTASection />
+  <FAQ items={homeFaq} title="Najczęstsze pytania o regresję LBL" />
+</BaseLayout>

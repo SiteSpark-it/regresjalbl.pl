@@ -1,0 +1,48 @@
+---
+import { Image } from 'astro:assets';
+import heroImage from '../assets/regresja-lbl-brama.png';
+
+interface Props {
+  title: string;
+  subtitle: string;
+  ctaLabel: string;
+  ctaHref: string;
+  secondaryLabel?: string;
+  secondaryHref?: string;
+}
+
+const { title, subtitle, ctaLabel, ctaHref, secondaryLabel, secondaryHref } = Astro.props;
+const titleLines =
+  title === 'Regresja LBL — przewodnik po Life Between Lives'
+    ? ['Regresja LBL', 'przewodnik po', 'Life Between Lives']
+    : [title];
+---
+
+<section class="relative overflow-hidden bg-ink-950 text-warm-50">
+  <div class="absolute inset-0 bg-[radial-gradient(circle_at_65%_35%,rgba(212,162,74,0.15),transparent_34%),linear-gradient(180deg,#07111d_0%,#0b1624_100%)]"></div>
+  <div class="container-page relative grid min-w-0 items-center gap-10 py-12 lg:min-h-[720px] lg:grid-cols-[0.92fr_1.08fr] lg:py-16">
+    <div class="w-full max-w-2xl min-w-0">
+      <h1 class="hero-title display-title max-w-full text-[2rem] text-warm-50 lg:text-[4.15rem]" aria-label={title}>
+        {titleLines.map((line, index) => <span class="block">{line}{index < titleLines.length - 1 ? ' ' : ''}</span>)}
+      </h1>
+      <p class="mt-6 max-w-xl break-words text-lg leading-8 text-warm-100/78 md:text-xl md:leading-9">{subtitle}</p>
+      <div class="mt-9 flex w-full flex-col gap-3 sm:flex-row">
+        <a class="button-primary w-full text-center sm:w-auto" href={ctaHref} rel="noopener noreferrer" aria-label="Przejdź do zapisów w Instytucie Regresji">{ctaLabel}</a>
+        {secondaryLabel && secondaryHref && <a class="button-secondary w-full text-center sm:w-auto" href={secondaryHref}>{secondaryLabel}</a>}
+      </div>
+    </div>
+    <div class="relative min-h-[16rem] w-full min-w-0 max-w-full overflow-hidden rounded-md border border-white/12 bg-ink-900 shadow-soft lg:min-h-[30rem]">
+      <Image
+        src={heroImage}
+        alt="Kamienna brama w ciemnym wnętrzu, przez którą wpada ciepłe światło"
+        widths={[480, 720, 960, 1280]}
+        sizes="(min-width: 1024px) 52vw, 100vw"
+        format="webp"
+        loading="eager"
+        fetchpriority="high"
+        class="h-full min-h-[16rem] w-full object-cover lg:min-h-[30rem]"
+      />
+      <div class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-ink-950/74 to-transparent"></div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,88 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import CTASection from '../components/CTASection.astro';
+import DisclaimerBox from '../components/DisclaimerBox.astro';
+import FAQ from '../components/FAQ.astro';
+import PageIntro from '../components/PageIntro.astro';
+import { siteData } from '../content/siteData';
+import { articleSchema, breadcrumbSchema, faqSchema, personSchema, serviceSchema, websiteSchema } from '../content/schema';
+
+const title = 'Life Between Lives® i Michael Newton — czym jest regresja LBL?';
+const description =
+  'Czym jest Life Between Lives®, skąd pochodzi pojęcie LBL i jak odróżniać oficjalne źródła MNI od metod autorskich.';
+const breadcrumbs = [{ href: '/life-between-lives/', label: 'Life Between Lives®' }];
+const pageFaq = [
+  {
+    question: 'Czy Life Between Lives® to nazwa oficjalnej metody?',
+    answer:
+      'Life Between Lives® jest nazwą kojarzoną z pracą dr. Michaela Newtona i może stanowić znak towarowy właściciela. Jeśli szukasz oficjalnej ścieżki MNI, sprawdzaj aktualne informacje bezpośrednio w źródłach The Michael Newton Institute.'
+  },
+  {
+    question: 'Czy można pisać o Michaelu Newtonie bez afiliacji z MNI?',
+    answer:
+      'Tak, można edukacyjnie odnosić się do publikacji i historii pojęcia, pod warunkiem że nie tworzy się wrażenia oficjalnej afiliacji. Dlatego na tej stronie konsekwentnie oddzielamy informacje o LBL od autorskiej metody Brama Dusz LBL™.'
+  },
+  {
+    question: 'Jak sprawdzić oficjalne źródła?',
+    answer:
+      'Najprościej wejść na stronę The Michael Newton Institute i sprawdzić aktualne listy, standardy oraz informacje o osobach prowadzących. Zewnętrzne strony edukacyjne mogą pomagać w zrozumieniu pojęć, ale nie zastępują oficjalnego źródła.'
+  }
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  path="/life-between-lives/"
+  schema={[websiteSchema(), personSchema(), serviceSchema('/life-between-lives/'), breadcrumbSchema(breadcrumbs), articleSchema('/life-between-lives/', title, description), faqSchema(pageFaq)]}
+>
+  <Breadcrumbs items={breadcrumbs} />
+  <PageIntro
+    title="Life Between Lives® i dr Michael Newton — czym jest regresja LBL?"
+    text="Najważniejsze rozróżnienia dla osób, które szukają informacji o LBL, ale chcą zachować jasność źródeł, nazw i afiliacji."
+  />
+  <section class="section-space bg-warm-50">
+    <div class="container-page grid gap-10 lg:grid-cols-[0.36fr_0.64fr]">
+      <DisclaimerBox text={siteData.disclaimer} />
+      <article class="prose-site">
+        <h2 class="display-title text-4xl text-ink-950">Co warto rozdzielić?</h2>
+        <p>
+          Life Between Lives® jest pojęciem znanym dzięki publikacjom dr. Michaela Newtona i opisom doświadczeń między
+          wcieleniami. Samo wyjaśnianie tego pojęcia nie oznacza jednak prowadzenia oficjalnej usługi ani reprezentowania MNI.
+        </p>
+        <p>
+          Jeżeli zależy Ci na ścieżce oficjalnej, sprawdzaj aktualne informacje bezpośrednio w źródłach MNI. Jeżeli interesuje
+          Cię metoda autorska, zwróć uwagę, czy autor jasno nazywa inspiracje, kwalifikacje i granice pracy.
+        </p>
+        <a class="button-quiet mt-6" href={siteData.externalLinks.mni} rel="noopener noreferrer">The Michael Newton Institute</a>
+      </article>
+    </div>
+  </section>
+  <section class="section-space bg-white" aria-labelledby="sources-title">
+    <div class="container-page grid gap-12 lg:grid-cols-[0.42fr_0.58fr]">
+      <div>
+        <div class="gold-line"></div>
+        <h2 id="sources-title" class="display-title mt-5 text-4xl text-ink-950 md:text-5xl">Źródła, inspiracje i granice</h2>
+      </div>
+      <article class="prose-site">
+        <p>
+          W języku polskim temat LBL często miesza się z regresją poprzednich wcieleń, hipnozą regresyjną, duchowością i
+          metodami autorskimi. To naturalne, bo osoby szukające informacji zwykle próbują dopiero zrozumieć mapę pojęć.
+        </p>
+        <p>
+          Uczciwy opis powinien jasno mówić, kiedy chodzi o edukacyjne odniesienie do publikacji, kiedy o oficjalne źródła,
+          a kiedy o osobną praktykę prowadzoną przez konkretnego autora. Takie rozróżnienie buduje zaufanie i chroni przed
+          obietnicami, których nie da się odpowiedzialnie składać.
+        </p>
+        <ul>
+          <li><a href="/brama-dusz-lbl/">Brama Dusz LBL™</a> jest opisana jako metoda autorska.</li>
+          <li><a href="/regresja-poprzednich-wcielen/">Regresja poprzednich wcieleń</a> ma własny rytm i cel pracy.</li>
+          <li><a href="/sesja/">Sesja</a> wymaga jasnych granic i spokojnej integracji.</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+  <CTASection title="Po uporządkowaniu pojęć możesz zobaczyć, jak wygląda sesja" />
+  <FAQ items={pageFaq} title="FAQ o Life Between Lives®" />
+</BaseLayout>

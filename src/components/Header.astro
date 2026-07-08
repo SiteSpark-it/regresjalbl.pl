@@ -1,0 +1,43 @@
+---
+import { siteData } from '../content/siteData';
+---
+
+<header class="sticky top-0 z-40 border-b border-white/10 bg-ink-950/[0.92] text-warm-50 backdrop-blur">
+  <a
+    href="#main-content"
+    class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-gold-500 focus:px-4 focus:py-2 focus:text-ink-950"
+  >
+    Przejdź do treści
+  </a>
+  <div class="container-page flex min-h-16 items-center justify-between gap-4 py-3">
+    <a href="/" class="flex items-center gap-3 no-underline" aria-label="Regresja LBL - strona główna">
+      <span class="grid h-10 w-10 place-items-center rounded-md border border-gold-500/50 bg-white/5 text-gold-500" aria-hidden="true">
+        <span class="h-5 w-3 rounded-t-full border border-current"></span>
+      </span>
+      <span class="leading-tight">
+        <span class="block text-sm font-bold uppercase tracking-[0.14em] text-warm-50">Regresja LBL</span>
+        <span class="block text-xs text-warm-100/72">przewodnik edukacyjny</span>
+      </span>
+    </a>
+
+    <nav class="hidden items-center gap-5 text-sm font-medium text-warm-100/82 lg:flex" aria-label="Główna nawigacja">
+      {siteData.navLinks.map((link) => <a class="hover:text-gold-500" href={link.href}>{link.label}</a>)}
+    </nav>
+
+    <div class="hidden items-center gap-3 lg:flex">
+      <a class="button-primary" href={siteData.cta.url} rel="noopener noreferrer" aria-label="Przejdź do zapisów w Instytucie Regresji">Zapisy</a>
+    </div>
+
+    <details class="group relative lg:hidden">
+      <summary class="button-secondary cursor-pointer list-none px-3" aria-label="Otwórz menu">
+        Menu
+      </summary>
+      <nav class="absolute right-0 mt-3 w-72 rounded-md border border-white/12 bg-ink-900 p-3 shadow-soft" aria-label="Menu mobilne">
+        <div class="grid gap-1">
+          {siteData.navLinks.map((link) => <a class="rounded-md px-3 py-3 text-sm text-warm-50 hover:bg-white/[0.08]" href={link.href}>{link.label}</a>)}
+          <a class="button-primary mt-2" href={siteData.cta.url} rel="noopener noreferrer" aria-label="Przejdź do zapisów w Instytucie Regresji">Zapisy</a>
+        </div>
+      </nav>
+    </details>
+  </div>
+</header>

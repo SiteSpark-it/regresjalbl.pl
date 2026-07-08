@@ -1,0 +1,42 @@
+---
+import { siteData } from '../content/siteData';
+
+interface Props {
+  title: string;
+  description: string;
+  path?: string;
+  image?: string;
+  schema?: unknown[];
+  noindex?: boolean;
+}
+
+const {
+  title,
+  description,
+  path = '/',
+  image = siteData.defaultImage,
+  schema = [],
+  noindex = false
+} = Astro.props;
+
+const canonical = new URL(path, siteData.domain).toString();
+const imageUrl = new URL(image, siteData.domain).toString();
+---
+
+<title>{title}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonical} />
+<meta name="robots" content={noindex ? 'noindex, nofollow' : 'index, follow'} />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="pl_PL" />
+<meta property="og:site_name" content={siteData.name} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonical} />
+<meta property="og:image" content={imageUrl} />
+<meta property="og:image:alt" content="Symboliczna brama i ciepłe światło dla strony o regresji LBL" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={imageUrl} />
+{schema.map((item) => <script type="application/ld+json" set:html={JSON.stringify(item)} />)}

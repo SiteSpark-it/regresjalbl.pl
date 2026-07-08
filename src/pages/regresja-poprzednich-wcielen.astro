@@ -1,0 +1,100 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import CTASection from '../components/CTASection.astro';
+import FAQ from '../components/FAQ.astro';
+import PageIntro from '../components/PageIntro.astro';
+import { articleSchema, breadcrumbSchema, faqSchema, personSchema, serviceSchema, websiteSchema } from '../content/schema';
+
+const title = 'Regresja poprzednich wcieleń a regresja LBL — różnice';
+const description =
+  'Czym różni się regresja poprzednich wcieleń od regresji LBL i pracy między wcieleniami? Spokojne porównanie celów, języka i granic.';
+const breadcrumbs = [{ href: '/regresja-poprzednich-wcielen/', label: 'Regresja poprzednich wcieleń' }];
+const pageFaq = [
+  {
+    question: 'Czy regresja poprzednich wcieleń zawsze prowadzi do LBL?',
+    answer:
+      'Nie. Regresja poprzednich wcieleń może pozostać przy jednej historii, emocji lub relacji. Praca LBL kieruje uwagę ku szerszej perspektywie między wcieleniami, ale nie każda sesja musi tam prowadzić.'
+  },
+  {
+    question: 'Czy obrazy z poprzednich wcieleń trzeba traktować dosłownie?',
+    answer:
+      'Nie trzeba. Można je rozumieć duchowo, symbolicznie, intuicyjnie albo jako wewnętrzną narrację. Odpowiedzialna praca nie zmusza do jednej interpretacji i nie używa doświadczenia jako dowodu przeciwko uczestnikowi.'
+  },
+  {
+    question: 'Czy PLR jest psychoterapią?',
+    answer:
+      'Nie. Opisywana regresja poprzednich wcieleń ma charakter rozwojowy i duchowy. Może dotykać emocji i relacji, ale nie zastępuje diagnozy, leczenia, interwencji kryzysowej ani psychoterapii klinicznej.'
+  }
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  path="/regresja-poprzednich-wcielen/"
+  schema={[websiteSchema(), personSchema(), serviceSchema('/regresja-poprzednich-wcielen/'), breadcrumbSchema(breadcrumbs), articleSchema('/regresja-poprzednich-wcielen/', title, description), faqSchema(pageFaq)]}
+>
+  <Breadcrumbs items={breadcrumbs} />
+  <PageIntro
+    title="Regresja poprzednich wcieleń a regresja LBL"
+    text="Dwa bliskie, ale nieidentyczne sposoby pracy z narracją wewnętrzną, symboliką, emocjami i pytaniami duchowymi."
+  />
+  <section class="section-space bg-warm-50">
+    <div class="container-page grid gap-12 lg:grid-cols-[0.45fr_0.55fr]">
+      <h2 class="display-title text-4xl text-ink-950">Regresja poprzednich wcieleń</h2>
+      <article class="prose-site">
+        <p>
+          Regresja poprzednich wcieleń koncentruje się na obrazie, historii lub przeżyciu, które uczestnik interpretuje
+          jako doświadczenie z innego czasu. Może pojawić się postać, miejsce, relacja, emocja albo powtarzający się motyw.
+        </p>
+        <p>
+          Najważniejsze nie jest udowodnienie dosłowności obrazu, ale sprawdzenie, co ta narracja porusza: lęk, lojalność,
+          stratę, poczucie winy, tęsknotę, granice albo potrzebę domknięcia.
+        </p>
+      </article>
+    </div>
+  </section>
+  <section class="section-space bg-white" aria-labelledby="differences-title">
+    <div class="container-page">
+      <div class="max-w-3xl">
+        <div class="gold-line"></div>
+        <h2 id="differences-title" class="display-title mt-5 text-4xl text-ink-950 md:text-5xl">PLR i LBL — najprostsze rozróżnienie</h2>
+      </div>
+      <div class="mt-10 grid gap-5 md:grid-cols-2">
+        <article class="rounded-md border border-ink-950/10 bg-warm-50 p-6">
+          <h3 class="text-xl font-bold text-ink-950">PLR: konkretna historia</h3>
+          <p class="mt-3 text-sm leading-7 text-slate-600">
+            PLR zwykle pracuje z jedną sceną, wcieleniem lub relacją. Uczestnik może zobaczyć fragment życia, moment śmierci,
+            wybór, spotkanie albo silną emocję, która domaga się zrozumienia.
+          </p>
+        </article>
+        <article class="rounded-md border border-ink-950/10 bg-warm-50 p-6">
+          <h3 class="text-xl font-bold text-ink-950">LBL: szersza perspektywa</h3>
+          <p class="mt-3 text-sm leading-7 text-slate-600">
+            LBL kieruje uwagę ku przestrzeni między wcieleniami, relacjom duszy, przewodnictwu, sensowi i integracji. Może
+            rozwijać to, co pojawiło się w PLR, ale nie jest automatycznym etapem każdej sesji.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+  <section class="section-space bg-warm-50" aria-labelledby="links-title">
+    <div class="container-page grid gap-12 lg:grid-cols-[0.38fr_0.62fr]">
+      <h2 id="links-title" class="display-title text-4xl text-ink-950 md:text-5xl">Co czytać dalej?</h2>
+      <article class="prose-site">
+        <p>
+          Jeżeli zaczynasz od poprzednich wcieleń, dobrym kolejnym krokiem jest zrozumienie pracy między wcieleniami i tego,
+          jak bezpiecznie mówić o LBL bez mieszania oficjalnych źródeł z metodami autorskimi.
+        </p>
+        <ul>
+          <li><a href="/regresja-miedzy-wcieleniami/">Regresja między wcieleniami</a> porządkuje temat przestrzeni pomiędzy wcieleniami.</li>
+          <li><a href="/life-between-lives/">Life Between Lives®</a> wyjaśnia kontekst Michaela Newtona i MNI.</li>
+          <li><a href="/brama-dusz-lbl/">Brama Dusz LBL™</a> opisuje metodę autorską.</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+  <CTASection title="Zobacz, jak może wyglądać sesja" />
+  <FAQ items={pageFaq} title="FAQ o regresji poprzednich wcieleń" />
+</BaseLayout>

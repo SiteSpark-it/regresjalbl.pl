@@ -1,0 +1,45 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import PageIntro from '../components/PageIntro.astro';
+import { siteData } from '../content/siteData';
+import { breadcrumbSchema, personSchema, websiteSchema } from '../content/schema';
+
+const title = 'Polityka prywatności — regresjalbl.pl';
+const description = 'Informacje o kontakcie, linkach zewnętrznych, cookies i prywatności na statycznej stronie regresjalbl.pl.';
+const breadcrumbs = [{ href: '/polityka-prywatnosci/', label: 'Polityka prywatności' }];
+---
+
+<BaseLayout title={title} description={description} path="/polityka-prywatnosci/" schema={[websiteSchema(), personSchema(), breadcrumbSchema(breadcrumbs)]}>
+  <Breadcrumbs items={breadcrumbs} />
+  <PageIntro
+    title="Polityka prywatności"
+    text="Krótka informacja o kontakcie, linkach zewnętrznych i sposobie korzystania ze statycznej strony regresjalbl.pl."
+    ctaLabel="Wróć do przewodnika"
+    ctaHref="/"
+  />
+  <section class="section-space bg-warm-50">
+    <div class="container-page">
+      <article class="prose-site max-w-3xl">
+        <h2 class="display-title text-4xl text-ink-950">Kontakt</h2>
+        <p>
+          Kontakt ze stroną jest możliwy przez adres e-mail: <a href={siteData.contact.emailHref}>{siteData.contact.email}</a>.
+          Jeżeli korzystasz z linku do zapisów, przechodzisz do zewnętrznej strony Instytutu Regresji.
+        </p>
+
+        <h2 class="display-title mt-10 text-4xl text-ink-950">Linki zewnętrzne</h2>
+        <p>
+          Strona może prowadzić do zewnętrznych serwisów, w tym Instytutu Regresji, maciejregresja.pl oraz oficjalnych źródeł
+          informacyjnych dotyczących The Michael Newton Institute. Zewnętrzne serwisy działają według własnych zasad prywatności.
+        </p>
+
+        <h2 class="display-title mt-10 text-4xl text-ink-950">Analityka i cookies</h2>
+        <p>
+          Strona jest statyczna i nie zawiera formularza kontaktowego ani systemu kont użytkownika. Jeżeli w przyszłości zostaną
+          dodane narzędzia analityczne lub cookies inne niż techniczne, polityka prywatności powinna zostać zaktualizowana przed
+          ich uruchomieniem.
+        </p>
+      </article>
+    </div>
+  </section>
+</BaseLayout>

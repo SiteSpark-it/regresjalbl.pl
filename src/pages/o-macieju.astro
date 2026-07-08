@@ -1,0 +1,63 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import CTASection from '../components/CTASection.astro';
+import DisclaimerBox from '../components/DisclaimerBox.astro';
+import FAQ from '../components/FAQ.astro';
+import PageIntro from '../components/PageIntro.astro';
+import { siteData } from '../content/siteData';
+import { articleSchema, breadcrumbSchema, faqSchema, personSchema, serviceSchema, websiteSchema } from '../content/schema';
+
+const title = 'O prowadzącym — regresja duchowa, psychologia i Brama Dusz LBL™';
+const description =
+  'Kim jest prowadzący sesje Brama Dusz LBL™? Regresja duchowa, studia psychologiczne w Warszawie, inspiracje Michaelem Newtonem i odpowiedzialne granice pracy.';
+const breadcrumbs = [{ href: '/o-macieju/', label: 'O prowadzącym' }];
+const pageFaq = [
+  {
+    question: 'Czy autor jest oficjalnym facylitatorem MNI?',
+    answer:
+      'Nie przedstawiam autora jako oficjalnego facylitatora MNI. Opis mówi o pracy z regresją duchową, ukończonych szkoleniach z regresji i hipnozy regresyjnej, studiach psychologicznych oraz dalszym rozwoju w kierunku certyfikacji.'
+  },
+  {
+    question: 'Dlaczego na stronie jest link do maciejregresja.pl?',
+    answer:
+      'To link osobisty, który pomaga zobaczyć szerszy kontekst mojej pracy. Główne miejsce zapisów pozostaje na stronie Instytutu Regresji, a ta domena pełni przede wszystkim funkcję edukacyjną.'
+  }
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  path="/o-macieju/"
+  schema={[websiteSchema(), personSchema(), serviceSchema('/o-macieju/'), breadcrumbSchema(breadcrumbs), articleSchema('/o-macieju/', title, description), faqSchema(pageFaq)]}
+>
+  <Breadcrumbs items={breadcrumbs} />
+  <PageIntro
+    title="O prowadzącym — regresja duchowa, psychologia i Brama Dusz LBL™"
+    text="Krótki, uczciwy opis doświadczenia, inspiracji i granic pracy. Bez pozy, bez niepotwierdzonych afiliacji i bez obietnic efektu."
+  />
+  <section class="section-space bg-warm-50">
+    <div class="container-page grid gap-10 lg:grid-cols-[0.36fr_0.64fr]">
+      <DisclaimerBox text={siteData.disclaimer} />
+      <article class="prose-site">
+        <h2 class="display-title text-4xl text-ink-950">Jak pracuję z tym tematem?</h2>
+        <p>
+          Pracuję z regresją duchową i regresją poprzednich wcieleń, a równolegle studiuję psychologię w Warszawie. To
+          połączenie pomaga mi mówić o duchowości językiem, który zostawia miejsce na emocje, ciało, symbole i zdrowy dystans.
+        </p>
+        <p>
+          Ukończyłem szkolenia z regresji i hipnozy regresyjnej. Rozwijam autorską metodę Brama Dusz LBL™ inspirowaną
+          publikacjami dr. Michaela Newtona. Jestem też w drodze dalszego rozwoju w kierunku certyfikacji LBL.
+        </p>
+        <p>
+          Ten opis nie oznacza oficjalnej certyfikacji MNI. Zależy mi na prostym języku, bo zaufanie zaczyna się od uczciwego
+          nazwania tego, co wiem, czego się uczę i czego nie powinienem obiecywać.
+        </p>
+        <a class="button-quiet mt-6" href={siteData.personalLink.url} rel="noopener noreferrer">Przejdź do maciejregresja.pl</a>
+      </article>
+    </div>
+  </section>
+  <CTASection title="Zapisy odbywają się przez Instytut Regresji" />
+  <FAQ items={pageFaq} title="FAQ o prowadzącym" />
+</BaseLayout>

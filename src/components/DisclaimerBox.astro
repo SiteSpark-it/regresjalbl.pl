@@ -1,0 +1,19 @@
+---
+interface Props {
+  text: string;
+  tone?: 'dark' | 'light';
+}
+
+const { text, tone = 'light' } = Astro.props;
+const classes =
+  tone === 'dark'
+    ? 'border-gold-500/28 bg-white/7 text-warm-50'
+    : 'border-gold-600/25 bg-white text-ink-800 shadow-soft';
+---
+
+<aside class={`rounded-md border p-5 ${classes}`} aria-label="Informacja prawna">
+  <div class="flex min-w-0 gap-4">
+    <span class="mt-1 h-7 w-1.5 shrink-0 rounded-full bg-gold-500"></span>
+    <p class="min-w-0 break-words text-sm leading-7">{text}</p>
+  </div>
+</aside>
