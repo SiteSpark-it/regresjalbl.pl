@@ -40,7 +40,7 @@ export function serviceSchema(path = '/') {
   return {
     '@context': 'https://schema.org',
     '@type': 'Service',
-    name: 'Autorska sesja regresji duchowej Brama Dusz LBL™',
+    name: 'Autorska sesja regresji duchowej Brama Dusz LBL',
     serviceType: 'Sesja rozwojowa i duchowa',
     provider: {
       '@type': 'Person',

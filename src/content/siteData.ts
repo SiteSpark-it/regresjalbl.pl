@@ -24,7 +24,7 @@
   author: {
     name: 'Maciej Masłanka',
     description:
-      'Maciej Masłanka pracuje z regresją duchową i regresją poprzednich wcieleń, studiuje psychologię w Warszawie i rozwija autorską metodę Brama Dusz LBL™ inspirowaną publikacjami dr. Michaela Newtona. Ta strona opisuje temat edukacyjnie i poleca jego pracę z perspektywy osoby, która korzystała z sesji.'
+      'Maciej Masłanka pracuje z regresją duchową i regresją poprzednich wcieleń, studiuje psychologię w Warszawie i rozwija autorską metodę Brama Dusz LBL inspirowaną publikacjami dr. Michaela Newtona. Ta strona opisuje temat edukacyjnie i poleca jego pracę z perspektywy osoby, która korzystała z sesji.'
   },
   externalLinks: {
     mni: 'https://michaelnewton.org',
@@ -39,9 +39,9 @@
   },
   navLinks: [
     { href: '/', label: 'Regresja LBL' },
-    { href: '/life-between-lives/', label: 'Life Between Lives®' },
+    { href: '/life-between-lives/', label: 'Life Between Lives' },
     { href: '/regresja-miedzy-wcieleniami/', label: 'Między wcieleniami' },
-    { href: '/brama-dusz-lbl/', label: 'Brama Dusz LBL™' },
+    { href: '/brama-dusz-lbl/', label: 'Brama Dusz LBL' },
     { href: '/o-macieju/', label: 'Maciej Masłanka' },
     { href: '/sesja/', label: 'Sesja' },
     { href: '/artykuly/', label: 'Baza wiedzy' },
@@ -49,23 +49,23 @@
   ],
   footerLinks: [
     { href: '/', label: 'Regresja LBL' },
-    { href: '/life-between-lives/', label: 'Life Between Lives® i Michael Newton' },
+    { href: '/life-between-lives/', label: 'Life Between Lives i Michael Newton' },
     { href: '/regresja-poprzednich-wcielen/', label: 'Regresja poprzednich wcieleń' },
     { href: '/regresja-miedzy-wcieleniami/', label: 'Regresja między wcieleniami' },
-    { href: '/brama-dusz-lbl/', label: 'Brama Dusz LBL™' },
+    { href: '/brama-dusz-lbl/', label: 'Brama Dusz LBL' },
     { href: '/o-macieju/', label: 'Polecany prowadzący' },
     { href: '/sesja/', label: 'Sesja i zapisy' },
     { href: '/faq/', label: 'FAQ' }
   ],
   disclaimer:
-    'Strona/metoda nie jest oficjalną usługą The Michael Newton Institute. Life Between Lives® może stanowić znak towarowy jego właściciela. Skrót LBL jest używany tutaj informacyjnie, a Brama Dusz LBL™ jest opisana jako metoda autorska.'
+    'Strona/metoda nie jest oficjalną usługą The Michael Newton Institute. Nazwy Life Between Lives i LBL są używane tutaj informacyjnie, a Brama Dusz LBL jest opisana jako metoda autorska.'
 };
 
 export const homeFaq = [
   {
-    question: 'Czy Brama Dusz LBL™ to oficjalne Life Between Lives®?',
+    question: 'Czy Brama Dusz LBL to oficjalne Life Between Lives?',
     answer:
-      'Nie. Brama Dusz LBL™ jest autorską metodą regresji duchowej inspirowaną publikacjami dr. Michaela Newtona. Nie jest oficjalną usługą The Michael Newton Institute ani potwierdzeniem powiązania z MNI.'
+      'Nie. Brama Dusz LBL jest autorską metodą regresji duchowej inspirowaną publikacjami dr. Michaela Newtona. Nie jest oficjalną usługą The Michael Newton Institute ani potwierdzeniem powiązania z MNI.'
   },
   {
     question: 'Czy LBL jest tym samym co PLR?',
@@ -85,7 +85,7 @@ export const homeFaq = [
   {
     question: 'Czy trzeba mieć certyfikowanego facylitatora?',
     answer:
-      'Jeśli szukasz oficjalnej ścieżki Life Between Lives®, najlepiej sprawdzić aktualne listy bezpośrednio w The Michael Newton Institute. Jeśli wybierasz metodę autorską, zwróć uwagę na jasne granice, doświadczenie prowadzącego i uczciwe rozróżnienie inspiracji od oficjalnej afiliacji.'
+      'Jeśli szukasz oficjalnej ścieżki Life Between Lives, najlepiej sprawdzić aktualne listy bezpośrednio w The Michael Newton Institute. Jeśli wybierasz metodę autorską, zwróć uwagę na jasne granice, doświadczenie prowadzącego i uczciwe rozróżnienie inspiracji od oficjalnej afiliacji.'
   },
   {
     question: 'Ile trwa sesja regresji?',
@@ -159,9 +159,9 @@ export const peopleAlsoAsk = [
       'Regresja między wcieleniami kieruje uwagę ku doświadczeniu opisywanemu jako życie pomiędzy wcieleniami. W sesji mogą pojawiać się symbole, poczucie celu, relacje duszy i pytania o wybory. Odpowiedzialna praca nie wymusza przeżyć i nie obiecuje konkretnego efektu.'
   },
   {
-    question: 'Czym różni się Life Between Lives® od metody Brama Dusz LBL™?',
+    question: 'Czym różni się Life Between Lives od metody Brama Dusz LBL?',
     answer:
-      'Life Between Lives® jest pojęciem kojarzonym z publikacjami dr. Michaela Newtona i oficjalną ścieżką The Michael Newton Institute. Brama Dusz LBL™ jest metodą autorską inspirowaną tym obszarem literatury, ale nie jest oficjalną usługą MNI ani potwierdzeniem afiliacji z instytutem.'
+      'Life Between Lives jest pojęciem kojarzonym z publikacjami dr. Michaela Newtona i oficjalną ścieżką The Michael Newton Institute. Brama Dusz LBL jest metodą autorską inspirowaną tym obszarem literatury, ale nie jest oficjalną usługą MNI ani potwierdzeniem afiliacji z instytutem.'
   },
   {
     question: 'Kim był dr Michael Newton w kontekście LBL?',
@@ -222,7 +222,7 @@ export const peopleAlsoAsk = [
 
 export const serviceCards = [
   {
-    title: 'Life Between Lives®',
+    title: 'Life Between Lives',
     description:
       'Edukacyjne wyjaśnienie pojęcia LBL, publikacji dr. Michaela Newtona i różnicy między informacją a oficjalną afiliacją.',
     href: '/life-between-lives/'
@@ -234,7 +234,7 @@ export const serviceCards = [
     href: '/regresja-miedzy-wcieleniami/'
   },
   {
-    title: 'Brama Dusz LBL™',
+    title: 'Brama Dusz LBL',
     description:
       'Autorska metoda regresji duchowej inspirowana publikacjami dr. Michaela Newtona, opisana bez podszywania się pod MNI.',
     href: '/brama-dusz-lbl/'
@@ -243,7 +243,7 @@ export const serviceCards = [
 
 export const articleCards = [
   {
-    title: 'Life Between Lives® i dr Michael Newton',
+    title: 'Life Between Lives i dr Michael Newton',
     description:
       'Kontekst pojęcia LBL, publikacji Newtona i tego, dlaczego warto odróżniać edukację od oficjalnej afiliacji.',
     href: '/life-between-lives/',
@@ -257,7 +257,7 @@ export const articleCards = [
     meta: 'porównanie'
   },
   {
-    title: 'Brama Dusz LBL™ jako metoda autorska',
+    title: 'Brama Dusz LBL jako metoda autorska',
     description:
       'Jak mówić o autorskiej metodzie inspirowanej publikacjami Newtona bez niejasności prawnych i bez obietnic.',
     href: '/brama-dusz-lbl/',
@@ -277,7 +277,7 @@ export const blogTopics = [
     phrase: 'regresja LBL',
     intent: 'Dla osób, które chcą zrozumieć skrót LBL i odróżnić edukację od oferty.',
     h1: 'Regresja LBL: co oznacza ten skrót i od czego zacząć?',
-    h2: ['Co oznacza LBL?', 'Life Between Lives® w literaturze', 'Metody autorskie i granice języka', 'Kiedy przejść do opisu sesji'],
+    h2: ['Co oznacza LBL?', 'Life Between Lives w literaturze', 'Metody autorskie i granice języka', 'Kiedy przejść do opisu sesji'],
     links: ['/life-between-lives/', '/brama-dusz-lbl/', '/sesja/'],
     cta: 'Zobacz terminy sesji w Instytucie Regresji'
   },
@@ -292,7 +292,7 @@ export const blogTopics = [
   {
     phrase: 'Life Between Lives Michael Newton',
     intent: 'Dla osób, które szukają kontekstu Michaela Newtona i oficjalnych źródeł.',
-    h1: 'Life Between Lives® i Michael Newton: co warto wiedzieć przed sesją',
+    h1: 'Life Between Lives i Michael Newton: co warto wiedzieć przed sesją',
     h2: ['Kim był dr Michael Newton?', 'Czym jest The Michael Newton Institute?', 'Jak sprawdzać oficjalne źródła?', 'Czym jest inspiracja publikacjami'],
     links: ['/life-between-lives/', '/brama-dusz-lbl/', 'https://michaelnewton.org'],
     cta: 'Czytaj dalej o odpowiedzialnej pracy inspirowanej Newtonem'
@@ -324,7 +324,7 @@ export const blogTopics = [
   {
     phrase: 'Brama Dusz LBL',
     intent: 'Dla osób, które chcą poznać autorską metodę i jej granice.',
-    h1: 'Brama Dusz LBL™: metoda autorska, inspiracje i odpowiedzialność',
+    h1: 'Brama Dusz LBL: metoda autorska, inspiracje i odpowiedzialność',
     h2: ['Skąd nazwa metody?', 'Co oznacza inspiracja Newtonem?', 'Jak wygląda język sesji?', 'Czego metoda nie obiecuje'],
     links: ['/brama-dusz-lbl/', '/life-between-lives/', '/sesja/'],
     cta: 'Poznaj metodę i zobacz, czy jest Ci bliska'

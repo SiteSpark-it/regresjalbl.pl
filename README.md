@@ -45,4 +45,4 @@ Gotowa statyczna wersja strony powstaje w folderze `dist`.
 
 ## Uwagi prawne
 
-Treści celowo odróżniają edukacyjne użycie pojęć LBL i Life Between Lives® od oficjalnych usług The Michael Newton Institute. Przed publikacją produkcyjną uzupełnij dane kontaktowe i politykę prywatności.
+Treści celowo odróżniają edukacyjne użycie pojęć LBL i Life Between Lives od oficjalnych usług The Michael Newton Institute. Przed publikacją produkcyjną uzupełnij dane kontaktowe i politykę prywatności.
