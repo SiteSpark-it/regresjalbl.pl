@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 160" role="img" aria-label="Regresja LBL">
+  <defs>
+    <linearGradient id="mark-bg" x1="14" x2="122" y1="14" y2="130" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#fffaf2"/>
+      <stop offset=".58" stop-color="#eaf6f8"/>
+      <stop offset="1" stop-color="#d7edf2"/>
+    </linearGradient>
+    <linearGradient id="mark-arch" x1="43" x2="111" y1="28" y2="122" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#172a3a"/>
+      <stop offset="1" stop-color="#3f7d96"/>
+    </linearGradient>
+    <linearGradient id="mark-light" x1="77" x2="77" y1="36" y2="118" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#f2dcae"/>
+      <stop offset=".52" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#86bdd0"/>
+    </linearGradient>
+  </defs>
+  <rect width="520" height="160" rx="24" fill="#fffaf2"/>
+  <rect x="24" y="24" width="112" height="112" rx="26" fill="url(#mark-bg)"/>
+  <rect x="31" y="31" width="98" height="98" rx="21" fill="none" stroke="#172a3a" stroke-opacity=".1"/>
+  <path d="M52 116V72c0-21.5 11.7-34 28-34s28 12.5 28 34v44" fill="none" stroke="url(#mark-arch)" stroke-width="8" stroke-linecap="round"/>
+  <path d="M66 116V74.5C66 62.3 71.6 55 80 55s14 7.3 14 19.5V116" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" opacity=".9"/>
+  <path d="M80 48v67" fill="none" stroke="url(#mark-light)" stroke-width="5" stroke-linecap="round"/>
+  <path d="M68 92c4-4.2 8-6.3 12-6.3S88 87.8 92 92" fill="none" stroke="#5f9bb3" stroke-width="3.5" stroke-linecap="round" opacity=".82"/>
+  <text x="160" y="76" fill="#172a3a" font-family="Georgia, Cambria, 'Times New Roman', serif" font-size="38" font-weight="700" letter-spacing=".3">Regresja LBL</text>
+  <text x="162" y="108" fill="#51606a" font-family="Arial, Helvetica, sans-serif" font-size="16" letter-spacing="2.4">PRZEWODNIK EDUKACYJNY</text>
+</svg>
