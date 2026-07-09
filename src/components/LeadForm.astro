@@ -93,6 +93,9 @@ import { siteData } from '../content/siteData';
       payload.referrer = document.referrer || '';
       payload.timezone = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
       payload.screen = `${window.innerWidth}x${window.innerHeight}`;
+      payload.viewport = `${window.innerWidth}x${window.innerHeight}`;
+      payload.device = window.innerWidth < 640 ? 'mobile' : window.innerWidth < 1024 ? 'tablet' : 'desktop';
+      payload.analytics = window.RegresjaAnalytics?.context?.() || {};
 
       setStatus('Wysyłam wiadomość...');
 

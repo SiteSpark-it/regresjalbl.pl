@@ -39,9 +39,14 @@ const breadcrumbs = [{ href: '/polityka-prywatnosci/', label: 'Polityka prywatno
         <h2 class="display-title mt-10 text-4xl text-ink-950">Analityka strony</h2>
         <p>
           Strona może zbierać statystyki odwiedzin dopiero po wyrażeniu zgody w banerze analitycznym. Dane obejmują między innymi:
-          odwiedzaną podstronę, czas sesji, kliknięcia w kontakt, źródło wejścia, język przeglądarki, strefę czasową, rozmiar ekranu
-          oraz przybliżony kraj, jeśli serwer hostingowy udostępnia taką informację. Surowy adres IP nie jest prezentowany w panelu
-          statystyk.
+          odwiedzane podstrony, kolejność stron w sesji, czas pobytu, kliknięcia w kontakt, źródło wejścia, parametry UTM, język
+          przeglądarki, strefę czasową, rozmiar ekranu, typ urządzenia oraz przybliżony kraj, region lub miasto, jeśli hosting albo
+          proxy świadomie udostępnia takie nagłówki. Surowy adres IP nie jest prezentowany w panelu statystyk.
+        </p>
+        <p>
+          Dane statystyczne mogą być udostępniane do centralnego panelu administracyjnego przez chroniony endpoint eksportu. Endpoint
+          wymaga sekretu dostępu i może zwracać dane w formie zaszyfrowanej. Dostęp do panelu i eksportu powinien mieć wyłącznie
+          właściciel strony albo osoby przez niego upoważnione.
         </p>
 
         <h2 class="display-title mt-10 text-4xl text-ink-950">Linki zewnętrzne</h2>
