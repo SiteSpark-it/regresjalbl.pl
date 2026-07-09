@@ -7,8 +7,8 @@ interface Props {
 }
 
 const {
-  title = 'Sesja w Instytucie Regresji',
-  text = 'Jeżeli po lekturze czujesz, że to może być dla Ciebie właściwy moment, możesz spokojnie zajrzeć do zapisów w Instytucie Regresji. Tam znajdziesz informacje o terminach, formie sesji i dalszym kontakcie.'
+  title = 'Umów konsultację w sprawie sesji',
+  text = 'Jeżeli po lekturze czujesz, że to może być dla Ciebie właściwy moment, zacznij od spokojnej konsultacji. Na tej stronie znajdziesz opis przebiegu, granic pracy i kontakt do ustalenia szczegółów.'
 } = Astro.props;
 ---
 
@@ -20,7 +20,7 @@ const {
       <p class="mt-5 max-w-3xl text-base leading-8 text-slate-700">{text}</p>
     </div>
     <div class="flex flex-col gap-3 sm:flex-row lg:flex-col">
-      <a class="button-primary" href={siteData.cta.url} rel="noopener noreferrer" aria-label="Przejdź do zapisów w Instytucie Regresji">{siteData.cta.label}</a>
+      <a class="button-primary" href={siteData.cta.url} aria-label="Przejdź do konsultacji na regresjalbl.pl">{siteData.cta.label}</a>
       <a class="button-secondary bg-white/55" href={siteData.personalLink.url} rel="noopener noreferrer" aria-label="Przejdź do strony Macieja Masłanki">Maciej Masłanka</a>
     </div>
   </div>

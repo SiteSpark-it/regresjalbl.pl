@@ -6,9 +6,9 @@
   ogImage: '/images/regresja-lbl-brama.webp',
   language: 'pl-PL',
   cta: {
-    label: 'Zobacz terminy sesji',
-    url: 'https://instytutregresji.pl',
-    href: 'https://instytutregresji.pl'
+    label: 'Umów konsultację',
+    url: '/sesja/#kontakt',
+    href: '/sesja/#kontakt'
   },
   personalLink: {
     label: 'maciejregresja.pl',
@@ -54,7 +54,7 @@
     { href: '/regresja-miedzy-wcieleniami/', label: 'Regresja między wcieleniami' },
     { href: '/brama-dusz-lbl/', label: 'Brama Dusz LBL' },
     { href: '/o-macieju/', label: 'Polecany prowadzący' },
-    { href: '/sesja/', label: 'Sesja i zapisy' },
+    { href: '/sesja/', label: 'Sesja i konsultacja' },
     { href: '/faq/', label: 'FAQ' }
   ],
   disclaimer:
@@ -181,7 +181,7 @@ export const peopleAlsoAsk = [
   {
     question: 'Ile kosztuje sesja regresji duchowej?',
     answer:
-      'Cena sesji zależy od formy spotkania, czasu pracy, przygotowania i zasad danego prowadzącego. Najuczciwiej sprawdzić aktualne informacje bezpośrednio na stronie zapisów. Sama cena nie powinna być jedynym kryterium decyzji; ważne są też granice, język i doświadczenie prowadzącego.'
+      'Cena sesji zależy od formy spotkania, czasu pracy, przygotowania i zasad danego prowadzącego. Najuczciwiej ustalić aktualne informacje w kontakcie przed decyzją. Sama cena nie powinna być jedynym kryterium; ważne są też granice, język i doświadczenie prowadzącego.'
   },
   {
     question: 'Jak przygotować pytania do sesji regresji?',
@@ -279,7 +279,7 @@ export const blogTopics = [
     h1: 'Regresja LBL: co oznacza ten skrót i od czego zacząć?',
     h2: ['Co oznacza LBL?', 'Life Between Lives w literaturze', 'Metody autorskie i granice języka', 'Kiedy przejść do opisu sesji'],
     links: ['/life-between-lives/', '/brama-dusz-lbl/', '/sesja/'],
-    cta: 'Zobacz terminy sesji w Instytucie Regresji'
+    cta: 'Umów spokojną konsultację na tej stronie'
   },
   {
     phrase: 'LBL a PLR',
@@ -302,8 +302,8 @@ export const blogTopics = [
     intent: 'Dla osób, które chcą wiedzieć, czy sesja online jest możliwa i kiedy ma sens.',
     h1: 'Regresja online: warunki, przygotowanie i granice bezpieczeństwa',
     h2: ['Kiedy forma online ma sens?', 'Jak przygotować miejsce?', 'Co ustalić przed sesją?', 'Kiedy lepiej wybrać inne wsparcie'],
-    links: ['/sesja/', '/faq/', 'https://instytutregresji.pl'],
-    cta: 'Zobacz aktualne możliwości sesji online'
+    links: ['/sesja/', '/faq/', '/sesja/#kontakt'],
+    cta: 'Sprawdź, jak wygląda konsultacja online'
   },
   {
     phrase: 'regresja poprzednich wcieleń',
@@ -318,8 +318,8 @@ export const blogTopics = [
     intent: 'Dla osób, które są blisko decyzji i chcą praktycznych wskazówek.',
     h1: 'Jak przygotować się do sesji regresji duchowej?',
     h2: ['Intencja bez presji', 'Warunki miejsca i czasu', 'Pytania do prowadzącego', 'Czego nie oczekiwać od sesji'],
-    links: ['/sesja/', '/faq/', 'https://instytutregresji.pl'],
-    cta: 'Zobacz zapisy, jeśli czujesz gotowość'
+    links: ['/sesja/', '/faq/', '/sesja/#kontakt'],
+    cta: 'Umów konsultację, jeśli czujesz gotowość'
   },
   {
     phrase: 'Brama Dusz LBL',

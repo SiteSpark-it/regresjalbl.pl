@@ -24,7 +24,7 @@ import LogoMark from './LogoMark.astro';
     </nav>
 
     <div class="hidden items-center gap-3 lg:flex">
-      <a class="button-primary" href={siteData.cta.url} rel="noopener noreferrer" aria-label="Przejdź do zapisów w Instytucie Regresji">Zapisy</a>
+      <a class="button-primary" href={siteData.cta.url} aria-label="Przejdź do konsultacji na regresjalbl.pl">Konsultacja</a>
     </div>
 
     <details class="group relative lg:hidden">
@@ -34,7 +34,7 @@ import LogoMark from './LogoMark.astro';
       <nav class="absolute right-0 mt-3 w-72 rounded-md border border-ink-950/10 bg-warm-50 p-3 shadow-soft" aria-label="Menu mobilne">
         <div class="grid gap-1">
           {siteData.navLinks.map((link) => <a class="rounded-md px-3 py-3 text-sm text-ink-900 hover:bg-gold-500/12" href={link.href}>{link.label}</a>)}
-          <a class="button-primary mt-2" href={siteData.cta.url} rel="noopener noreferrer" aria-label="Przejdź do zapisów w Instytucie Regresji">Zapisy</a>
+          <a class="button-primary mt-2" href={siteData.cta.url} aria-label="Przejdź do konsultacji na regresjalbl.pl">Konsultacja</a>
         </div>
       </nav>
     </details>

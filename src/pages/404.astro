@@ -4,7 +4,7 @@ import { siteData } from '../content/siteData';
 import { websiteSchema } from '../content/schema';
 
 const title = 'Nie znaleziono strony — Regresja LBL';
-const description = 'Ta podstrona nie istnieje. Wróć do przewodnika o regresji LBL, bazy wiedzy albo zapisów w Instytucie Regresji.';
+const description = 'Ta podstrona nie istnieje. Wróć do przewodnika o regresji LBL, bazy wiedzy albo informacji o konsultacji.';
 ---
 
 <BaseLayout title={title} description={description} path="/404/" schema={[websiteSchema()]}>
@@ -14,11 +14,11 @@ const description = 'Ta podstrona nie istnieje. Wróć do przewodnika o regresji
       <h1 class="display-title mt-6 text-[clamp(2.4rem,7vw,5.4rem)] text-ink-950">Nie znaleziono strony</h1>
       <p class="mt-6 text-lg leading-8 text-slate-600">
         Ten adres nie prowadzi do aktywnej podstrony. Możesz wrócić do przewodnika o regresji LBL albo przejść bezpośrednio
-        do informacji o zapisach.
+        do informacji o konsultacji.
       </p>
       <div class="mt-8 flex flex-col gap-3 sm:flex-row">
         <a class="button-primary" href="/">Wróć do przewodnika</a>
-        <a class="button-quiet" href={siteData.cta.url} rel="noopener noreferrer">Zobacz zapisy</a>
+        <a class="button-quiet" href={siteData.cta.url}>Umów konsultację</a>
       </div>
     </div>
   </section>
