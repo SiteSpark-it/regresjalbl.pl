@@ -27,6 +27,22 @@ Gotowa statyczna wersja strony powstaje w folderze `dist`.
 
 ## Wdrożenie na Hostinger
 
+Najprostszy wariant: podepnij w Hostingerze repozytorium GitHub:
+
+```text
+https://github.com/SiteSpark-it/regresjalbl.pl
+```
+
+Jako gałąź wdrożeniową wybierz:
+
+```text
+hostinger-dist
+```
+
+Ta gałąź zawiera już gotową zawartość folderu `dist`, więc w Hostingerze nie trzeba uruchamiać buildu Astro. Katalog publikacji ustaw na katalog domeny, zwykle `public_html`.
+
+Wariant ręczny, jeśli nie używasz wdrożenia z GitHub:
+
 1. Uruchom `npm install`, a potem `npm run build`.
 2. Wejdź do panelu Hostingera i otwórz menedżer plików albo połącz się przez FTP/SFTP.
 3. Wgraj zawartość folderu `dist` do katalogu domeny, zwykle `public_html`.
