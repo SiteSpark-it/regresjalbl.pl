@@ -14,6 +14,10 @@ if (regresja_sanitize_scalar($data['website'] ?? '', 200) !== '') {
     regresja_json_response(['ok' => true, 'spam' => true]);
 }
 
+if (regresja_is_ignored_ip($config) && (($config['ignore_owner_leads'] ?? true) === true)) {
+    regresja_json_response(['ok' => true, 'ignored' => true]);
+}
+
 $name = regresja_sanitize_scalar($data['name'] ?? '', 80);
 $email = regresja_sanitize_scalar($data['email'] ?? '', 140);
 $phone = regresja_sanitize_scalar($data['phone'] ?? '', 60);
@@ -24,6 +28,8 @@ if ($name === '' || !filter_var($email, FILTER_VALIDATE_EMAIL) || $message === '
     regresja_json_response(['ok' => false, 'error' => 'missing_required_fields'], 422);
 }
 
+$analytics = is_array($data['analytics'] ?? null) ? $data['analytics'] : [];
+$geo = regresja_geo($config);
 $row = [
     'ts' => gmdate('c'),
     'name' => $name,
@@ -36,7 +42,15 @@ $row = [
     'referrer' => regresja_sanitize_scalar($data['referrer'] ?? '', 300),
     'timezone' => regresja_sanitize_scalar($data['timezone'] ?? '', 80),
     'screen' => regresja_sanitize_scalar($data['screen'] ?? '', 30),
-    'country' => regresja_country(),
+    'viewport' => regresja_sanitize_scalar($data['viewport'] ?? '', 30),
+    'device' => regresja_sanitize_scalar($data['device'] ?? '', 40),
+    'sessionId' => regresja_sanitize_scalar($analytics['sessionId'] ?? '', 80),
+    'sessionStartedAt' => regresja_sanitize_scalar($analytics['sessionStartedAt'] ?? '', 80),
+    'entryPage' => regresja_sanitize_scalar($analytics['entryPage'] ?? '', 180),
+    'pageSequence' => max(0, min(10000, (int) ($analytics['pageSequence'] ?? 0))),
+    'country' => $geo['country'],
+    'city' => $geo['city'],
+    'region' => $geo['region'],
     'ipHash' => regresja_ip_hash($config),
 ];
 

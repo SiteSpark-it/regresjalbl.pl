@@ -3,7 +3,11 @@
   const CONSENT_KEY = 'regresja_analytics_consent';
   const IGNORE_KEY = 'regresja_ignore_analytics';
   const SESSION_KEY = 'regresja_session_id';
+  const SESSION_START_KEY = 'regresja_session_started_at';
   const START_KEY = 'regresja_page_started_at';
+  const ENTRY_PAGE_KEY = 'regresja_entry_page';
+  const PREVIOUS_PAGE_KEY = 'regresja_previous_page';
+  const PAGE_SEQUENCE_KEY = 'regresja_page_sequence';
 
   const params = new URLSearchParams(window.location.search);
   if (params.get('analytics_ignore') === '1') {
@@ -23,13 +27,41 @@
     if (!id) {
       id = randomId();
       sessionStorage.setItem(SESSION_KEY, id);
+      sessionStorage.setItem(SESSION_START_KEY, new Date().toISOString());
+      sessionStorage.setItem(ENTRY_PAGE_KEY, location.pathname);
+      sessionStorage.setItem(PAGE_SEQUENCE_KEY, '0');
     }
     return id;
   };
 
+  const pageSequence = () => {
+    const current = Number(sessionStorage.getItem(PAGE_SEQUENCE_KEY) || '0') + 1;
+    sessionStorage.setItem(PAGE_SEQUENCE_KEY, String(current));
+    return current;
+  };
+
+  const deviceType = () => {
+    const width = window.innerWidth || 0;
+    if (width < 640) return 'mobile';
+    if (width < 1024) return 'tablet';
+    return 'desktop';
+  };
+
+  const utm = new URLSearchParams(window.location.search);
+  const pageStartedAt = new Date().toISOString();
+  sessionId();
+  const currentPageSequence = pageSequence();
+  let activeSeconds = 0;
+  let visibleStartedAt = Date.now();
+
   const basePayload = (event, extra = {}) => ({
     event,
     sessionId: sessionId(),
+    sessionStartedAt: sessionStorage.getItem(SESSION_START_KEY) || '',
+    pageStartedAt,
+    pageSequence: currentPageSequence,
+    entryPage: sessionStorage.getItem(ENTRY_PAGE_KEY) || location.pathname,
+    previousPage: sessionStorage.getItem(PREVIOUS_PAGE_KEY) || '',
     page: location.pathname,
     title: document.title,
     referrer: document.referrer || '',
@@ -39,6 +71,10 @@
     timezone: Intl.DateTimeFormat().resolvedOptions().timeZone || '',
     viewport: `${window.innerWidth}x${window.innerHeight}`,
     screen: `${window.screen?.width || 0}x${window.screen?.height || 0}`,
+    device: deviceType(),
+    utmSource: utm.get('utm_source') || '',
+    utmMedium: utm.get('utm_medium') || '',
+    utmCampaign: utm.get('utm_campaign') || '',
     userAgent: navigator.userAgent || '',
     timestamp: new Date().toISOString(),
     ...extra
@@ -106,6 +142,15 @@
     ignoreThisDevice() {
       localStorage.setItem(IGNORE_KEY, '1');
       localStorage.setItem(CONSENT_KEY, 'denied');
+    },
+    context() {
+      return {
+        sessionId: sessionId(),
+        sessionStartedAt: sessionStorage.getItem(SESSION_START_KEY) || '',
+        entryPage: sessionStorage.getItem(ENTRY_PAGE_KEY) || location.pathname,
+        previousPage: sessionStorage.getItem(PREVIOUS_PAGE_KEY) || '',
+        pageSequence: currentPageSequence
+      };
     }
   };
 
@@ -118,19 +163,50 @@
     }
   }, { capture: true });
 
+  const updateActiveSeconds = () => {
+    if (document.visibilityState !== 'visible') return;
+    const now = Date.now();
+    activeSeconds += Math.max(0, Math.round((now - visibleStartedAt) / 1000));
+    visibleStartedAt = now;
+  };
+
+  let formStarted = false;
+  document.addEventListener('focusin', (event) => {
+    if (formStarted || !event.target?.closest?.('[data-lead-form]')) return;
+    formStarted = true;
+    send('form_start', { scrollDepth: maxScroll() });
+  });
+
   const leave = () => {
     if (ignored() || consent() !== 'granted') return;
+    updateActiveSeconds();
     const startedAt = Number(sessionStorage.getItem(START_KEY) || Date.now());
     send('page_leave', {
       durationSeconds: Math.max(0, Math.round((Date.now() - startedAt) / 1000)),
+      activeSeconds,
       scrollDepth: maxScroll()
     }, true);
+    sessionStorage.setItem(PREVIOUS_PAGE_KEY, location.pathname);
   };
 
   document.addEventListener('visibilitychange', () => {
-    if (document.visibilityState === 'hidden') leave();
+    if (document.visibilityState === 'hidden') {
+      leave();
+    } else {
+      visibleStartedAt = Date.now();
+    }
   });
   window.addEventListener('pagehide', leave);
+
+  window.setInterval(() => {
+    if (ignored() || consent() !== 'granted' || document.visibilityState !== 'visible') return;
+    updateActiveSeconds();
+    send('engagement_ping', {
+      durationSeconds: Math.max(0, Math.round((Date.now() - Number(sessionStorage.getItem(START_KEY) || Date.now())) / 1000)),
+      activeSeconds,
+      scrollDepth: maxScroll()
+    });
+  }, 30000);
 
   showConsent();
   if (consent() === 'granted') start();
