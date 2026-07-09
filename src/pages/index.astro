@@ -23,16 +23,41 @@ const breadcrumbs = [{ href: '/', label: 'Regresja LBL' }];
 >
   <Hero
     title="Regresja LBL — czym jest i czym różni się od autorskich metod?"
-    subtitle="Jeśli temat LBL wraca do Ciebie od dłuższego czasu, zacznij od jasnego przewodnika i krótkiej konsultacji. Bez podszywania się pod oficjalne źródła, bez obietnic na wyrost, z konkretną ścieżką do sprawdzenia metody Brama Dusz LBL."
+    subtitle="Jeśli temat LBL wraca do Ciebie od dłuższego czasu, nie musisz już błądzić między sprzecznymi opisami. Zacznij od spokojnego przewodnika, a gdy poczujesz gotowość, przejdź do krótkiej konsultacji na tej stronie."
     ctaLabel={siteData.cta.label}
     ctaHref={siteData.cta.url}
-    secondaryLabel="Najpierw wyjaśnienie"
+    secondaryLabel="Najpierw zrozum temat"
     secondaryHref="#co-oznacza-lbl"
   />
 
-  <section class="bg-[#edf7fa] pb-12">
+  <section class="bg-[#edf7fa] pb-8">
     <div class="container-page">
       <DisclaimerBox tone="dark" text={siteData.disclaimer} />
+    </div>
+  </section>
+
+  <section class="bg-[#edf7fa] pb-14" aria-labelledby="start-title">
+    <div class="container-page">
+      <div class="soft-panel grid gap-6 p-5 md:grid-cols-[0.36fr_0.64fr] md:p-7">
+        <div>
+          <p class="text-xs font-bold uppercase tracking-[0.16em] text-gold-700">Najprostszy start</p>
+          <h2 id="start-title" class="mt-3 text-2xl font-bold text-ink-950">Nie musisz od razu wiedzieć, czy to jest “dla Ciebie”.</h2>
+        </div>
+        <div class="grid gap-4 md:grid-cols-3">
+          <article class="decision-card p-4">
+            <h3 class="font-bold text-ink-950">Czytam</h3>
+            <p class="mt-2 text-sm leading-7 text-slate-700">Najpierw porządkujesz pojęcia: LBL, Life Between Lives, PLR i metody autorskie.</p>
+          </article>
+          <article class="decision-card p-4">
+            <h3 class="font-bold text-ink-950">Sprawdzam</h3>
+            <p class="mt-2 text-sm leading-7 text-slate-700">Widzisz, czy bliższa jest Ci praca duchowa, symboliczna czy bardziej psychologiczna.</p>
+          </article>
+          <article class="decision-card p-4">
+            <h3 class="font-bold text-ink-950">Piszę</h3>
+            <p class="mt-2 text-sm leading-7 text-slate-700">Jeśli temat nadal zostaje w głowie, wysyłasz krótką wiadomość i ustalasz kolejny krok.</p>
+          </article>
+        </div>
+      </div>
     </div>
   </section>
 

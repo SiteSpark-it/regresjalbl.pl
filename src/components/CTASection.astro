@@ -7,26 +7,33 @@ interface Props {
 }
 
 const {
-  title = 'Umów konsultację w sprawie sesji',
-  text = 'Jeżeli temat wraca do Ciebie od dłuższego czasu, nie musisz od razu decydować o pełnej sesji. Zacznij od krótkiej konsultacji: opisz, czego szukasz, a dostaniesz jasną informację o najbliższym sensownym kroku.'
+  title = 'Jeśli temat wraca, zrób pierwszy prosty krok',
+  text = 'Nie musisz mieć gotowej decyzji ani idealnie opisanej historii. Napisz krótko, czego szukasz, a konsultacja pomoże spokojnie sprawdzić, czy sesja regresji LBL albo Brama Dusz LBL jest dla Ciebie właściwym kierunkiem.'
 } = Astro.props;
 ---
 
 <section class="bg-[#eaf6f8] text-ink-950">
-  <div class="container-page grid gap-8 py-14 lg:grid-cols-[1fr_auto] lg:items-center">
+  <div class="container-page grid gap-8 py-14 lg:grid-cols-[1fr_0.42fr] lg:items-center">
     <div>
       <div class="gold-line"></div>
       <h2 class="display-title mt-5 text-4xl md:text-5xl">{title}</h2>
       <p class="mt-5 max-w-3xl text-base leading-8 text-slate-700">{text}</p>
       <div class="trust-strip">
-        <span class="trust-pill">1 wiadomość</span>
-        <span class="trust-pill">spokojna kwalifikacja</span>
-        <span class="trust-pill">kontakt mail / telefon / WhatsApp</span>
+        <span class="trust-pill">3-6 zdań wystarczy</span>
+        <span class="trust-pill">odpowiedzialna kwalifikacja</span>
+        <span class="trust-pill">mail / telefon / WhatsApp</span>
       </div>
     </div>
-    <div class="flex flex-col gap-3 sm:flex-row lg:flex-col">
-      <a class="button-primary" href={siteData.cta.url} aria-label="Przejdź do konsultacji na regresjalbl.pl">{siteData.cta.label}</a>
-      <a class="button-secondary bg-white/55" href={siteData.personalLink.url} rel="noopener noreferrer" aria-label="Przejdź do strony Macieja Masłanki">Maciej Masłanka</a>
+    <div class="soft-panel p-5">
+      <p class="text-sm font-bold text-ink-950">Najkrótsza ścieżka</p>
+      <p class="mt-2 text-sm leading-7 text-slate-700">
+        Formularz na tej stronie prowadzi do kontaktu konsultacyjnego. Możesz też od razu napisać maila albo użyć WhatsAppa.
+      </p>
+      <div class="mt-5 grid gap-3">
+        <a class="button-primary w-full" href={siteData.cta.url} aria-label="Przejdź do konsultacji na regresjalbl.pl">{siteData.cta.label}</a>
+        <a class="button-secondary w-full bg-white/70" href={siteData.contact.whatsappHref} rel="noopener noreferrer">WhatsApp</a>
+        <a class="button-quiet w-full bg-white/55" href={siteData.contact.emailHref}>{siteData.contact.email}</a>
+      </div>
     </div>
   </div>
 </section>

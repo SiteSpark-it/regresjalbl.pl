@@ -3,7 +3,7 @@ import { siteData } from '../content/siteData';
 import LogoMark from './LogoMark.astro';
 ---
 
-<header class="sticky top-0 z-40 border-b border-ink-950/10 bg-warm-50/[0.94] text-ink-950 backdrop-blur">
+<header class="sticky top-0 z-40 border-b border-ink-950/10 bg-mist/[0.94] text-ink-950 backdrop-blur">
   <a
     href="#main-content"
     class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-gold-500 focus:px-4 focus:py-2 focus:text-ink-950"
@@ -15,26 +15,27 @@ import LogoMark from './LogoMark.astro';
       <LogoMark class="h-11 w-11 shrink-0 drop-shadow-sm" title="Regresja LBL" />
       <span class="leading-tight">
         <span class="block text-sm font-bold uppercase tracking-[0.14em] text-ink-950">Regresja LBL</span>
-        <span class="block text-xs text-slate-600">przewodnik edukacyjny</span>
+        <span class="block text-xs text-slate-600">edukacja i konsultacja</span>
       </span>
     </a>
 
-    <nav class="hidden items-center gap-5 text-sm font-medium text-slate-700 xl:flex" aria-label="Główna nawigacja">
-      {siteData.navLinks.map((link) => <a class="hover:text-gold-700" href={link.href}>{link.label}</a>)}
+    <nav class="hidden items-center gap-1 text-sm font-medium text-slate-700 xl:flex" aria-label="Główna nawigacja">
+      {siteData.navLinks.map((link) => <a class="nav-link" href={link.href}>{link.label}</a>)}
     </nav>
 
     <div class="hidden items-center gap-3 xl:flex">
-      <a class="button-primary" href={siteData.cta.url} aria-label="Przejdź do konsultacji na regresjalbl.pl">Konsultacja</a>
+      <a class="button-primary" href={siteData.cta.url} aria-label="Przejdź do konsultacji na regresjalbl.pl">Umów konsultację</a>
     </div>
 
     <details class="group relative xl:hidden">
       <summary class="button-secondary cursor-pointer list-none px-3" aria-label="Otwórz menu">
         Menu
       </summary>
-      <nav class="absolute right-0 mt-3 w-72 rounded-md border border-ink-950/10 bg-warm-50 p-3 shadow-soft" aria-label="Menu mobilne">
+      <nav class="absolute right-0 mt-3 w-72 rounded-md border border-ink-950/10 bg-mist p-3 shadow-soft" aria-label="Menu mobilne">
         <div class="grid gap-1">
           {siteData.navLinks.map((link) => <a class="rounded-md px-3 py-3 text-sm text-ink-900 hover:bg-gold-500/12" href={link.href}>{link.label}</a>)}
-          <a class="button-primary mt-2" href={siteData.cta.url} aria-label="Przejdź do konsultacji na regresjalbl.pl">Konsultacja</a>
+          <a class="button-primary mt-2" href={siteData.cta.url} aria-label="Przejdź do konsultacji na regresjalbl.pl">Umów konsultację</a>
+          <a class="button-secondary mt-1" href={siteData.contact.whatsappHref} rel="noopener noreferrer">WhatsApp</a>
         </div>
       </nav>
     </details>

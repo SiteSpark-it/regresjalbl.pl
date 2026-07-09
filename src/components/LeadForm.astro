@@ -5,12 +5,17 @@ import { siteData } from '../content/siteData';
 <form class="conversion-card p-6 md:p-7" data-lead-form action="/api/lead.php" method="post">
   <input type="text" name="website" class="hidden" tabindex="-1" autocomplete="off" aria-hidden="true" />
   <div>
-    <p class="text-xs font-bold uppercase tracking-[0.16em] text-gold-700">Konsultacja</p>
-    <h3 class="mt-2 text-2xl font-bold text-ink-950">Napisz, czego szukasz</h3>
+    <p class="text-xs font-bold uppercase tracking-[0.16em] text-gold-700">Konsultacja wstępna</p>
+    <h3 class="mt-2 text-2xl font-bold text-ink-950">Napisz krótko, a resztę ustalisz w rozmowie</h3>
     <p class="mt-3 text-sm leading-7 text-slate-700">
-      Nie opisuj całej historii. Wystarczy kilka zdań: czego dotyczy temat, czy interesuje Cię spotkanie online i jak najwygodniej
-      się z Tobą skontaktować.
+      Nie musisz opisywać całej historii. Wystarczy kilka zdań: czego dotyczy temat, czy interesuje Cię spotkanie online i jak najwygodniej się z Tobą skontaktować.
     </p>
+  </div>
+
+  <div class="mt-5 grid gap-3 rounded-md bg-[#eaf6f8]/70 p-4 text-sm leading-7 text-slate-700 sm:grid-cols-3">
+    <p><strong class="text-ink-950">1.</strong> Wysyłasz krótką wiadomość.</p>
+    <p><strong class="text-ink-950">2.</strong> Dostajesz spokojną odpowiedź.</p>
+    <p><strong class="text-ink-950">3.</strong> Ustalasz formę sesji.</p>
   </div>
 
   <div class="mt-6 grid gap-4 sm:grid-cols-2">
@@ -40,6 +45,7 @@ import { siteData } from '../content/siteData';
     Co chcesz sprawdzić podczas konsultacji?
     <select class="form-field" name="topic">
       <option value="czy_to_dla_mnie">Czy taka sesja jest dla mnie?</option>
+      <option value="termin">Chcę zapytać o termin sesji</option>
       <option value="przebieg">Jak wygląda przebieg sesji?</option>
       <option value="online">Czy mogę pracować online?</option>
       <option value="brama_dusz_lbl">Brama Dusz LBL</option>
@@ -61,12 +67,12 @@ import { siteData } from '../content/siteData';
   </label>
 
   <div class="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
-    <button class="button-primary w-full sm:w-auto" type="submit">Wyślij prośbę o konsultację</button>
+    <button class="button-primary w-full sm:w-auto" type="submit">Wyślij i poproś o konsultację</button>
     <a class="button-quiet w-full bg-white/70 text-center sm:w-auto" href={siteData.contact.emailHref}>Napisz bez formularza</a>
   </div>
 
   <p class="mt-4 text-sm leading-7 text-slate-700" data-lead-status aria-live="polite">
-    Po wysłaniu wiadomość trafi do kontaktu: {siteData.contact.email}.
+    Po wysłaniu wiadomość trafi bezpośrednio na kontakt: {siteData.contact.email}. Możesz też użyć telefonu lub WhatsAppa: {siteData.contact.phone}.
   </p>
 </form>
 

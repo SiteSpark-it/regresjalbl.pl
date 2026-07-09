@@ -1,6 +1,6 @@
 ---
 import { Image } from 'astro:assets';
-import heroImage from '../assets/regresja-lbl-brama.png';
+import heroImage from '../assets/regresja-lbl-brama-light.webp';
 
 interface Props {
   title: string;
@@ -18,9 +18,9 @@ const titleLines =
     : [title];
 ---
 
-<section class="relative overflow-hidden bg-warm-50 text-ink-950">
-  <div class="absolute inset-0 bg-[radial-gradient(circle_at_20%_12%,rgba(134,189,208,0.38),transparent_34%),radial-gradient(circle_at_82%_28%,rgba(247,239,227,0.9),transparent_32%),linear-gradient(180deg,#fffaf2_0%,#edf7fa_100%)]"></div>
-  <div class="container-page relative grid min-w-0 items-center gap-10 py-12 lg:min-h-[720px] lg:grid-cols-[0.92fr_1.08fr] lg:py-16 xl:min-h-[calc(100svh-4.5rem)] xl:gap-14">
+<section class="relative overflow-hidden bg-mist text-ink-950">
+  <div class="absolute inset-0 bg-[radial-gradient(circle_at_18%_12%,rgba(220,239,244,0.95),transparent_34%),radial-gradient(circle_at_82%_22%,rgba(255,250,242,0.96),transparent_34%),linear-gradient(180deg,#fbfdff_0%,#edf7fa_62%,#fffaf2_100%)]"></div>
+  <div class="container-page relative grid min-w-0 items-center gap-10 py-12 lg:min-h-[720px] lg:grid-cols-[0.94fr_1.06fr] lg:py-16 xl:min-h-[calc(100svh-4.5rem)] xl:gap-14">
     <div class="w-full max-w-2xl min-w-0">
       <h1 class="hero-title display-title max-w-full text-[clamp(2.15rem,4.5vw,4.85rem)] text-ink-950" aria-label={title}>
         {titleLines.map((line, index) => <span class="block">{line}{index < titleLines.length - 1 ? ' ' : ''}</span>)}
@@ -31,12 +31,15 @@ const titleLines =
         {secondaryLabel && secondaryHref && <a class="button-secondary w-full text-center sm:w-auto" href={secondaryHref}>{secondaryLabel}</a>}
       </div>
       <div class="trust-strip" aria-label="Najważniejsze informacje o konsultacji">
-        <span class="trust-pill">Krótka wiadomość wystarczy</span>
-        <span class="trust-pill">Online lub telefonicznie</span>
-        <span class="trust-pill">Bez obietnic i bez presji</span>
+        <span class="trust-pill">Wystarczy krótka wiadomość</span>
+        <span class="trust-pill">Mail, telefon lub WhatsApp</span>
+        <span class="trust-pill">Najpierw spokojna kwalifikacja</span>
+      </div>
+      <div class="consultation-note mt-7 rounded-md px-5 py-4 text-sm leading-7 text-slate-700">
+        Jeśli czujesz, że temat wraca i nie chcesz już tylko czytać kolejnych opisów, zacznij od konsultacji. To ma być prosty pierwszy krok: sprawdzić, czy taka forma pracy jest dla Ciebie sensowna.
       </div>
     </div>
-    <div class="relative min-h-[16rem] w-full min-w-0 max-w-full overflow-hidden rounded-md border border-ink-950/10 bg-white shadow-soft lg:min-h-[31rem] xl:min-h-[35rem]">
+    <div class="hero-media-frame lg:min-h-[31rem] xl:min-h-[35rem]">
       <Image
         src={heroImage}
         alt="Kamienna brama w ciemnym wnętrzu, przez którą wpada ciepłe światło"
@@ -47,7 +50,15 @@ const titleLines =
         fetchpriority="high"
         class="h-full min-h-[16rem] w-full object-cover lg:min-h-[31rem] xl:min-h-[35rem]"
       />
-      <div class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-warm-50/70 to-transparent"></div>
+      <div class="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-warm-50/78 to-transparent"></div>
+      <div class="hero-step-card hidden md:block">
+        <p class="text-xs font-bold uppercase tracking-[0.16em] text-gold-700">Jak zacząć</p>
+        <div class="mt-3 grid gap-3 text-sm text-ink-900 sm:grid-cols-3">
+          <p><strong>1.</strong> Napisz, czego szukasz.</p>
+          <p><strong>2.</strong> Sprawdź, czy sesja ma sens.</p>
+          <p><strong>3.</strong> Ustal formę i termin.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
