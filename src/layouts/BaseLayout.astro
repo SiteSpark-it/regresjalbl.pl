@@ -23,6 +23,7 @@ const { title, description, path = '/', image, schema = [] } = Astro.props;
     <meta name="theme-color" content="#fffaf2" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <SEO title={title} description={description} path={path} image={image} schema={schema} />
+    <script src="/assets/site-analytics.js" defer></script>
   </head>
   <body>
     <Header />

@@ -25,4 +25,8 @@ ErrorDocument 404 /404.html
   <FilesMatch "\.(html)$">
     Header set Cache-Control "public, max-age=300"
   </FilesMatch>
+  <FilesMatch "\.(php)$">
+    Header set Cache-Control "no-store"
+    Header set X-Content-Type-Options "nosniff"
+  </FilesMatch>
 </IfModule>

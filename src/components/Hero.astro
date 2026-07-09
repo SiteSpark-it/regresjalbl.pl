@@ -20,9 +20,9 @@ const titleLines =
 
 <section class="relative overflow-hidden bg-warm-50 text-ink-950">
   <div class="absolute inset-0 bg-[radial-gradient(circle_at_20%_12%,rgba(134,189,208,0.38),transparent_34%),radial-gradient(circle_at_82%_28%,rgba(247,239,227,0.9),transparent_32%),linear-gradient(180deg,#fffaf2_0%,#edf7fa_100%)]"></div>
-  <div class="container-page relative grid min-w-0 items-center gap-10 py-12 lg:min-h-[720px] lg:grid-cols-[0.92fr_1.08fr] lg:py-16">
+  <div class="container-page relative grid min-w-0 items-center gap-10 py-12 lg:min-h-[720px] lg:grid-cols-[0.92fr_1.08fr] lg:py-16 xl:min-h-[calc(100svh-4.5rem)] xl:gap-14">
     <div class="w-full max-w-2xl min-w-0">
-      <h1 class="hero-title display-title max-w-full text-[2rem] text-ink-950 lg:text-[4.15rem]" aria-label={title}>
+      <h1 class="hero-title display-title max-w-full text-[clamp(2.15rem,4.5vw,4.85rem)] text-ink-950" aria-label={title}>
         {titleLines.map((line, index) => <span class="block">{line}{index < titleLines.length - 1 ? ' ' : ''}</span>)}
       </h1>
       <p class="mt-6 max-w-xl break-words text-lg leading-8 text-slate-700 md:text-xl md:leading-9">{subtitle}</p>
@@ -30,17 +30,22 @@ const titleLines =
         <a class="button-primary w-full text-center sm:w-auto" href={ctaHref} aria-label="Przejdź do konsultacji na regresjalbl.pl">{ctaLabel}</a>
         {secondaryLabel && secondaryHref && <a class="button-secondary w-full text-center sm:w-auto" href={secondaryHref}>{secondaryLabel}</a>}
       </div>
+      <div class="trust-strip" aria-label="Najważniejsze informacje o konsultacji">
+        <span class="trust-pill">Krótka wiadomość wystarczy</span>
+        <span class="trust-pill">Online lub telefonicznie</span>
+        <span class="trust-pill">Bez obietnic i bez presji</span>
+      </div>
     </div>
-    <div class="relative min-h-[16rem] w-full min-w-0 max-w-full overflow-hidden rounded-md border border-ink-950/10 bg-white shadow-soft lg:min-h-[30rem]">
+    <div class="relative min-h-[16rem] w-full min-w-0 max-w-full overflow-hidden rounded-md border border-ink-950/10 bg-white shadow-soft lg:min-h-[31rem] xl:min-h-[35rem]">
       <Image
         src={heroImage}
         alt="Kamienna brama w ciemnym wnętrzu, przez którą wpada ciepłe światło"
         widths={[480, 720, 960, 1280]}
-        sizes="(min-width: 1024px) 52vw, 100vw"
+        sizes="(min-width: 1280px) 680px, (min-width: 1024px) 52vw, 100vw"
         format="webp"
         loading="eager"
         fetchpriority="high"
-        class="h-full min-h-[16rem] w-full object-cover lg:min-h-[30rem]"
+        class="h-full min-h-[16rem] w-full object-cover lg:min-h-[31rem] xl:min-h-[35rem]"
       />
       <div class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-warm-50/70 to-transparent"></div>
     </div>

@@ -4,8 +4,8 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 import CTASection from '../components/CTASection.astro';
 import DisclaimerBox from '../components/DisclaimerBox.astro';
 import FAQ from '../components/FAQ.astro';
+import LeadForm from '../components/LeadForm.astro';
 import PageIntro from '../components/PageIntro.astro';
-import { siteData } from '../content/siteData';
 import { articleSchema, breadcrumbSchema, faqSchema, personSchema, serviceSchema, websiteSchema } from '../content/schema';
 
 const title = 'Sesja regresji duchowej — przebieg, przygotowanie i konsultacja';
@@ -109,22 +109,7 @@ const pageFaq = [
           i czy masz pytania dotyczące przygotowania.
         </p>
       </div>
-      <article class="rounded-md border border-ink-950/10 bg-warm-50 p-7 shadow-soft">
-        <h3 class="text-2xl font-bold text-ink-950">Kontakt</h3>
-        <p class="mt-4 text-sm leading-7 text-slate-700">
-          Napisz spokojnie, bez rozpisywania całej historii. Wystarczy kilka zdań o intencji, preferowanej formie spotkania i pytaniach,
-          które chcesz omówić przed decyzją.
-        </p>
-        <div class="mt-6 grid gap-3">
-          <a class="button-primary" href={siteData.contact.emailHref}>Napisz: {siteData.contact.email}</a>
-          <a class="button-quiet bg-white/70" href={siteData.contact.phoneHref}>Zadzwoń: {siteData.contact.phone}</a>
-          <a class="button-quiet bg-white/70" href={siteData.contact.whatsappHref} rel="noopener noreferrer">WhatsApp: {siteData.contact.phone}</a>
-        </div>
-        <p class="mt-5 text-xs leading-6 text-slate-600">
-          Konsultacja nie jest diagnozą ani obietnicą efektu. Służy sprawdzeniu, czy taka forma pracy jest dla Ciebie właściwa i czy warunki
-          spotkania są spokojne oraz bezpieczne.
-        </p>
-      </article>
+      <LeadForm />
     </div>
   </section>
   <CTASection title="Masz pytanie przed decyzją?" text="Przejdź do kontaktu na tej stronie. Możesz napisać maila, zadzwonić albo użyć WhatsAppa, żeby dopytać o formę sesji i przygotowanie." />

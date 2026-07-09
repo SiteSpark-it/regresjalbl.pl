@@ -1,0 +1,111 @@
+---
+import { siteData } from '../content/siteData';
+---
+
+<form class="conversion-card p-6 md:p-7" data-lead-form action="/api/lead.php" method="post">
+  <input type="text" name="website" class="hidden" tabindex="-1" autocomplete="off" aria-hidden="true" />
+  <div>
+    <p class="text-xs font-bold uppercase tracking-[0.16em] text-gold-700">Konsultacja</p>
+    <h3 class="mt-2 text-2xl font-bold text-ink-950">Napisz, czego szukasz</h3>
+    <p class="mt-3 text-sm leading-7 text-slate-700">
+      Nie opisuj całej historii. Wystarczy kilka zdań: czego dotyczy temat, czy interesuje Cię spotkanie online i jak najwygodniej
+      się z Tobą skontaktować.
+    </p>
+  </div>
+
+  <div class="mt-6 grid gap-4 sm:grid-cols-2">
+    <label class="grid gap-2 text-sm font-bold text-ink-900">
+      Imię
+      <input class="form-field" name="name" autocomplete="given-name" required maxlength="80" />
+    </label>
+    <label class="grid gap-2 text-sm font-bold text-ink-900">
+      E-mail
+      <input class="form-field" name="email" type="email" autocomplete="email" required maxlength="120" />
+    </label>
+    <label class="grid gap-2 text-sm font-bold text-ink-900">
+      Telefon / WhatsApp
+      <input class="form-field" name="phone" type="tel" autocomplete="tel" maxlength="40" />
+    </label>
+    <label class="grid gap-2 text-sm font-bold text-ink-900">
+      Najwygodniejszy kontakt
+      <select class="form-field" name="preferred_contact">
+        <option value="email">E-mail</option>
+        <option value="phone">Telefon</option>
+        <option value="whatsapp">WhatsApp</option>
+      </select>
+    </label>
+  </div>
+
+  <label class="mt-4 grid gap-2 text-sm font-bold text-ink-900">
+    Co chcesz sprawdzić podczas konsultacji?
+    <select class="form-field" name="topic">
+      <option value="czy_to_dla_mnie">Czy taka sesja jest dla mnie?</option>
+      <option value="przebieg">Jak wygląda przebieg sesji?</option>
+      <option value="online">Czy mogę pracować online?</option>
+      <option value="brama_dusz_lbl">Brama Dusz LBL</option>
+      <option value="inne">Inne pytanie</option>
+    </select>
+  </label>
+
+  <label class="mt-4 grid gap-2 text-sm font-bold text-ink-900">
+    Krótka wiadomość
+    <textarea class="form-field min-h-32 resize-y" name="message" required maxlength="1400" placeholder="Napisz 3-6 zdań. Bez danych medycznych i bez bardzo prywatnych szczegółów na tym etapie."></textarea>
+  </label>
+
+  <label class="mt-5 flex gap-3 text-xs leading-6 text-slate-700">
+    <input class="mt-1 h-4 w-4 shrink-0" type="checkbox" name="consent" value="yes" required />
+    <span>
+      Wyrażam zgodę na kontakt w sprawie konsultacji i rozumiem, że sesja ma charakter rozwojowy oraz duchowy, a nie medyczny
+      ani psychoterapeutyczny.
+    </span>
+  </label>
+
+  <div class="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
+    <button class="button-primary w-full sm:w-auto" type="submit">Wyślij prośbę o konsultację</button>
+    <a class="button-quiet w-full bg-white/70 text-center sm:w-auto" href={siteData.contact.emailHref}>Napisz bez formularza</a>
+  </div>
+
+  <p class="mt-4 text-sm leading-7 text-slate-700" data-lead-status aria-live="polite">
+    Po wysłaniu wiadomość trafi do kontaktu: {siteData.contact.email}.
+  </p>
+</form>
+
+<script is:inline>
+  (() => {
+    const form = document.querySelector('[data-lead-form]');
+    if (!form) return;
+    const status = form.querySelector('[data-lead-status]');
+    const setStatus = (text) => {
+      if (status) status.textContent = text;
+    };
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const formData = new FormData(form);
+      const payload = Object.fromEntries(formData.entries());
+      payload.page = location.pathname;
+      payload.referrer = document.referrer || '';
+      payload.timezone = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+      payload.screen = `${window.innerWidth}x${window.innerHeight}`;
+
+      setStatus('Wysyłam wiadomość...');
+
+      try {
+        const response = await fetch('/api/lead.php', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        const result = await response.json().catch(() => ({}));
+        if (!response.ok || result.ok !== true) {
+          throw new Error(result.error || 'Nie udało się wysłać formularza.');
+        }
+        form.reset();
+        setStatus('Dziękuję. Wiadomość została przyjęta. Jeśli wolisz, możesz też napisać bezpośrednio na info@instytutregresji.pl.');
+        window.RegresjaAnalytics?.track?.('lead_submit', { topic: payload.topic || 'unknown' });
+      } catch (error) {
+        setStatus('Nie udało się wysłać formularza automatycznie. Napisz bezpośrednio na info@instytutregresji.pl albo zadzwoń: +48 455 448 119.');
+      }
+    });
+  })();
+</script>
