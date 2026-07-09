@@ -12,16 +12,16 @@ const {
 } = Astro.props;
 ---
 
-<section class="bg-ink-900 text-warm-50">
+<section class="bg-[#eaf6f8] text-ink-950">
   <div class="container-page grid gap-8 py-14 lg:grid-cols-[1fr_auto] lg:items-center">
     <div>
       <div class="gold-line"></div>
       <h2 class="display-title mt-5 text-4xl md:text-5xl">{title}</h2>
-      <p class="mt-5 max-w-3xl text-base leading-8 text-warm-100/78">{text}</p>
+      <p class="mt-5 max-w-3xl text-base leading-8 text-slate-700">{text}</p>
     </div>
     <div class="flex flex-col gap-3 sm:flex-row lg:flex-col">
       <a class="button-primary" href={siteData.cta.url} rel="noopener noreferrer" aria-label="Przejdź do zapisów w Instytucie Regresji">{siteData.cta.label}</a>
-      <a class="button-secondary" href={siteData.personalLink.url} rel="noopener noreferrer" aria-label="Przejdź do strony Macieja Masłanki">Maciej Masłanka</a>
+      <a class="button-secondary bg-white/55" href={siteData.personalLink.url} rel="noopener noreferrer" aria-label="Przejdź do strony Macieja Masłanki">Maciej Masłanka</a>
     </div>
   </div>
 </section>
