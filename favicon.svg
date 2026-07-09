@@ -1,5 +1,24 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Regresja LBL">
-  <rect width="64" height="64" rx="10" fill="#07111d"/>
-  <path d="M21 52V28c0-8.3 4.9-15 11-15s11 6.7 11 15v24" fill="none" stroke="#d4a24a" stroke-width="4" stroke-linecap="round"/>
-  <path d="M32 18c4.2 3.1 6.4 7.2 6.4 12.4V52" fill="none" stroke="#fbf7ef" stroke-width="2" stroke-linecap="round" opacity=".72"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-label="Regresja LBL">
+  <defs>
+    <linearGradient id="bg" x1="16" x2="80" y1="12" y2="88" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#fffaf2"/>
+      <stop offset=".58" stop-color="#eaf6f8"/>
+      <stop offset="1" stop-color="#d7edf2"/>
+    </linearGradient>
+    <linearGradient id="arch" x1="23" x2="73" y1="18" y2="84" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#172a3a"/>
+      <stop offset="1" stop-color="#3f7d96"/>
+    </linearGradient>
+    <linearGradient id="light" x1="48" x2="48" y1="24" y2="76" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#f2dcae"/>
+      <stop offset=".52" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#86bdd0"/>
+    </linearGradient>
+  </defs>
+  <rect width="96" height="96" rx="22" fill="url(#bg)"/>
+  <rect x="8.5" y="8.5" width="79" height="79" rx="17.5" fill="none" stroke="#172a3a" stroke-opacity=".1"/>
+  <path d="M25 78V43.5C25 26.8 34.2 17 48 17s23 9.8 23 26.5V78" fill="none" stroke="url(#arch)" stroke-width="7" stroke-linecap="round"/>
+  <path d="M36 78V45.5C36 35.9 40.7 30 48 30s12 5.9 12 15.5V78" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" opacity=".9"/>
+  <path d="M48 25v51" fill="none" stroke="url(#light)" stroke-width="4" stroke-linecap="round"/>
+  <path d="M38 60c3.2-3.4 6.5-5.1 10-5.1S54.8 56.6 58 60" fill="none" stroke="#5f9bb3" stroke-width="3" stroke-linecap="round" opacity=".82"/>
 </svg>
