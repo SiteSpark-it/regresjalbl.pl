@@ -15,18 +15,20 @@ const { title, subtitle, ctaLabel, ctaHref, secondaryLabel, secondaryHref } = As
 const titleLines =
   title === 'Regresja LBL — przewodnik po Life Between Lives'
     ? ['Regresja LBL', 'przewodnik po', 'Life Between Lives']
+    : title === 'Regresja LBL — czym jest i czym różni się od autorskich metod?'
+      ? ['Regresja LBL', 'czym jest i czym różni się', 'od autorskich metod?']
     : [title];
 ---
 
 <section class="relative overflow-hidden bg-mist text-ink-950">
   <div class="absolute inset-0 bg-[radial-gradient(circle_at_18%_12%,rgba(220,239,244,0.95),transparent_34%),radial-gradient(circle_at_82%_22%,rgba(255,250,242,0.96),transparent_34%),linear-gradient(180deg,#fbfdff_0%,#edf7fa_62%,#fffaf2_100%)]"></div>
-  <div class="container-page relative grid min-w-0 items-center gap-10 py-12 lg:min-h-[720px] lg:grid-cols-[0.94fr_1.06fr] lg:py-16 xl:min-h-[calc(100svh-4.5rem)] xl:gap-14">
-    <div class="w-full max-w-2xl min-w-0">
-      <h1 class="hero-title display-title max-w-full text-[clamp(2.15rem,4.5vw,4.85rem)] text-ink-950" aria-label={title}>
+  <div class="container-page relative grid min-w-0 items-center gap-8 py-10 sm:py-12 lg:min-h-[600px] lg:grid-cols-2 lg:py-14 xl:min-h-[760px] xl:gap-12">
+    <div class="w-full max-w-[46rem] min-w-0">
+      <h1 class="hero-title display-title max-w-full text-ink-950" aria-label={title}>
         {titleLines.map((line, index) => <span class="block">{line}{index < titleLines.length - 1 ? ' ' : ''}</span>)}
       </h1>
-      <p class="mt-6 max-w-xl break-words text-lg leading-8 text-slate-700 md:text-xl md:leading-9">{subtitle}</p>
-      <div class="mt-9 flex w-full flex-col gap-3 sm:flex-row">
+      <p class="mt-5 max-w-xl break-words text-base leading-8 text-slate-700 sm:text-lg md:text-xl md:leading-9 lg:mt-6">{subtitle}</p>
+      <div class="mt-7 flex w-full flex-col gap-3 sm:flex-row lg:mt-8">
         <a class="button-primary w-full text-center sm:w-auto" href={ctaHref} aria-label="Przejdź do konsultacji na regresjalbl.pl">{ctaLabel}</a>
         {secondaryLabel && secondaryHref && <a class="button-secondary w-full text-center sm:w-auto" href={secondaryHref}>{secondaryLabel}</a>}
       </div>
@@ -35,11 +37,11 @@ const titleLines =
         <span class="trust-pill">Mail, telefon lub WhatsApp</span>
         <span class="trust-pill">Najpierw spokojna kwalifikacja</span>
       </div>
-      <div class="consultation-note mt-7 rounded-md px-5 py-4 text-sm leading-7 text-slate-700">
+      <div class="consultation-note mt-6 hidden rounded-md px-5 py-4 text-sm leading-7 text-slate-700 sm:block lg:mt-7">
         Jeśli czujesz, że temat wraca i nie chcesz już tylko czytać kolejnych opisów, zacznij od konsultacji. To ma być prosty pierwszy krok: sprawdzić, czy taka forma pracy jest dla Ciebie sensowna.
       </div>
     </div>
-    <div class="hero-media-frame lg:min-h-[31rem] xl:min-h-[35rem]">
+    <div class="hero-media-frame hidden sm:block sm:min-h-[22rem] md:min-h-[25rem] lg:min-h-[28rem] xl:min-h-[31rem]">
       <Image
         src={heroImage}
         alt="Kamienna brama w ciemnym wnętrzu, przez którą wpada ciepłe światło"
@@ -48,7 +50,7 @@ const titleLines =
         format="webp"
         loading="eager"
         fetchpriority="high"
-        class="h-full min-h-[16rem] w-full object-cover lg:min-h-[31rem] xl:min-h-[35rem]"
+        class="h-full min-h-[22rem] w-full object-cover md:min-h-[25rem] lg:min-h-[28rem] xl:min-h-[31rem]"
       />
       <div class="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-warm-50/78 to-transparent"></div>
       <div class="hero-step-card hidden md:block">

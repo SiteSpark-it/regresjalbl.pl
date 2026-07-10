@@ -24,7 +24,7 @@
   --font-display: Georgia, Cambria, "Times New Roman", serif;
   --shadow-soft: 0 24px 70px rgba(31, 56, 75, 0.11);
   --shadow-glow: 0 0 0 1px rgba(111, 168, 189, 0.2), 0 18px 50px rgba(31, 56, 75, 0.13);
-  --container-content: 72rem;
+  --container-content: 84rem;
 }
 
 @layer base {
@@ -100,7 +100,7 @@
   }
 
   .container-page {
-    width: min(100% - clamp(2rem, 6vw, 8rem), 78rem);
+    width: min(100% - clamp(2rem, 5vw, 6rem), var(--container-content));
     margin-inline: auto;
     max-width: 100%;
     box-sizing: border-box;
@@ -246,7 +246,7 @@
 
   .hero-media-frame {
     position: relative;
-    min-height: 16rem;
+    min-height: 15rem;
     width: 100%;
     max-width: 100%;
     overflow: hidden;
@@ -293,7 +293,7 @@
     right: 1rem;
     bottom: 1rem;
     z-index: 60;
-    width: min(calc(100vw - 2rem), 29rem);
+    width: min(calc(100vw - 2rem), 28rem);
     border: 1px solid rgba(31, 56, 75, 0.14);
     border-radius: 0.5rem;
     background: rgba(255, 250, 242, 0.96);
@@ -386,7 +386,7 @@
 
 @media (max-width: 63.99rem) {
   .container-page {
-    width: min(100%, 78rem);
+    width: min(100%, var(--container-content));
     padding-inline: 1rem;
     margin-inline: auto;
   }
@@ -396,8 +396,8 @@
   }
 
   .hero-title {
-    font-size: clamp(1.82rem, 9vw, 2.35rem);
-    line-height: 1.08;
+    font-size: clamp(1.72rem, 8.2vw, 2.3rem);
+    line-height: 1.09;
     overflow-wrap: anywhere;
     word-break: normal;
   }
@@ -419,9 +419,9 @@
   }
 
   .consent-banner {
-    right: 0.75rem;
-    bottom: 0.75rem;
-    width: min(calc(100vw - 1.5rem), 26rem);
+    right: 0.5rem;
+    bottom: 0.5rem;
+    width: min(calc(100vw - 1rem), 25rem);
     padding: 0.65rem;
   }
 
@@ -445,5 +445,44 @@
     min-height: 2.45rem;
     padding: 0.58rem 0.65rem;
     font-size: 0.86rem;
+  }
+}
+
+@media (min-width: 64rem) and (max-width: 89.99rem) {
+  .container-page {
+    width: min(100% - 3.5rem, var(--container-content));
+  }
+
+  .hero-title {
+    font-size: clamp(2.75rem, 3.8vw, 3.45rem);
+    line-height: 1.03;
+  }
+}
+
+@media (min-width: 90rem) {
+  .hero-title {
+    font-size: clamp(3.2rem, 3.35vw, 3.85rem);
+    line-height: 1.03;
+  }
+}
+
+@media (max-width: 35.99rem) {
+  .lead-text {
+    font-size: 1rem;
+    line-height: 1.68;
+  }
+
+  .trust-strip {
+    gap: 0.45rem;
+  }
+
+  .trust-pill {
+    min-height: 1.85rem;
+    padding: 0.32rem 0.62rem;
+    font-size: 0.78rem;
+  }
+
+  .consultation-note {
+    padding: 0.85rem 1rem;
   }
 }
