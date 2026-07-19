@@ -21,14 +21,21 @@ function regresja_config(): array
             'region' => ['HTTP_CF_REGION', 'GEOIP_REGION', 'HTTP_X_REGION', 'HTTP_X_GEO_REGION'],
         ],
     ];
-    $customPath = __DIR__ . '/config.php';
-    if (is_file($customPath)) {
+    $config = $default;
+    $customPaths = [
+        __DIR__ . '/config.php',
+        dirname(__DIR__, 2) . '/.regresjalbl-analytics/config.php',
+    ];
+    foreach ($customPaths as $customPath) {
+        if (!is_file($customPath)) {
+            continue;
+        }
         $custom = require $customPath;
         if (is_array($custom)) {
-            return array_replace($default, $custom);
+            $config = array_replace($config, $custom);
         }
     }
-    return $default;
+    return $config;
 }
 
 function regresja_json_response(array $payload, int $status = 200): void

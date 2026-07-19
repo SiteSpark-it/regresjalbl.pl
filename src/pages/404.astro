@@ -7,7 +7,7 @@ const title = 'Nie znaleziono strony — Regresja LBL';
 const description = 'Ta podstrona nie istnieje. Wróć do przewodnika o regresji LBL, bazy wiedzy albo informacji o konsultacji.';
 ---
 
-<BaseLayout title={title} description={description} path="/404/" schema={[websiteSchema()]}>
+<BaseLayout title={title} description={description} path="/404/" schema={[websiteSchema()]} noindex={true}>
   <section class="section-space bg-white">
     <div class="container-page max-w-3xl">
       <div class="gold-line"></div>

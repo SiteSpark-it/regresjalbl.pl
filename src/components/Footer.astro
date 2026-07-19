@@ -4,14 +4,14 @@ const year = new Date().getFullYear();
 ---
 
 <footer class="bg-[#e8f4f7] text-ink-900">
-  <div class="container-page grid gap-10 py-14 lg:grid-cols-[1.4fr_1fr_1fr]">
+  <div class="container-page grid gap-10 py-14 md:grid-cols-2 xl:grid-cols-[1.25fr_0.9fr_0.9fr_1fr]">
     <section aria-labelledby="footer-about">
       <h2 id="footer-about" class="display-title text-3xl text-ink-950">Regresja LBL</h2>
       <p class="mt-4 max-w-xl text-sm leading-7 text-slate-700">
-        Edukacyjny przewodnik po pojęciach LBL, Life Between Lives i regresji między wcieleniami oraz
-        odpowiedzialne wprowadzenie do autorskiej metody Brama Dusz LBL.
+        Przewodnik po regresji LBL, pracy między wcieleniami i metodzie Brama Dusz LBL. Znajdziesz tu wyjaśnienia,
+        przygotowanie do sesji oraz drogę do spokojnej konsultacji.
       </p>
-      <p class="mt-5 text-xs leading-6 text-slate-600">{siteData.disclaimer}</p>
+      <p class="mt-5 text-xs leading-6 text-slate-600">Treści mają charakter edukacyjny i rozwojowy. Sesja nie zastępuje pomocy medycznej ani psychoterapii klinicznej.</p>
     </section>
 
     <nav aria-labelledby="footer-nav">
@@ -22,6 +22,16 @@ const year = new Date().getFullYear();
       </ul>
     </nav>
 
+    <nav aria-labelledby="footer-guides">
+      <h2 id="footer-guides" class="text-sm font-bold uppercase tracking-[0.14em] text-gold-700">Popularne pytania</h2>
+      <ul class="mt-4 grid gap-2 text-sm">
+        <li><a class="text-slate-700 hover:text-gold-700" href="/artykuly/pytania-do-sesji-regresji/">Jak przygotować pytania?</a></li>
+        <li><a class="text-slate-700 hover:text-gold-700" href="/artykuly/co-jesli-nic-nie-zobacze-podczas-regresji/">Co, jeśli nic nie zobaczę?</a></li>
+        <li><a class="text-slate-700 hover:text-gold-700" href="/artykuly/jak-wybrac-prowadzacego-regresje/">Jak wybrać prowadzącego?</a></li>
+        <li><a class="text-slate-700 hover:text-gold-700" href="/artykuly/integracja-po-sesji-regresji/">Co robić po sesji?</a></li>
+      </ul>
+    </nav>
+
     <section aria-labelledby="footer-contact">
       <h2 id="footer-contact" class="text-sm font-bold uppercase tracking-[0.14em] text-gold-700">Kontakt i źródła</h2>
       <ul class="mt-4 grid gap-2 text-sm text-slate-700">
@@ -29,12 +39,12 @@ const year = new Date().getFullYear();
         <li><a class="hover:text-gold-700" href={siteData.contact.whatsappHref} rel="noopener noreferrer">WhatsApp: {siteData.contact.phone}</a></li>
         <li><a class="hover:text-gold-700" href={siteData.contact.emailHref}>{siteData.contact.email}</a></li>
         <li><a class="hover:text-gold-700" href={siteData.cta.url} aria-label="Przejdź do konsultacji na regresjalbl.pl">Umów konsultację</a></li>
-        <li><a class="hover:text-gold-700" href={siteData.personalLink.url} rel="noopener noreferrer" aria-label="Przejdź do strony Macieja Masłanki">{siteData.personalLink.label}</a></li>
+        <li><a class="hover:text-gold-700" href={siteData.instituteLink.url} rel="noopener noreferrer">Instytut Regresji</a></li>
         <li><a class="hover:text-gold-700" href={siteData.externalLinks.mni} rel="noopener noreferrer">The Michael Newton Institute</a></li>
       </ul>
     </section>
   </div>
   <div class="border-t border-ink-950/10 py-5">
-    <p class="container-page text-xs text-slate-600">© {year} {siteData.name}. Strona informacyjna, bez afiliacji z The Michael Newton Institute.</p>
+    <p class="container-page text-xs text-slate-600">© {year} {siteData.name}. Informacje o sesjach i konsultacjach: Instytut Regresji.</p>
   </div>
 </footer>

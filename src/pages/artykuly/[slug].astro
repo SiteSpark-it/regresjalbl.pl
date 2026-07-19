@@ -1,0 +1,147 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import CTASection from '../../components/CTASection.astro';
+import FAQ from '../../components/FAQ.astro';
+import PageIntro from '../../components/PageIntro.astro';
+import ArticleCard from '../../components/ArticleCard.astro';
+import { knowledgeArticles, type KnowledgeArticle } from '../../content/articles';
+import { siteData } from '../../content/siteData';
+import { blogPostingSchema, breadcrumbSchema, faqSchema, organizationSchema, websiteSchema } from '../../content/schema';
+
+export function getStaticPaths() {
+  return knowledgeArticles.map((article) => ({
+    params: { slug: article.slug },
+    props: { article }
+  }));
+}
+
+const { article } = Astro.props as { article: KnowledgeArticle };
+const path = `/artykuly/${article.slug}/`;
+const breadcrumbs = [
+  { href: '/artykuly/', label: 'Baza wiedzy' },
+  { href: path, label: article.title }
+];
+const relatedArticles = article.related
+  .map((slug) => knowledgeArticles.find((item) => item.slug === slug))
+  .filter((item): item is KnowledgeArticle => Boolean(item));
+const formattedDate = new Intl.DateTimeFormat('pl-PL', {
+  day: 'numeric',
+  month: 'long',
+  year: 'numeric'
+}).format(new Date(`${article.modified}T12:00:00`));
+---
+
+<BaseLayout
+  title={article.metaTitle}
+  description={article.description}
+  path={path}
+  ogType="article"
+  publishedTime={article.published}
+  modifiedTime={article.modified}
+  schema={[
+    websiteSchema(),
+    organizationSchema(),
+    breadcrumbSchema(breadcrumbs),
+    blogPostingSchema(path, article.title, article.description, article.published, article.modified),
+    faqSchema(article.faq)
+  ]}
+>
+  <Breadcrumbs items={breadcrumbs} />
+  <PageIntro title={article.title} text={article.excerpt} ctaLabel="Zapytaj o własną sytuację" />
+
+  <article>
+    <header class="border-y border-ink-950/10 bg-[#edf7fa]">
+      <div class="container-page flex flex-wrap items-center gap-x-5 gap-y-2 py-5 text-sm text-slate-700">
+        <span class="font-bold text-gold-700">{article.category}</span>
+        <span>{article.readingTime}</span>
+        <time datetime={article.modified}>Aktualizacja: {formattedDate}</time>
+        <span>Redakcja Regresja LBL</span>
+      </div>
+    </header>
+
+    <section class="section-space bg-white" aria-labelledby="answer-title">
+      <div class="container-page grid gap-10 lg:grid-cols-[0.34fr_0.66fr]">
+        <div>
+          <p class="text-xs font-bold uppercase tracking-[0.16em] text-gold-700">Odpowiedź w skrócie</p>
+          <h2 id="answer-title" class="display-title mt-4 text-3xl text-ink-950 md:text-4xl">Najważniejsze na początek</h2>
+        </div>
+        <div>
+          <p class="rounded-md border-l-4 border-gold-500 bg-warm-50 p-6 text-lg leading-8 text-ink-900 shadow-sm">
+            {article.directAnswer}
+          </p>
+          <ul class="mt-6 grid gap-3 sm:grid-cols-2">
+            {article.keyPoints.map((point) => (
+              <li class="decision-card flex gap-3 p-4 text-sm leading-7 text-slate-700">
+                <span class="mt-2 h-2 w-2 shrink-0 rounded-full bg-gold-500" aria-hidden="true"></span>
+                <span>{point}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <div class="bg-warm-50">
+      {article.sections.map((section, index) => (
+        <section class:list={['section-space', index % 2 === 1 && 'bg-white']} aria-labelledby={`section-${index}`}>
+          <div class="container-page grid gap-10 lg:grid-cols-[0.34fr_0.66fr]">
+            <div>
+              <div class="gold-line"></div>
+              <h2 id={`section-${index}`} class="display-title mt-5 text-3xl text-ink-950 md:text-4xl">{section.heading}</h2>
+            </div>
+            <div class="prose-site article-prose">
+              {section.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+              {section.list && (
+                <ul class="article-checklist">
+                  {section.list.map((item) => <li>{item}</li>)}
+                </ul>
+              )}
+              {index === 1 && (
+                <aside class="mt-8 rounded-md border border-gold-600/25 bg-[#edf7fa] p-5" aria-label="Konsultacja">
+                  <p class="font-bold text-ink-950">Chcesz odnieść ten temat do własnej sytuacji?</p>
+                  <p class="mt-2 text-sm leading-7 text-slate-700">
+                    W konsultacji możesz opisać swoje pytanie bez rezerwowania pełnej sesji. Przejdź do
+                    <a href="/sesja/#kontakt"> formularza na regresjalbl.pl</a>, zadzwoń pod
+                    <a href={siteData.contact.phoneHref}> {siteData.contact.phone}</a> albo skorzystaj z WhatsAppa.
+                  </p>
+                </aside>
+              )}
+            </div>
+          </div>
+        </section>
+      ))}
+    </div>
+  </article>
+
+  <section class="section-space bg-white" aria-labelledby="related-title">
+    <div class="container-page">
+      <div class="max-w-3xl">
+        <div class="gold-line"></div>
+        <h2 id="related-title" class="display-title mt-5 text-4xl text-ink-950 md:text-5xl">Przeczytaj także</h2>
+        <p class="mt-5 lead-text">Materiały, które rozwijają temat bez powtarzania tej samej odpowiedzi.</p>
+      </div>
+      <div class="mt-8 grid gap-x-8 md:grid-cols-2">
+        {relatedArticles.map((item) => (
+          <ArticleCard
+            title={item.title}
+            description={item.excerpt}
+            href={`/artykuly/${item.slug}/`}
+            meta={item.category}
+          />
+        ))}
+      </div>
+      <p class="mt-8 text-sm leading-7 text-slate-700">
+        Wróć do <a class="font-bold text-gold-700 hover:text-ink-950" href="/artykuly/">pełnej bazy wiedzy</a>,
+        poznaj <a class="font-bold text-gold-700 hover:text-ink-950" href="/brama-dusz-lbl/">metodę Brama Dusz LBL</a>
+        albo sprawdź <a class="font-bold text-gold-700 hover:text-ink-950" href="/sesja/">przebieg sesji regresji duchowej</a>.
+      </p>
+    </div>
+  </section>
+
+  <FAQ items={article.faq} title={`Pytania związane z tematem: ${article.category}`} />
+  <CTASection
+    title="Nie musisz rozstrzygać wszystkiego samodzielnie"
+    text="Jeśli po lekturze masz konkretne pytanie, napisz kilka zdań. Konsultacja pomoże sprawdzić formę spotkania, przygotowanie i to, czy regresja jest odpowiednim krokiem w Twojej sytuacji."
+  />
+</BaseLayout>

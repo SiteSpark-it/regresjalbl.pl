@@ -10,9 +10,9 @@
     url: '/sesja/#kontakt',
     href: '/sesja/#kontakt'
   },
-  personalLink: {
-    label: 'maciejregresja.pl',
-    url: 'https://maciejregresja.pl'
+  instituteLink: {
+    label: 'Instytut Regresji',
+    url: 'https://instytutregresji.pl/'
   },
   contact: {
     phone: '+48 455 448 119',
@@ -24,7 +24,7 @@
   author: {
     name: 'Maciej Masłanka',
     description:
-      'Maciej Masłanka pracuje z regresją duchową i regresją poprzednich wcieleń, studiuje psychologię w Warszawie i rozwija autorską metodę Brama Dusz LBL inspirowaną publikacjami dr. Michaela Newtona. Ta strona opisuje temat edukacyjnie i poleca jego pracę z perspektywy osoby, która korzystała z sesji.'
+      'Maciej Masłanka pracuje z regresją duchową i regresją poprzednich wcieleń, studiuje psychologię w Warszawie oraz rozwija metodę Brama Dusz LBL, inspirowaną publikacjami dr. Michaela Newtona. Na tej stronie opisujemy jego styl pracy i praktyczne informacje potrzebne przed konsultacją.'
   },
   externalLinks: {
     mni: 'https://michaelnewton.org',
@@ -40,10 +40,9 @@
   navLinks: [
     { href: '/', label: 'Regresja LBL' },
     { href: '/life-between-lives/', label: 'Life Between Lives' },
-    { href: '/regresja-miedzy-wcieleniami/', label: 'Między wcieleniami' },
     { href: '/brama-dusz-lbl/', label: 'Brama Dusz LBL' },
-    { href: '/o-macieju/', label: 'Maciej Masłanka' },
     { href: '/sesja/', label: 'Sesja' },
+    { href: '/o-macieju/', label: 'Prowadzący' },
     { href: '/artykuly/', label: 'Baza wiedzy' },
     { href: '/faq/', label: 'FAQ' }
   ],
@@ -57,15 +56,18 @@
     { href: '/sesja/', label: 'Sesja i konsultacja' },
     { href: '/faq/', label: 'FAQ' }
   ],
-  disclaimer:
-    'Strona/metoda nie jest oficjalną usługą The Michael Newton Institute. Nazwy Life Between Lives i LBL są używane tutaj informacyjnie, a Brama Dusz LBL jest opisana jako metoda autorska.'
 };
 
-export const homeFaq = [
+export interface FaqItem {
+  question: string;
+  answer: string;
+}
+
+export const homeFaq: FaqItem[] = [
   {
-    question: 'Czy Brama Dusz LBL to oficjalne Life Between Lives?',
+    question: 'Czym jest Brama Dusz LBL?',
     answer:
-      'Nie. Brama Dusz LBL jest autorską metodą regresji duchowej inspirowaną publikacjami dr. Michaela Newtona. Nie jest oficjalną usługą The Michael Newton Institute ani potwierdzeniem powiązania z MNI.'
+      'Brama Dusz LBL to autorska metoda regresji duchowej inspirowana publikacjami dr. Michaela Newtona oraz praktyką regresji i hipnozy regresyjnej. Sesja służy pracy z doświadczeniem wewnętrznym: obrazami, emocjami, symbolami i pytaniami o sens. Jej przebieg jest zawsze poprzedzony rozmową o intencji oraz granicach pracy.'
   },
   {
     question: 'Czy LBL jest tym samym co PLR?',
@@ -83,9 +85,9 @@ export const homeFaq = [
       'Tak, część sesji rozwojowych może odbywać się online, jeśli uczestnik ma spokojne miejsce, stabilne połączenie i czuje się bezpiecznie. Forma sesji powinna być ustalona indywidualnie, bez presji i bez obietnic konkretnego efektu.'
   },
   {
-    question: 'Czy trzeba mieć certyfikowanego facylitatora?',
+    question: 'Na co zwrócić uwagę przy wyborze prowadzącego?',
     answer:
-      'Jeśli szukasz oficjalnej ścieżki Life Between Lives, najlepiej sprawdzić aktualne listy bezpośrednio w The Michael Newton Institute. Jeśli wybierasz metodę autorską, zwróć uwagę na jasne granice, doświadczenie prowadzącego i uczciwe rozróżnienie inspiracji od oficjalnej afiliacji.'
+      'Sprawdź doświadczenie, ukończone szkolenia, sposób kwalifikacji, warunki sesji i to, czy możesz swobodnie zadawać pytania. Dobry prowadzący jasno opisuje przebieg pracy, nie gwarantuje konkretnego efektu i potrafi powiedzieć, kiedy lepiej wybrać inną formę wsparcia.'
   },
   {
     question: 'Ile trwa sesja regresji?',
@@ -161,12 +163,12 @@ export const peopleAlsoAsk = [
   {
     question: 'Czym różni się Life Between Lives od metody Brama Dusz LBL?',
     answer:
-      'Life Between Lives jest pojęciem kojarzonym z publikacjami dr. Michaela Newtona i oficjalną ścieżką The Michael Newton Institute. Brama Dusz LBL jest metodą autorską inspirowaną tym obszarem literatury, ale nie jest oficjalną usługą MNI ani potwierdzeniem afiliacji z instytutem.'
+      'Life Between Lives opisuje obszar doświadczeń między wcieleniami znany z publikacji dr. Michaela Newtona. Brama Dusz LBL jest autorską metodą, która czerpie z tego kierunku inspirację, ale ma własny sposób prowadzenia, przygotowania oraz integracji po sesji.'
   },
   {
     question: 'Kim był dr Michael Newton w kontekście LBL?',
     answer:
-      'Dr Michael Newton był autorem publikacji opisujących doświadczenia osób pracujących z głębokim transem i tematyką życia pomiędzy wcieleniami. Jego książki stały się ważnym punktem odniesienia dla osób zainteresowanych LBL. Warto jednak odróżniać lekturę i inspirację od oficjalnej afiliacji.'
+      'Dr Michael Newton był autorem publikacji opisujących doświadczenia osób pracujących z głębokim transem i tematyką życia pomiędzy wcieleniami. Jego książki stały się ważnym punktem odniesienia dla osób zainteresowanych LBL, pytaniami o sens, relacje duszy oraz możliwą ciągłość doświadczenia.'
   },
   {
     question: 'Czy sesja regresji LBL jest bezpieczna?',
@@ -199,9 +201,9 @@ export const peopleAlsoAsk = [
       'Nie zawsze. LBL i regresja duchowa wymagają gotowości do spokojnej pracy wewnętrznej oraz zgody na brak gwarancji efektu. Jeśli ktoś jest w silnym kryzysie, pod wpływem substancji albo oczekuje diagnozy lub leczenia, lepszym wyborem może być inny rodzaj wsparcia.'
   },
   {
-    question: 'Czy można sprawdzić oficjalnego facylitatora MNI?',
+    question: 'Gdzie szukać źródłowych informacji o Life Between Lives?',
     answer:
-      'Tak. Jeśli zależy Ci na oficjalnej ścieżce The Michael Newton Institute, najlepiej sprawdzić aktualne listy i kryteria bezpośrednio na stronie tej organizacji. Strony edukacyjne mogą wyjaśniać pojęcia, ale nie powinny zastępować oficjalnego źródła informacji o afiliacji.'
+      'Dobrym początkiem są książki dr. Michaela Newtona oraz materiały organizacji rozwijających ten kierunek. Warto porównywać źródła z praktycznym opisem konkretnej sesji: czasem, przygotowaniem, sposobem prowadzenia i integracją po spotkaniu.'
   },
   {
     question: 'Czy regresja LBL daje pewność, kim byłem w poprzednim życiu?',
@@ -224,7 +226,7 @@ export const serviceCards = [
   {
     title: 'Life Between Lives',
     description:
-      'Edukacyjne wyjaśnienie pojęcia LBL, publikacji dr. Michaela Newtona i różnicy między informacją a oficjalną afiliacją.',
+      'Kontekst LBL, publikacje dr. Michaela Newtona i praktyczne wyjaśnienie, jak czytać ten kierunek pracy.',
     href: '/life-between-lives/'
   },
   {
@@ -236,7 +238,7 @@ export const serviceCards = [
   {
     title: 'Brama Dusz LBL',
     description:
-      'Autorska metoda regresji duchowej inspirowana publikacjami dr. Michaela Newtona, opisana bez podszywania się pod MNI.',
+      'Autorska metoda regresji duchowej inspirowana publikacjami dr. Michaela Newtona, z przygotowaniem i integracją.',
     href: '/brama-dusz-lbl/'
   }
 ];
@@ -245,7 +247,7 @@ export const articleCards = [
   {
     title: 'Life Between Lives i dr Michael Newton',
     description:
-      'Kontekst pojęcia LBL, publikacji Newtona i tego, dlaczego warto odróżniać edukację od oficjalnej afiliacji.',
+      'Kontekst pojęcia LBL, publikacji Newtona oraz pytania, które warto zadać przed wyborem sesji.',
     href: '/life-between-lives/',
     meta: 'przewodnik'
   },
@@ -259,7 +261,7 @@ export const articleCards = [
   {
     title: 'Brama Dusz LBL jako metoda autorska',
     description:
-      'Jak mówić o autorskiej metodzie inspirowanej publikacjami Newtona bez niejasności prawnych i bez obietnic.',
+      'Jak wygląda autorska metoda pracy: przygotowanie, prowadzenie sesji i spokojna integracja doświadczenia.',
     href: '/brama-dusz-lbl/',
     meta: 'metoda'
   },
@@ -272,5 +274,4 @@ export const articleCards = [
   }
 ];
 
-export type FaqItem = (typeof homeFaq)[number];
 export type CardItem = (typeof serviceCards)[number];

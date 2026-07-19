@@ -2,13 +2,13 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import CTASection from '../components/CTASection.astro';
-import DisclaimerBox from '../components/DisclaimerBox.astro';
 import FAQ from '../components/FAQ.astro';
 import LeadForm from '../components/LeadForm.astro';
 import PageIntro from '../components/PageIntro.astro';
+import ArticleCard from '../components/ArticleCard.astro';
 import { articleSchema, breadcrumbSchema, faqSchema, personSchema, serviceSchema, websiteSchema } from '../content/schema';
 
-const title = 'Sesja regresji duchowej — przebieg, przygotowanie i konsultacja';
+const title = 'Sesja regresji duchowej — przebieg i konsultacja';
 const description =
   'Jak wygląda sesja regresji duchowej i Brama Dusz LBL? Przygotowanie, przebieg, integracja, granice pracy i kontakt do konsultacji.';
 const breadcrumbs = [{ href: '/sesja/', label: 'Sesja regresji duchowej' }];
@@ -27,6 +27,16 @@ const pageFaq = [
     question: 'Co dzieje się po sesji?',
     answer:
       'Po sesji ważna jest integracja: odpoczynek, zapisanie wrażeń, spokojna obserwacja emocji i unikanie pochopnych decyzji. Nie każde doświadczenie trzeba od razu wyjaśniać. Czasem sens układa się dopiero po kilku dniach.'
+  },
+  {
+    question: 'Czy trzeba umieć medytować albo łatwo się relaksować?',
+    answer:
+      'Nie. Wcześniejsze doświadczenie medytacyjne nie jest wymagane. Rozmowa i prowadzenie pomagają stopniowo kierować uwagę do wewnątrz. Warto powiedzieć, jeśli trudno Ci się rozluźnić, potrzebujesz wolniejszego tempa albo masz obawy związane z utratą kontroli.'
+  },
+  {
+    question: 'Czy po konsultacji muszę rezerwować pełną sesję?',
+    answer:
+      'Nie. Konsultacja ma pomóc zebrać informacje, wyjaśnić przebieg i sprawdzić warunki. Możesz po niej zrezygnować, poprosić o czas do namysłu albo wrócić z dodatkowymi pytaniami. Decyzja o pełnej sesji powinna być świadoma i dobrowolna.'
   }
 ];
 ---
@@ -44,7 +54,10 @@ const pageFaq = [
   />
   <section class="section-space bg-warm-50">
     <div class="container-page grid gap-10 lg:grid-cols-[0.36fr_0.64fr]">
-      <DisclaimerBox text="Sesja ma charakter rozwojowy i duchowy. Nie stanowi diagnozy, leczenia, porady medycznej ani psychoterapii klinicznej." />
+      <div>
+        <div class="gold-line"></div>
+        <h2 class="display-title mt-5 text-4xl text-ink-950">Zanim umówisz sesję</h2>
+      </div>
       <article class="prose-site">
         <h2 class="display-title text-4xl text-ink-950">Dla kogo może być taka praca?</h2>
         <p>
@@ -52,8 +65,9 @@ const pageFaq = [
           obrazach. Nie jest formą interwencji kryzysowej ani zastępstwem profesjonalnego leczenia.
         </p>
         <p>
-          Przed zapisem warto uczciwie przyjrzeć się oczekiwaniom, stanowi zdrowia i wcześniejszym doświadczeniom. Dobra
-          decyzja potrzebuje informacji, spokoju i braku presji.
+          Przed zapisem warto uczciwie przyjrzeć się oczekiwaniom, swojej aktualnej sytuacji i wcześniejszym doświadczeniom.
+          Dobra decyzja potrzebuje informacji, spokoju i braku presji. Sesja ma charakter rozwojowy i duchowy; nie zastępuje
+          diagnozy, leczenia ani psychoterapii klinicznej.
         </p>
       </article>
     </div>
@@ -99,16 +113,31 @@ const pageFaq = [
       </article>
     </div>
   </section>
+  <section class="section-space bg-[#edf7fa]" aria-labelledby="preparation-reading-title">
+    <div class="container-page">
+      <div class="max-w-3xl">
+        <div class="gold-line"></div>
+        <h2 id="preparation-reading-title" class="display-title mt-5 text-4xl text-ink-950 md:text-5xl">Przygotuj się w swoim tempie</h2>
+        <p class="mt-6 lead-text">Te trzy materiały odpowiadają na najczęstsze praktyczne pytania przed spotkaniem i po nim.</p>
+      </div>
+      <div class="mt-9 grid gap-x-8 md:grid-cols-3">
+        <ArticleCard title="Jak przygotować pytania do sesji?" description="Przykłady intencji, pytania otwarte i sformułowania, które warto zmienić." href="/artykuly/pytania-do-sesji-regresji/" meta="przed sesją" />
+        <ArticleCard title="Jak przygotować regresję online?" description="Prywatność, sprzęt, pozycja ciała i plan na wypadek przerwania połączenia." href="/artykuly/jak-przygotowac-sie-do-regresji-online/" meta="online" />
+        <ArticleCard title="Co robić po sesji?" description="Spokojna integracja, notatki i granice interpretacji doświadczenia." href="/artykuly/integracja-po-sesji-regresji/" meta="po sesji" />
+      </div>
+    </div>
+  </section>
   <section id="kontakt" class="section-space bg-white" aria-labelledby="kontakt-title">
     <div class="container-page grid gap-10 lg:grid-cols-[0.42fr_0.58fr]">
       <div>
         <div class="gold-line"></div>
         <h2 id="kontakt-title" class="display-title mt-5 text-4xl text-ink-950 md:text-5xl">Umów konsultację</h2>
         <p class="mt-6 lead-text">
-          Jeżeli czujesz, że to temat dla Ciebie, nie odkładaj decyzji tylko dlatego, że nie masz jeszcze wszystkich odpowiedzi. Napisz krótko, czego szukasz, a konsultacja pomoże ustalić najbliższy sensowny krok.
+          Nie musisz mieć gotowej historii ani idealnie ułożonych pytań. Napisz krótko, czego szukasz, a konsultacja pomoże
+          ustalić formę spotkania, przygotowanie i najbliższy sensowny krok.
         </p>
         <div class="mt-7 grid gap-3 text-sm leading-7 text-slate-700">
-          <p class="consultation-note rounded-md px-4 py-3"><strong class="text-ink-950">Najlepiej napisać teraz, gdy temat jest świeży.</strong> Wystarczy kilka zdań i preferowana forma kontaktu.</p>
+          <p class="consultation-note rounded-md px-4 py-3"><strong class="text-ink-950">Wystarczy kilka zdań i preferowana forma kontaktu.</strong> Nie musisz podejmować decyzji o pełnej sesji przed rozmową.</p>
           <p class="rounded-md border border-ink-950/10 bg-white/70 px-4 py-3">Kontakt: <a class="font-bold text-gold-700 hover:text-ink-950" href="tel:+48455448119">+48 455 448 119</a> lub <a class="font-bold text-gold-700 hover:text-ink-950" href="mailto:info@instytutregresji.pl">info@instytutregresji.pl</a>.</p>
         </div>
       </div>

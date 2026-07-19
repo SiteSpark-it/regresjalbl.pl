@@ -4,20 +4,25 @@ import type { FaqItem } from '../content/siteData';
 interface Props {
   items: FaqItem[];
   title?: string;
+  id?: string;
+  intro?: string;
 }
 
-const { items, title = 'FAQ' } = Astro.props;
+const {
+  items,
+  title = 'FAQ',
+  id = 'faq',
+  intro = 'Te odpowiedzi mają pomóc Ci spokojnie uporządkować temat. Nie zastępują konsultacji medycznej, psychoterapeutycznej ani diagnostycznej.'
+} = Astro.props;
+const titleId = `${id}-title`;
 ---
 
-<section class="section-space bg-warm-50" id="faq" aria-labelledby="faq-title">
+<section class="faq-section section-space bg-warm-50" id={id} aria-labelledby={titleId}>
   <div class="container-page grid gap-10 lg:grid-cols-[0.36fr_0.64fr]">
     <div>
       <div class="gold-line"></div>
-      <h2 id="faq-title" class="display-title mt-5 text-4xl text-ink-950 md:text-5xl">{title}</h2>
-      <p class="mt-5 text-base leading-8 text-slate-600">
-        Te odpowiedzi mają pomóc Ci spokojnie uporządkować temat. Nie zastępują konsultacji medycznej,
-        psychoterapeutycznej ani diagnostycznej.
-      </p>
+      <h2 id={titleId} class="display-title mt-5 text-4xl text-ink-950 md:text-5xl">{title}</h2>
+      <p class="mt-5 text-base leading-8 text-slate-600">{intro}</p>
     </div>
     <div class="grid gap-3">
       {items.map((item) => (

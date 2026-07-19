@@ -4,7 +4,7 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 import CTASection from '../components/CTASection.astro';
 import FAQ from '../components/FAQ.astro';
 import PageIntro from '../components/PageIntro.astro';
-import { articleSchema, breadcrumbSchema, faqSchema, personSchema, serviceSchema, websiteSchema } from '../content/schema';
+import { articleSchema, breadcrumbSchema, faqSchema, organizationSchema, personSchema, websiteSchema } from '../content/schema';
 
 const title = 'Regresja między wcieleniami — LBL, sens i integracja';
 const description =
@@ -33,12 +33,12 @@ const pageFaq = [
   title={title}
   description={description}
   path="/regresja-miedzy-wcieleniami/"
-  schema={[websiteSchema(), personSchema(), serviceSchema('/regresja-miedzy-wcieleniami/'), breadcrumbSchema(breadcrumbs), articleSchema('/regresja-miedzy-wcieleniami/', title, description), faqSchema(pageFaq)]}
+  schema={[websiteSchema(), organizationSchema(), personSchema(), breadcrumbSchema(breadcrumbs), articleSchema('/regresja-miedzy-wcieleniami/', title, description), faqSchema(pageFaq)]}
 >
   <Breadcrumbs items={breadcrumbs} />
   <PageIntro
     title="Regresja między wcieleniami — LBL, sens i integracja"
-    text="Przewodnik po pracy z przestrzenią między wcieleniami, napisany bez przesady, bez presji i bez podszywania się pod oficjalne źródła."
+    text="Przewodnik po pracy z przestrzenią między wcieleniami: znaczenie symboli, różnice względem PLR oraz spokojna integracja po sesji."
   />
   <section class="section-space bg-warm-50">
     <div class="container-page grid gap-12 lg:grid-cols-[0.4fr_0.6fr]">
@@ -52,6 +52,11 @@ const pageFaq = [
         <p>
           Dla wielu osób ważniejsze jest to, czy takie doświadczenie pomaga spokojniej zrozumieć emocje, relacje i wybory.
           Dlatego w tej pracy potrzebna jest delikatność, zwykły ludzki język i gotowość do integracji po sesji.
+        </p>
+        <p>
+          Nie każda sesja prowadzi do tego samego rodzaju przeżycia. U jednej osoby pojawi się wyraźny obraz, u innej emocja,
+          pojedynczy symbol lub po prostu poczucie spokoju. To nie jest konkurs na intensywność. Znaczenie ma to, czy po
+          spotkaniu potrafisz nazwać, co było dla Ciebie ważne i co chcesz dalej obserwować.
         </p>
       </article>
     </div>
@@ -69,6 +74,15 @@ const pageFaq = [
         </p>
         <p>
           Taki sposób pracy chroni przed nadinterpretacją. Pozwala zostawić miejsce zarówno na duchowość, jak i na zdrowy dystans.
+        </p>
+        <p>
+          Pomaga też wrócić do codzienności w swoim tempie. Warto po spotkaniu zanotować najważniejsze wątki, porozmawiać o nich
+          dopiero wtedy, gdy jest na to przestrzeń, i nie podejmować pod wpływem chwili decyzji, których skutki są duże lub trudne
+          do odwrócenia.
+        </p>
+        <p>
+          Więcej praktycznych wskazówek znajdziesz w przewodniku o
+          <a href="/artykuly/integracja-po-sesji-regresji/">integracji po sesji regresji</a>.
         </p>
       </article>
     </div>

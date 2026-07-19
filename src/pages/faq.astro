@@ -5,20 +5,23 @@ import CTASection from '../components/CTASection.astro';
 import FAQ from '../components/FAQ.astro';
 import PageIntro from '../components/PageIntro.astro';
 import { homeFaq, peopleAlsoAsk, siteData } from '../content/siteData';
-import { breadcrumbSchema, faqSchema, personSchema, serviceSchema, websiteSchema } from '../content/schema';
+import { breadcrumbSchema, faqSchema, organizationSchema, personSchema, websiteSchema } from '../content/schema';
 
 const title = 'FAQ — regresja LBL, Life Between Lives i Brama Dusz LBL';
 const description =
   'Najczęstsze pytania o regresję LBL, Life Between Lives, PLR, sesje online, przygotowanie i autorską metodę Brama Dusz LBL.';
 const breadcrumbs = [{ href: '/faq/', label: 'FAQ' }];
 const allFaq = [...homeFaq, ...peopleAlsoAsk];
+const meaningFaq = [homeFaq[0], homeFaq[1], homeFaq[2], peopleAlsoAsk[0], peopleAlsoAsk[1], peopleAlsoAsk[2], peopleAlsoAsk[3], peopleAlsoAsk[4], peopleAlsoAsk[11]];
+const sessionFaq = [homeFaq[3], homeFaq[5], homeFaq[7], peopleAlsoAsk[6], peopleAlsoAsk[8], peopleAlsoAsk[9], peopleAlsoAsk[13]];
+const decisionFaq = [homeFaq[4], homeFaq[6], peopleAlsoAsk[5], peopleAlsoAsk[7], peopleAlsoAsk[10], peopleAlsoAsk[12], peopleAlsoAsk[14]];
 ---
 
 <BaseLayout
   title={title}
   description={description}
   path="/faq/"
-  schema={[websiteSchema(), personSchema(), serviceSchema('/faq/'), breadcrumbSchema(breadcrumbs), faqSchema(allFaq)]}
+  schema={[websiteSchema(), organizationSchema(), personSchema(), breadcrumbSchema(breadcrumbs), faqSchema(allFaq)]}
 >
   <Breadcrumbs items={breadcrumbs} />
   <PageIntro
@@ -34,15 +37,32 @@ const allFaq = [...homeFaq, ...peopleAlsoAsk];
       <article class="prose-site">
         <p>
           FAQ nie ma zastąpić rozmowy z prowadzącym. Ma pomóc Ci uporządkować język: czym różni się PLR od LBL,
-          gdzie zaczyna się metoda autorska i dlaczego tak ważne jest uczciwe oddzielenie inspiracji od oficjalnej afiliacji.
+          jak wygląda sesja i jakie pytania warto zadać sobie przed podjęciem decyzji.
         </p>
         <p>
-          Jeśli po lekturze czujesz, że temat Cię dotyczy, możesz przejść do sekcji konsultacji na tej stronie. Więcej informacji
-          o Macieju Masłance znajdziesz też na stronie <a href={siteData.personalLink.url} rel="noopener noreferrer">maciejregresja.pl</a>.
+          Jeśli po lekturze czujesz, że temat Cię dotyczy, możesz przejść do sekcji konsultacji na tej stronie. Organizacyjnie
+          sesje i kontakt prowadzi <a href={siteData.instituteLink.url} rel="noopener noreferrer">Instytut Regresji</a>.
         </p>
       </article>
     </div>
   </section>
-  <FAQ items={allFaq} title="Pytania i odpowiedzi" />
+  <FAQ
+    items={meaningFaq}
+    title="Pojęcia, LBL i sposób rozumienia"
+    id="faq-pojecia"
+    intro="Najpierw uporządkuj podstawy: czym jest LBL, jak różni się od PLR i czy trzeba przyjmować jedną interpretację doświadczenia."
+  />
+  <FAQ
+    items={sessionFaq}
+    title="Przygotowanie i przebieg sesji"
+    id="faq-sesja"
+    intro="Praktyczne odpowiedzi o formie online, pytaniach, czasie spotkania, sposobie doświadczania i integracji po sesji."
+  />
+  <FAQ
+    items={decisionFaq}
+    title="Bezpieczeństwo i świadoma decyzja"
+    id="faq-decyzja"
+    intro="Kiedy sesja może nie być właściwym krokiem, jak wybierać prowadzącego i dlaczego regresja nie zastępuje pomocy medycznej ani psychoterapii klinicznej."
+  />
   <CTASection title="Masz po lekturze własne pytania?" text="Nie musisz mieć wszystkiego poukładanego od razu. Jeśli chcesz spokojnie sprawdzić formę pracy, przejdź do konsultacji na tej stronie albo napisz na info@instytutregresji.pl." />
 </BaseLayout>

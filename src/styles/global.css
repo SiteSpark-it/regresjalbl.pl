@@ -317,9 +317,13 @@
     align-items: center;
   }
 
-  #faq summary {
+  .faq-section summary {
     min-height: 2.75rem;
     align-items: center;
+  }
+
+  .faq-section + .faq-section {
+    border-top: 1px solid rgba(31, 56, 75, 0.09);
   }
 
   .prose-site {
@@ -354,6 +358,28 @@
 
   .prose-site a:hover {
     color: #172a3a;
+  }
+
+  .article-prose {
+    font-size: 1.04rem;
+    line-height: 1.86;
+  }
+
+  .article-checklist {
+    display: grid;
+    gap: 0.75rem;
+    margin-top: 1.5rem !important;
+    padding-left: 0 !important;
+    list-style: none;
+  }
+
+  .article-checklist li {
+    position: relative;
+    border-left: 2px solid rgba(216, 173, 97, 0.72);
+    border-radius: 0.35rem;
+    background: rgba(255, 255, 255, 0.74);
+    padding: 0.7rem 0.9rem 0.7rem 1rem;
+    color: #334752;
   }
 
   .article-link {
@@ -442,7 +468,7 @@
 
   .consent-banner .button-primary,
   .consent-banner .button-quiet {
-    min-height: 2.45rem;
+    min-height: 2.75rem;
     padding: 0.58rem 0.65rem;
     font-size: 0.86rem;
   }

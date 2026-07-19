@@ -10,9 +10,23 @@ interface Props {
   path?: string;
   image?: string;
   schema?: unknown[];
+  ogType?: 'website' | 'article';
+  publishedTime?: string;
+  modifiedTime?: string;
+  noindex?: boolean;
 }
 
-const { title, description, path = '/', image, schema = [] } = Astro.props;
+const {
+  title,
+  description,
+  path = '/',
+  image,
+  schema = [],
+  ogType = 'website',
+  publishedTime,
+  modifiedTime,
+  noindex = false
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -21,8 +35,18 @@ const { title, description, path = '/', image, schema = [] } = Astro.props;
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#fffaf2" />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <SEO title={title} description={description} path={path} image={image} schema={schema} />
+    <link rel="icon" href="/favicon.png" type="image/png" sizes="192x192" />
+    <SEO
+      title={title}
+      description={description}
+      path={path}
+      image={image}
+      schema={schema}
+      ogType={ogType}
+      publishedTime={publishedTime}
+      modifiedTime={modifiedTime}
+      noindex={noindex}
+    />
     <script src="/assets/site-analytics.js" defer></script>
   </head>
   <body>

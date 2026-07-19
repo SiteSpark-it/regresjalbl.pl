@@ -4,7 +4,7 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 import CTASection from '../components/CTASection.astro';
 import FAQ from '../components/FAQ.astro';
 import PageIntro from '../components/PageIntro.astro';
-import { articleSchema, breadcrumbSchema, faqSchema, personSchema, serviceSchema, websiteSchema } from '../content/schema';
+import { articleSchema, breadcrumbSchema, faqSchema, organizationSchema, personSchema, websiteSchema } from '../content/schema';
 
 const title = 'Regresja poprzednich wcieleń a regresja LBL — różnice';
 const description =
@@ -33,12 +33,12 @@ const pageFaq = [
   title={title}
   description={description}
   path="/regresja-poprzednich-wcielen/"
-  schema={[websiteSchema(), personSchema(), serviceSchema('/regresja-poprzednich-wcielen/'), breadcrumbSchema(breadcrumbs), articleSchema('/regresja-poprzednich-wcielen/', title, description), faqSchema(pageFaq)]}
+  schema={[websiteSchema(), organizationSchema(), personSchema(), breadcrumbSchema(breadcrumbs), articleSchema('/regresja-poprzednich-wcielen/', title, description), faqSchema(pageFaq)]}
 >
   <Breadcrumbs items={breadcrumbs} />
   <PageIntro
     title="Regresja poprzednich wcieleń a regresja LBL"
-    text="Dwa bliskie, ale nieidentyczne sposoby pracy z narracją wewnętrzną, symboliką, emocjami i pytaniami duchowymi."
+    text="Dwa bliskie, ale nieidentyczne sposoby pracy z obrazami, emocjami, symboliką i pytaniami o własną historię."
   />
   <section class="section-space bg-warm-50">
     <div class="container-page grid gap-12 lg:grid-cols-[0.45fr_0.55fr]">
@@ -51,6 +51,11 @@ const pageFaq = [
         <p>
           Najważniejsze nie jest udowodnienie dosłowności obrazu, ale sprawdzenie, co ta narracja porusza: lęk, lojalność,
           stratę, poczucie winy, tęsknotę, granice albo potrzebę domknięcia.
+        </p>
+        <p>
+          W praktyce warto zostawić sobie prawo do własnego rozumienia doświadczenia. Dla jednej osoby będzie ono duchową historią,
+          dla innej językiem wyobraźni i emocji. Obie perspektywy mogą prowadzić do spokojnej refleksji, o ile nie wymusza się
+          jednej odpowiedzi ani nie traktuje sesji jako dowodu w ważnej życiowej sprawie.
         </p>
       </article>
     </div>
@@ -85,12 +90,13 @@ const pageFaq = [
       <article class="prose-site">
         <p>
           Jeżeli zaczynasz od poprzednich wcieleń, dobrym kolejnym krokiem jest zrozumienie pracy między wcieleniami i tego,
-          jak bezpiecznie mówić o LBL bez mieszania oficjalnych źródeł z metodami autorskimi.
+          jak rozumieć pracę między wcieleniami i czego można oczekiwać od sesji.
         </p>
         <ul>
           <li><a href="/regresja-miedzy-wcieleniami/">Regresja między wcieleniami</a> porządkuje temat przestrzeni pomiędzy wcieleniami.</li>
           <li><a href="/life-between-lives/">Life Between Lives</a> wyjaśnia kontekst Michaela Newtona i MNI.</li>
           <li><a href="/brama-dusz-lbl/">Brama Dusz LBL</a> opisuje metodę autorską.</li>
+          <li><a href="/artykuly/co-jesli-nic-nie-zobacze-podczas-regresji/">Co, jeśli nic nie zobaczę?</a> wyjaśnia różne sposoby doświadczania sesji.</li>
         </ul>
       </article>
     </div>

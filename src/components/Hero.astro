@@ -13,7 +13,9 @@ interface Props {
 
 const { title, subtitle, ctaLabel, ctaHref, secondaryLabel, secondaryHref } = Astro.props;
 const titleLines =
-  title === 'Regresja LBL — przewodnik po Life Between Lives'
+  title === 'Regresja LBL — czym jest i jak wygląda taka sesja?'
+    ? ['Regresja LBL', 'czym jest i jak wygląda', 'taka sesja?']
+    : title === 'Regresja LBL — przewodnik po Life Between Lives'
     ? ['Regresja LBL', 'przewodnik po', 'Life Between Lives']
     : title === 'Regresja LBL — czym jest i czym różni się od autorskich metod?'
       ? ['Regresja LBL', 'czym jest i czym różni się', 'od autorskich metod?']
@@ -35,10 +37,10 @@ const titleLines =
       <div class="trust-strip" aria-label="Najważniejsze informacje o konsultacji">
         <span class="trust-pill">Wystarczy krótka wiadomość</span>
         <span class="trust-pill">Mail, telefon lub WhatsApp</span>
-        <span class="trust-pill">Najpierw spokojna kwalifikacja</span>
+        <span class="trust-pill">Najpierw krótka rozmowa</span>
       </div>
       <div class="consultation-note mt-6 hidden rounded-md px-5 py-4 text-sm leading-7 text-slate-700 sm:block lg:mt-7">
-        Jeśli czujesz, że temat wraca i nie chcesz już tylko czytać kolejnych opisów, zacznij od konsultacji. To ma być prosty pierwszy krok: sprawdzić, czy taka forma pracy jest dla Ciebie sensowna.
+        Jeśli po lekturze nadal masz własne pytanie, możesz zacząć od konsultacji. To prosty pierwszy krok: sprawdzić formę pracy, przygotowanie i to, czy sesja jest dla Ciebie sensowna.
       </div>
     </div>
     <div class="hero-media-frame hidden sm:block sm:min-h-[22rem] md:min-h-[25rem] lg:min-h-[28rem] xl:min-h-[31rem]">

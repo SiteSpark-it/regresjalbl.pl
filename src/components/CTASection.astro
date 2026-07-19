@@ -20,7 +20,7 @@ const {
       <p class="mt-5 max-w-3xl text-base leading-8 text-slate-700">{text}</p>
       <div class="trust-strip">
         <span class="trust-pill">3-6 zdań wystarczy</span>
-        <span class="trust-pill">odpowiedzialna kwalifikacja</span>
+        <span class="trust-pill">najpierw krótka rozmowa</span>
         <span class="trust-pill">mail / telefon / WhatsApp</span>
       </div>
     </div>
@@ -34,6 +34,10 @@ const {
         <a class="button-secondary w-full bg-white/70" href={siteData.contact.whatsappHref} rel="noopener noreferrer">WhatsApp</a>
         <a class="button-quiet w-full bg-white/55" href={siteData.contact.emailHref}>{siteData.contact.email}</a>
       </div>
+      <p class="mt-4 text-xs leading-6 text-slate-600">
+        Zgłoszenia organizacyjnie obsługuje
+        <a class="font-bold text-ink-900 hover:text-gold-700" href={siteData.instituteLink.url} rel="noopener noreferrer">Instytut Regresji</a>.
+      </p>
     </div>
   </div>
 </section>

@@ -11,7 +11,9 @@ export function websiteSchema() {
     '@type': 'WebSite',
     name: siteData.name,
     url: siteData.domain,
-    inLanguage: siteData.language
+    inLanguage: siteData.language,
+    description:
+      'Edukacyjny przewodnik po regresji LBL, Life Between Lives, regresji między wcieleniami i metodzie Brama Dusz LBL.'
   };
 }
 
@@ -20,9 +22,21 @@ export function personSchema() {
     '@context': 'https://schema.org',
     '@type': 'Person',
     name: siteData.author.name,
-    url: siteData.personalLink.url,
+    url: new URL('/o-macieju/', siteData.domain).toString(),
+    jobTitle: 'Prowadzący sesje regresji duchowej',
     description: siteData.author.description,
-    sameAs: [siteData.personalLink.url]
+    knowsAbout: [
+      'regresja duchowa',
+      'regresja poprzednich wcieleń',
+      'regresja między wcieleniami',
+      'hipnoza regresyjna',
+      'integracja psychologiczno-duchowa'
+    ],
+    worksFor: {
+      '@type': 'Organization',
+      name: siteData.instituteLink.label,
+      url: siteData.instituteLink.url
+    }
   };
 }
 
@@ -32,7 +46,16 @@ export function organizationSchema() {
     '@type': 'Organization',
     name: siteData.name,
     url: siteData.domain,
-    logo: new URL('/favicon.svg', siteData.domain).toString()
+    logo: new URL('/favicon.png', siteData.domain).toString(),
+    email: siteData.contact.email,
+    telephone: siteData.contact.phone,
+    contactPoint: {
+      '@type': 'ContactPoint',
+      contactType: 'customer service',
+      telephone: siteData.contact.phone,
+      email: siteData.contact.email,
+      availableLanguage: 'Polish'
+    }
   };
 }
 
@@ -45,7 +68,7 @@ export function serviceSchema(path = '/') {
     provider: {
       '@type': 'Person',
       name: siteData.author.name,
-      url: siteData.personalLink.url
+      url: new URL('/o-macieju/', siteData.domain).toString()
     },
     areaServed: {
       '@type': 'Country',
@@ -53,7 +76,20 @@ export function serviceSchema(path = '/') {
     },
     url: new URL(path, siteData.domain).toString(),
     description:
-      'Autorska metoda regresji duchowej inspirowana publikacjami dr. Michaela Newtona, prowadzona jako praca rozwojowa i duchowa.'
+      'Autorska metoda regresji duchowej inspirowana publikacjami dr. Michaela Newtona, prowadzona jako praca rozwojowa i duchowa.',
+    offers: {
+      '@type': 'Offer',
+      url: new URL('/sesja/#kontakt', siteData.domain).toString()
+    },
+    availableChannel: {
+      '@type': 'ServiceChannel',
+      serviceUrl: new URL('/sesja/#kontakt', siteData.domain).toString(),
+      servicePhone: {
+        '@type': 'ContactPoint',
+        telephone: siteData.contact.phone,
+        contactType: 'consultation'
+      }
+    }
   };
 }
 
@@ -104,6 +140,45 @@ export function articleSchema(path: string, headline: string, description: strin
       '@type': 'Organization',
       name: siteData.name,
       url: siteData.domain
+    },
+    image: new URL(siteData.defaultImage, siteData.domain).toString(),
+    mainEntityOfPage: new URL(path, siteData.domain).toString()
+  };
+}
+
+export function blogPostingSchema(
+  path: string,
+  headline: string,
+  description: string,
+  datePublished: string,
+  dateModified: string
+) {
+  const url = new URL(path, siteData.domain).toString();
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline,
+    description,
+    url,
+    mainEntityOfPage: url,
+    inLanguage: siteData.language,
+    datePublished,
+    dateModified,
+    image: new URL(siteData.defaultImage, siteData.domain).toString(),
+    author: {
+      '@type': 'Organization',
+      name: siteData.name,
+      url: siteData.domain
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: siteData.name,
+      url: siteData.domain,
+      logo: {
+        '@type': 'ImageObject',
+        url: new URL('/favicon.png', siteData.domain).toString()
+      }
     }
   };
 }
