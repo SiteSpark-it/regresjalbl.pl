@@ -8,111 +8,220 @@ import ArticleCard from '../components/ArticleCard.astro';
 import ConsultationPath from '../components/ConsultationPath.astro';
 import { articleCards, homeFaq, serviceCards, siteData, snippetAnswers } from '../content/siteData';
 import { knowledgeArticles } from '../content/articles';
-import { breadcrumbSchema, faqSchema, organizationSchema, personSchema, serviceSchema, websiteSchema } from '../content/schema';
+import { faqSchema, organizationSchema, personSchema, serviceSchema, websiteSchema } from '../content/schema';
 
-const title = 'Regresja LBL — Life Between Lives i Brama Dusz LBL';
-const description = 'Regresja LBL wyjaśniona po ludzku: Life Between Lives, regresja między wcieleniami, różnice względem PLR oraz konsultacja do sesji Brama Dusz LBL.';
-const breadcrumbs = [{ href: '/', label: 'Regresja LBL' }];
+const title = 'Regresja LBL — sesja Life Between Lives krok po kroku';
+const description = 'Regresja LBL w Instytucie Regresji: czym jest Life Between Lives, jak wygląda sesja, ile trwa, jak się przygotować oraz jak zapytać o termin.';
 ---
 
-<BaseLayout title={title} description={description} path="/" schema={[websiteSchema(), organizationSchema(), personSchema(), serviceSchema('/'), breadcrumbSchema(breadcrumbs), faqSchema(homeFaq)]}>
-  <Hero title="Regresja LBL — czym jest i jak wygląda taka sesja?" subtitle="Rzetelny przewodnik po Life Between Lives, regresji między wcieleniami i metodzie Brama Dusz LBL. Najpierw zrozum temat, potem zdecyduj, czy chcesz o nim porozmawiać." ctaLabel={siteData.cta.label} ctaHref={siteData.cta.url} secondaryLabel="Poznaj podstawy" secondaryHref="#co-oznacza-lbl" />
+<BaseLayout title={title} description={description} path="/" schema={[websiteSchema(), organizationSchema(), personSchema(), serviceSchema('/'), faqSchema(homeFaq)]}>
+  <Hero
+    title="Regresja LBL: życie między wcieleniami"
+    subtitle="Pogłębiona sesja Life Between Lives dla osób, które chcą przyjrzeć się relacjom, poczuciu celu i doświadczeniu pomiędzy wcieleniami. Sesje prowadzi Instytut Regresji — online oraz w Rzeszowie."
+    ctaLabel={siteData.cta.label}
+    ctaHref={siteData.cta.url}
+    secondaryLabel="Zobacz przebieg sesji"
+    secondaryHref="/sesja/"
+  />
 
-  <section class="bg-[#edf7fa] pb-14" aria-labelledby="start-title">
-    <div class="container-page">
-      <div class="soft-panel grid gap-6 p-5 md:grid-cols-[0.36fr_0.64fr] md:p-7">
-        <div><p class="text-xs font-bold uppercase tracking-[0.16em] text-gold-700">Od informacji do rozmowy</p><h2 id="start-title" class="mt-3 text-2xl font-bold text-ink-950">Nie musisz znać wszystkich pojęć, żeby zacząć.</h2></div>
-        <div class="grid gap-4 md:grid-cols-3">
-          <article class="decision-card p-4"><h3 class="font-bold text-ink-950">1. Rozumiesz</h3><p class="mt-2 text-sm leading-7 text-slate-700">Porządkujesz różnicę między LBL, PLR, Life Between Lives i pracą między wcieleniami.</p></article>
-          <article class="decision-card p-4"><h3 class="font-bold text-ink-950">2. Sprawdzasz</h3><p class="mt-2 text-sm leading-7 text-slate-700">Czytasz o przebiegu sesji, granicach oraz tym, jak przygotować się bez presji.</p></article>
-          <article class="decision-card p-4"><h3 class="font-bold text-ink-950">3. Pytasz</h3><p class="mt-2 text-sm leading-7 text-slate-700">Wysyłasz krótką wiadomość i w konsultacji ustalasz, czy ten kierunek ma dziś sens.</p></article>
+  <section class="border-b border-ink-950/10 bg-white py-8" aria-labelledby="short-answer-title">
+    <div class="container-page grid gap-5 lg:grid-cols-[0.3fr_0.7fr] lg:items-start">
+      <h2 id="short-answer-title" class="text-lg font-bold text-ink-950">Regresja LBL w skrócie</h2>
+      <p class="max-w-4xl text-base leading-8 text-slate-700">
+        Regresja LBL, czyli Life Between Lives, jest wielogodzinną sesją poświęconą doświadczeniu życia między wcieleniami.
+        Może prowadzić przez poprzednie wcielenie, moment jego zakończenia i dalszą perspektywę związaną z relacjami duszy,
+        wyborami oraz poczuciem celu. Spotkanie obejmuje przygotowanie, właściwą pracę i czas na pierwszą integrację.
+      </p>
+    </div>
+  </section>
+
+  <section class="section-space bg-[#edf7fa]" aria-labelledby="institute-session-title">
+    <div class="container-page grid gap-10 lg:grid-cols-[0.43fr_0.57fr] lg:gap-16">
+      <div>
+        <p class="text-sm font-bold text-gold-700">Oferta sesji</p>
+        <h2 id="institute-session-title" class="section-heading mt-3 text-ink-950">Sesja LBL w Instytucie Regresji</h2>
+        <p class="mt-5 lead-text">Konkretna, spokojnie poprowadzona praca z życiem między wcieleniami — bez skracania procesu do szybkiej wizualizacji.</p>
+        <div class="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+          <a class="button-primary" href="/sesja/#kontakt">Zapytaj o najbliższy termin</a>
+          <a class="button-secondary" href={siteData.contact.whatsappHref} rel="noopener noreferrer">Napisz przez WhatsApp</a>
         </div>
       </div>
+      <article class="prose-site">
+        <p>
+          Instytut Regresji prowadzi sesje regresji LBL online i stacjonarnie w Rzeszowie. Standardowe spotkanie trwa zwykle
+          od 2,5 do 3,5 godziny. Przed sesją omawiane są intencja, pytania i warunki pracy, aby uczestnik wiedział, jak wygląda
+          cały proces i mógł przygotować sobie odpowiednią ilość czasu.
+        </p>
+        <p>
+          Właściwa część sesji rozpoczyna się od stopniowego skupienia uwagi. Prowadzący pomaga przejść przez pojawiające się
+          obrazy, odczucia i znaczenia, ale nie podpowiada gotowej historii. Po zakończeniu zostaje czas na spokojny powrót,
+          zapisanie najważniejszych wątków i omówienie tego, co warto obserwować w kolejnych dniach.
+        </p>
+        <dl class="mt-6 grid gap-4 border-y border-ink-950/10 py-5 sm:grid-cols-3">
+          <div><dt class="text-xs font-bold text-slate-600">Czas</dt><dd class="mt-1 font-bold text-ink-950">{siteData.session.duration}</dd></div>
+          <div><dt class="text-xs font-bold text-slate-600">Forma</dt><dd class="mt-1 font-bold text-ink-950">{siteData.session.format}</dd></div>
+          <div><dt class="text-xs font-bold text-slate-600">Cena</dt><dd class="mt-1 font-bold text-ink-950">{siteData.session.price}</dd></div>
+        </dl>
+      </article>
     </div>
   </section>
 
   <section class="section-space bg-warm-50" id="co-oznacza-lbl" aria-labelledby="co-oznacza-lbl-title">
-    <div class="container-page grid gap-12 lg:grid-cols-[0.34fr_0.66fr]">
-      <div><div class="gold-line"></div><h2 id="co-oznacza-lbl-title" class="display-title mt-5 text-4xl text-ink-950 md:text-5xl">Co oznacza LBL?</h2></div>
+    <div class="container-page grid gap-10 lg:grid-cols-[0.34fr_0.66fr] lg:gap-16">
+      <div>
+        <h2 id="co-oznacza-lbl-title" class="section-heading text-ink-950">Co oznacza LBL?</h2>
+        <p class="mt-5 lead-text">Life Between Lives dosłownie oznacza „życie między wcieleniami”.</p>
+      </div>
       <article class="prose-site">
-        <p>LBL to skrót, który najczęściej rozwija się jako Life Between Lives, czyli „życie między wcieleniami”. W polskich rozmowach wokół regresji określenie to bywa używane szerzej: do opisu pracy z poczuciem sensu, relacjami, symbolami i doświadczeniem wewnętrznym pojawiającym się pomiędzy opowieściami o kolejnych wcieleniach.</p>
-        <p>To nie jest jednak jeden, identyczny scenariusz sesji. Jedna osoba przychodzi z pytaniem o relację lub powtarzający się życiowy motyw, inna z ciekawością wobec poprzednich wcieleń, jeszcze inna chce sprawdzić, dlaczego jakiś obraz czy emocja stale wracają. Dobra rozmowa przed sesją pomaga nazwać, czego naprawdę szukasz.</p>
-        <p>Nie trzeba przyjmować dosłownej interpretacji każdego doświadczenia. Dla części osób LBL ma wymiar duchowy, dla innych symboliczny lub refleksyjny. W obu przypadkach wartość pracy polega na tym, że daje bezpieczną przestrzeń do uważnego zobaczenia własnych pytań.</p>
+        <p>
+          W regresji LBL uwaga nie zatrzymuje się wyłącznie na historii poprzedniego wcielenia. Sesja może prowadzić dalej:
+          do doświadczenia zakończenia tamtego życia, spotkania z ważnymi postaciami, spojrzenia na relacje z szerszej perspektywy
+          i pytań o kierunek obecnego życia. To właśnie odróżnia LBL od krótszej pracy skupionej na pojedynczej scenie.
+        </p>
+        <p>
+          Nie ma jednego zestawu obrazów, który powinien pojawić się u każdej osoby. Jedni odbierają doświadczenie wizualnie,
+          inni poprzez emocje, słowa, odczucia w ciele albo nagłe zrozumienie. Prowadzenie ma pomagać utrzymać ciągłość sesji,
+          a nie dopasowywać ją do z góry przygotowanego scenariusza.
+        </p>
+        <p>
+          Dla wielu osób LBL jest doświadczeniem duchowym. Inni podchodzą do niego bardziej symbolicznie. W obu przypadkach
+          najważniejsze pozostaje to, co uczestnik rzeczywiście przeżywa i jak rozumie to po powrocie do codzienności.
+        </p>
       </article>
     </div>
   </section>
 
   <section class="section-space bg-white" aria-labelledby="newton-title">
-    <div class="container-page grid gap-12 lg:grid-cols-[0.42fr_0.58fr]">
-      <div><div class="gold-line"></div><h2 id="newton-title" class="display-title mt-5 text-4xl text-ink-950 md:text-5xl">Life Between Lives i dr Michael Newton</h2></div>
+    <div class="container-page grid gap-10 lg:grid-cols-[0.42fr_0.58fr] lg:gap-16">
+      <div>
+        <h2 id="newton-title" class="section-heading text-ink-950">Life Between Lives i dr Michael Newton</h2>
+      </div>
       <article class="prose-site">
-        <p>Dr Michael Newton jest autorem książek, które spopularyzowały opisy doświadczeń związanych z życiem między wcieleniami. Dla wielu osób to właśnie jego publikacje były pierwszym spotkaniem z językiem LBL: pytaniami o sens, relacje duszy, wybory oraz ciągłość osobistej historii.</p>
-        <p>Warto czytać te książki jako ważne źródło inspiracji i refleksji, a równocześnie zachować własne myślenie. Żadna lektura nie zastąpi rozmowy o tym, jak wygląda konkretna sesja, kto ją prowadzi i jakie zasady obowiązują w praktyce.</p>
-        <p>Na osobnej stronie zebraliśmy <a href="/life-between-lives/">kontekst Life Between Lives</a>: pojęcia, pytania przed sesją oraz odsyłacz do źródeł dla osób, które chcą pogłębić temat.</p>
+        <p>
+          Dr Michael Newton spopularyzował temat życia między wcieleniami w książkach opartych na relacjach osób pracujących
+          w głębokim transie. Opisywał doświadczenia dotyczące grup dusz, przewodnictwa, wyborów przed wcieleniem, relacji
+          i sensu kolejnych etapów życia. Jego publikacje stały się najważniejszym punktem odniesienia dla pojęcia LBL.
+        </p>
+        <p>
+          Lektura pomaga zrozumieć język tego kierunku, lecz nie mówi jeszcze, jak będzie wyglądać konkretna sesja. Dlatego
+          przed zapisem warto sprawdzić czas spotkania, sposób przygotowania, doświadczenie prowadzącego i to, co dzieje się
+          po zakończeniu pracy.
+        </p>
+        <p>
+          Więcej kontekstu znajdziesz w przewodniku <a href="/life-between-lives/">Life Between Lives i Michael Newton</a>.
+          Osoby szukające materiałów źródłowych mogą również przejść do
+          <a href={siteData.externalLinks.mni} rel="noopener noreferrer">serwisu Michael Newton Institute</a>.
+        </p>
       </article>
+    </div>
+  </section>
+
+  <section class="section-space bg-[#edf7fa]" aria-labelledby="process-title">
+    <div class="container-page">
+      <div class="max-w-3xl">
+        <h2 id="process-title" class="section-heading text-ink-950">Jak wygląda sesja regresji LBL?</h2>
+        <p class="mt-5 lead-text">Dobre przygotowanie nie polega na wymyślaniu historii. Chodzi o jasną intencję, wygodne warunki i wystarczającą ilość czasu.</p>
+      </div>
+      <ol class="mt-9 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+        <li class="border-t-2 border-gold-500 pt-5"><span class="text-sm font-bold text-gold-700">01</span><h3 class="mt-2 text-xl font-bold text-ink-950">Rozmowa i pytania</h3><p class="mt-3 text-sm leading-7 text-slate-700">Ustalasz intencję, ważne tematy, przebieg spotkania i warunki, w których będzie odbywać się sesja.</p></li>
+        <li class="border-t-2 border-gold-500 pt-5"><span class="text-sm font-bold text-gold-700">02</span><h3 class="mt-2 text-xl font-bold text-ink-950">Wejście w skupienie</h3><p class="mt-3 text-sm leading-7 text-slate-700">Prowadzenie stopniowo wycisza uwagę i pomaga pozostać w kontakcie z tym, co pojawia się wewnętrznie.</p></li>
+        <li class="border-t-2 border-gold-500 pt-5"><span class="text-sm font-bold text-gold-700">03</span><h3 class="mt-2 text-xl font-bold text-ink-950">Doświadczenie LBL</h3><p class="mt-3 text-sm leading-7 text-slate-700">Praca może objąć poprzednie wcielenie, przejście między etapami i pytania dotyczące życia między wcieleniami.</p></li>
+        <li class="border-t-2 border-gold-500 pt-5"><span class="text-sm font-bold text-gold-700">04</span><h3 class="mt-2 text-xl font-bold text-ink-950">Powrót i integracja</h3><p class="mt-3 text-sm leading-7 text-slate-700">Po sesji jest czas na omówienie wrażeń, uporządkowanie notatek i spokojne przejście do codzienności.</p></li>
+      </ol>
+      <a class="button-secondary mt-8" href="/sesja/">Przeczytaj pełny opis sesji</a>
     </div>
   </section>
 
   <section class="section-space bg-warm-50" aria-labelledby="comparison-title">
     <div class="container-page">
-      <div class="max-w-3xl"><div class="gold-line"></div><h2 id="comparison-title" class="display-title mt-5 text-4xl text-ink-950 md:text-5xl">Regresja LBL a regresja poprzednich wcieleń</h2><p class="mt-6 lead-text">Pojęcia są bliskie, ale odpowiadają na trochę inne pytania. To rozróżnienie pomaga wybrać rozmowę i formę pracy bez chaosu.</p></div>
-      <div class="mt-10 grid gap-5 md:grid-cols-2">
-        <article class="decision-card p-6"><h3 class="text-xl font-bold text-ink-950">Regresja poprzednich wcieleń (PLR)</h3><p class="mt-3 text-sm leading-7 text-slate-700">Często prowadzi do konkretnej historii, sceny, relacji albo emocji. Uczestnik może pracować z tym, co kojarzy się z innym czasem i pytać, dlaczego ten motyw jest ważny właśnie teraz.</p><a class="mt-5 inline-flex text-sm font-bold text-gold-700 hover:text-ink-950" href="/regresja-poprzednich-wcielen/">Poznaj regresję poprzednich wcieleń</a></article>
-        <article class="decision-card p-6"><h3 class="text-xl font-bold text-ink-950">Regresja między wcieleniami (LBL)</h3><p class="mt-3 text-sm leading-7 text-slate-700">Kieruje uwagę szerzej: ku znaczeniu relacji, poczuciu celu, symbolom i temu, co uczestnik opisuje jako przestrzeń pomiędzy wcieleniami. Nie musi być kolejnym etapem każdej sesji PLR.</p><a class="mt-5 inline-flex text-sm font-bold text-gold-700 hover:text-ink-950" href="/regresja-miedzy-wcieleniami/">Poznaj pracę między wcieleniami</a></article>
+      <div class="max-w-3xl">
+        <h2 id="comparison-title" class="section-heading text-ink-950">Regresja LBL a regresja poprzednich wcieleń</h2>
+        <p class="mt-5 lead-text">Obie formy korzystają z pogłębionego skupienia, ale prowadzą uwagę w innym kierunku.</p>
+      </div>
+      <div class="mt-9 grid gap-5 md:grid-cols-2">
+        <article class="decision-card p-6">
+          <h3 class="text-xl font-bold text-ink-950">Regresja poprzednich wcieleń (PLR)</h3>
+          <p class="mt-3 text-sm leading-7 text-slate-700">Koncentruje się zwykle na konkretnej historii, relacji lub wydarzeniu z poprzedniego wcielenia. Praca pozwala dokładniej zobaczyć przebieg tej opowieści, związane z nią emocje i znaczenie, jakie ma dla obecnego życia.</p>
+          <a class="mt-5 text-sm font-bold text-gold-700 hover:text-ink-950" href="/regresja-poprzednich-wcielen/">Porównaj PLR i LBL</a>
+        </article>
+        <article class="decision-card p-6">
+          <h3 class="text-xl font-bold text-ink-950">Regresja między wcieleniami (LBL)</h3>
+          <p class="mt-3 text-sm leading-7 text-slate-700">Prowadzi dalej niż pojedyncza historia. Otwiera pytania o przestrzeń między wcieleniami, relacje duszy, wybory, poczucie celu i szerszy kontekst doświadczeń, które uczestnik chce zrozumieć.</p>
+          <a class="mt-5 text-sm font-bold text-gold-700 hover:text-ink-950" href="/regresja-miedzy-wcieleniami/">Poznaj regresję między wcieleniami</a>
+        </article>
       </div>
     </div>
   </section>
 
-  <section class="section-space bg-white" aria-labelledby="brama-title">
-    <div class="container-page grid gap-12 lg:grid-cols-[0.42fr_0.58fr]">
-      <div><div class="gold-line"></div><h2 id="brama-title" class="display-title mt-5 text-4xl text-ink-950 md:text-5xl">Brama Dusz LBL</h2><p class="mt-6 lead-text">Autorska metoda regresji duchowej, w której doświadczenie ma być przeżyte i zrozumiane we własnym tempie.</p></div>
+  <section class="section-space bg-white" aria-labelledby="leader-title">
+    <div class="container-page grid gap-10 lg:grid-cols-[0.38fr_0.62fr] lg:gap-16">
+      <div>
+        <p class="text-sm font-bold text-gold-700">Prowadzenie sesji</p>
+        <h2 id="leader-title" class="section-heading mt-3 text-ink-950">Maciej Masłanka</h2>
+      </div>
       <article class="prose-site">
-        <p>Brama Dusz LBL czerpie inspirację z publikacji dr. Michaela Newtona, ale jej praktyka opiera się przede wszystkim na rozmowie, uważnym prowadzeniu i integracji. To ważne, bo nie każdy potrzebuje tego samego pytania, tempa czy interpretacji.</p>
-        <p>Sesja może obejmować relaksację, pracę z wyobraźnią, emocjami, obrazami oraz pytaniami pomocniczymi. Prowadzący nie narzuca odpowiedzi i nie ocenia doświadczenia przez intensywność wizji. Celem jest stworzenie warunków do spotkania z tym, co dla uczestnika rzeczywiście ważne.</p>
-        <p>Metodę prowadzi Maciej Masłanka. Informacje o jego przygotowaniu, stylu pracy i pierwszym kontakcie znajdziesz na stronie <a href="/o-macieju/">o prowadzącym</a>, a pełny opis procesu na stronie <a href="/brama-dusz-lbl/">Brama Dusz LBL</a>.</p>
+        <p>
+          Sesje prowadzi Maciej Masłanka, który pracuje z regresją LBL, regresją poprzednich wcieleń i regresją duchową.
+          Ukończył szkolenia z regresji oraz hipnozy regresyjnej i studiuje psychologię w Warszawie. W pracy łączy jasną
+          strukturę spotkania z uważnością na indywidualny sposób przeżywania.
+        </p>
+        <p>
+          Ta strona poleca jego pracę z perspektywy osoby, która była jego klientką. Rekomendacja opiera się na doświadczeniu
+          spokojnego prowadzenia, możliwości zadawania pytań i pozostawieniu uczestnikowi przestrzeni do własnego rozumienia sesji.
+        </p>
+        <p><a href="/o-macieju/">Poznaj doświadczenie i sposób pracy Macieja</a>.</p>
       </article>
     </div>
   </section>
 
-  <section class="section-space bg-[#edf7fa]" aria-labelledby="session-title">
-    <div class="container-page grid gap-12 lg:grid-cols-[0.38fr_0.62fr]">
-      <div><div class="gold-line"></div><h2 id="session-title" class="display-title mt-5 text-4xl text-ink-950 md:text-5xl">Jak przejść od ciekawości do sesji?</h2></div>
-      <article class="prose-site">
-        <p>Najpierw warto przeczytać opis <a href="/sesja/">przebiegu sesji</a>: ile czasu zwykle potrzeba, jak przygotować spokojne warunki oraz dlaczego integracja po spotkaniu jest równie ważna jak sama praca. Dzięki temu decyzja nie opiera się na ogólnym haśle, tylko na konkretnych informacjach.</p>
-        <p>Gdy chcesz dopytać o dostępność lub formę online, możesz rozpocząć konsultację bezpośrednio na tej stronie. Organizacyjnie wspiera ją <a href={siteData.instituteLink.url} rel="noopener noreferrer">Instytut Regresji</a>. Kontakt telefoniczny, WhatsApp i e-mail są podane na stronie sesji.</p>
-      </article>
+  <section class="border-y border-ink-950/10 bg-warm-100 py-10" aria-labelledby="brama-title">
+    <div class="container-page grid gap-6 lg:grid-cols-[0.35fr_0.65fr] lg:items-center">
+      <h2 id="brama-title" class="text-2xl font-bold text-ink-950">Osobny format: Brama Dusz LBL</h2>
+      <p class="text-base leading-8 text-slate-700">
+        Obok sesji regresji LBL Maciej rozwija Brama Dusz LBL — własny format regresji duchowej inspirowany publikacjami
+        dr. Michaela Newtona i doświadczeniem z pracy regresyjnej. Ma osobny opis, przygotowanie i sposób prowadzenia.
+        <a class="font-bold text-gold-700 hover:text-ink-950" href="/brama-dusz-lbl/">Przeczytaj o Brama Dusz LBL</a>.
+      </p>
     </div>
   </section>
 
-  <ConsultationPath
-    title="Najpierw pytanie. Dopiero potem decyzja o sesji."
-    text="Konsultacja porządkuje oczekiwania i pozwala sprawdzić, czy bliższa jest Ci regresja poprzednich wcieleń, praca między wcieleniami czy metoda Brama Dusz LBL."
-  />
+  <ConsultationPath />
 
-  <section class="section-space bg-white" aria-labelledby="topics-title"><div class="container-page"><div class="max-w-3xl"><div class="gold-line"></div><h2 id="topics-title" class="display-title mt-5 text-4xl text-ink-950 md:text-5xl">Najważniejsze tematy</h2><p class="mt-6 lead-text">Wybierz ścieżkę, która odpowiada na Twoje aktualne pytanie. Każda strona rozwija temat, zamiast powtarzać ten sam opis.</p></div><div class="mt-10 grid gap-5 md:grid-cols-3">{serviceCards.map((card, index) => <ServiceCard {...card} index={index + 1} />)}</div><div class="mt-12 grid gap-4 md:grid-cols-2">{articleCards.map((card) => <ArticleCard {...card} />)}</div></div></section>
+  <section class="section-space bg-white" aria-labelledby="topics-title">
+    <div class="container-page">
+      <div class="max-w-3xl">
+        <h2 id="topics-title" class="section-heading text-ink-950">Najważniejsze tematy</h2>
+        <p class="mt-5 lead-text">Zacznij od przebiegu sesji albo uporządkuj pojęcia związane z LBL, poprzednimi wcieleniami i pracą duchową.</p>
+      </div>
+      <div class="mt-9 grid gap-5 md:grid-cols-3">{serviceCards.map((card, index) => <ServiceCard {...card} index={index + 1} />)}</div>
+      <div class="mt-10 grid gap-4 md:grid-cols-2">{articleCards.map((card) => <ArticleCard {...card} />)}</div>
+    </div>
+  </section>
+
   <section class="section-space bg-[#edf7fa]" aria-labelledby="knowledge-title">
     <div class="container-page">
       <div class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
         <div class="max-w-3xl">
-          <div class="gold-line"></div>
-          <h2 id="knowledge-title" class="display-title mt-5 text-4xl text-ink-950 md:text-5xl">Pytania, które pojawiają się przed sesją</h2>
-          <p class="mt-6 lead-text">Pełne odpowiedzi o przygotowaniu, obrazach, wyborze prowadzącego i pracy po spotkaniu.</p>
+          <h2 id="knowledge-title" class="section-heading text-ink-950">Baza wiedzy przed sesją</h2>
+          <p class="mt-5 lead-text">Praktyczne materiały o przygotowaniu, doświadczeniu w trakcie sesji i integracji po spotkaniu.</p>
         </div>
-        <a class="button-secondary" href="/artykuly/">Zobacz całą bazę wiedzy</a>
+        <a class="button-secondary" href="/artykuly/">Zobacz wszystkie artykuły</a>
       </div>
-      <div class="mt-10 grid gap-x-8 md:grid-cols-2">
-        {knowledgeArticles.slice(0, 4).map((article) => (
-          <ArticleCard
-            title={article.title}
-            description={article.excerpt}
-            href={`/artykuly/${article.slug}/`}
-            meta={article.category}
-          />
-        ))}
+      <div class="mt-9 grid gap-x-8 md:grid-cols-2">
+        {knowledgeArticles.slice(0, 4).map((article) => <ArticleCard title={article.title} description={article.excerpt} href={`/artykuly/${article.slug}/`} meta={article.category} />)}
       </div>
     </div>
   </section>
-  <section class="section-space bg-warm-50" aria-labelledby="answers-title"><div class="container-page"><div class="max-w-3xl"><div class="gold-line"></div><h2 id="answers-title" class="display-title mt-5 text-4xl text-ink-950 md:text-5xl">Krótkie odpowiedzi na ważne pytania</h2></div><div class="mt-10 grid gap-5 md:grid-cols-2">{snippetAnswers.slice(0, 4).map((item) => <article class="decision-card p-6"><h3 class="text-xl font-bold text-ink-950">{item.question}</h3><p class="mt-3 text-sm leading-7 text-slate-700">{item.answer}</p></article>)}</div></div></section>
-  <CTASection title="Masz pytanie, którego nie ma na stronie?" text="Napisz krótko, czego szukasz. Konsultacja pozwala spokojnie omówić Twoją sytuację, formę sesji i przygotowanie, zanim podejmiesz decyzję." />
+
+  <section class="section-space bg-warm-50" aria-labelledby="answers-title">
+    <div class="container-page">
+      <h2 id="answers-title" class="section-heading max-w-3xl text-ink-950">Krótkie odpowiedzi o regresji LBL</h2>
+      <div class="mt-9 grid gap-5 md:grid-cols-2">
+        {snippetAnswers.slice(0, 4).map((item) => <article class="decision-card p-6"><h3 class="text-xl font-bold text-ink-950">{item.question}</h3><p class="mt-3 text-sm leading-7 text-slate-700">{item.answer}</p></article>)}
+      </div>
+    </div>
+  </section>
+
+  <CTASection />
   <FAQ items={homeFaq} title="Najczęstsze pytania o regresję LBL" />
 </BaseLayout>

@@ -5,24 +5,105 @@ import CTASection from '../components/CTASection.astro';
 import FAQ from '../components/FAQ.astro';
 import PageIntro from '../components/PageIntro.astro';
 import { siteData } from '../content/siteData';
-import { articleSchema, breadcrumbSchema, faqSchema, organizationSchema, personSchema, websiteSchema } from '../content/schema';
+import { articleSchema, breadcrumbSchema, faqSchema, organizationSchema, personSchema, serviceSchema, websiteSchema } from '../content/schema';
 
-const title = 'Life Between Lives i Michael Newton — przewodnik po LBL';
-const description = 'Czym jest Life Between Lives? Poznaj kontekst publikacji Michaela Newtona, różnicę między LBL a PLR i pytania przed sesją regresji duchowej.';
+const title = 'Life Between Lives — czym jest LBL według Michaela Newtona';
+const description = 'Czym jest Life Between Lives i regresja LBL? Poznaj kontekst książek Michaela Newtona, przebieg sesji między wcieleniami i najważniejsze pojęcia.';
 const breadcrumbs = [{ href: '/life-between-lives/', label: 'Life Between Lives' }];
 const pageFaq = [
-  { question: 'Czym jest Life Between Lives?', answer: 'Life Between Lives to określenie znane z publikacji dr. Michaela Newtona, dotyczące doświadczeń opisywanych jako przestrzeń między wcieleniami. W rozmowach o regresji LBL służy do opisywania pytań o sens, relacje, wybory i wewnętrzne obrazy. Każda osoba może rozumieć takie doświadczenie duchowo albo symbolicznie.' },
-  { question: 'Czy LBL i regresja poprzednich wcieleń oznaczają to samo?', answer: 'Nie. Regresja poprzednich wcieleń zwykle skupia się na konkretnej historii, scenie lub relacji. LBL kieruje uwagę szerzej, ku temu, co osoba opisuje jako życie między wcieleniami, relacje duszy i poczucie celu. Oba kierunki mogą się spotykać, ale nie muszą wystąpić w jednej sesji.' },
-  { question: 'Od czego zacząć, jeśli interesuje mnie LBL?', answer: 'Zacznij od poznania podstawowych pojęć i opisu przebiegu sesji. Następnie warto przygotować jedno lub dwa pytania, które są dla Ciebie ważne, bez presji na konkretną odpowiedź. W konsultacji możesz ustalić, czy lepsza będzie sesja regresji poprzednich wcieleń, praca między wcieleniami czy inna forma.' }
+  { question: 'Czym jest Life Between Lives?', answer: 'Life Between Lives oznacza „życie między wcieleniami”. Pojęcie opisuje doświadczenia pojawiające się w pogłębionej regresji po przejściu poza historię poprzedniego wcielenia. Mogą dotyczyć relacji duszy, grup dusz, przewodnictwa, wyborów przed kolejnym życiem i poczucia celu. Skrót LBL jest dziś powszechnie używany dla tej formy pracy.' },
+  { question: 'Jak Michael Newton opisywał LBL?', answer: 'Michael Newton opisywał powtarzające się motywy z relacji osób w głębokim transie: przejście po zakończeniu wcielenia, spotkania z bliskimi duszami, kontakt z przewodnictwem, przegląd doświadczeń i przygotowanie do kolejnego życia. Jego książki uporządkowały język, którym wiele osób do dziś opisuje życie między wcieleniami.' },
+  { question: 'Czy LBL i regresja poprzednich wcieleń oznaczają to samo?', answer: 'Nie. Regresja poprzednich wcieleń skupia się przede wszystkim na historii jednego wcielenia, jego wydarzeniach, relacjach i emocjach. Regresja LBL prowadzi dalej, ku doświadczeniu życia pomiędzy wcieleniami i szerszym pytaniom o relacje duszy, wybory oraz sens. PLR może być częścią drogi do LBL.' },
+  { question: 'Od czego zacząć, jeśli interesuje mnie sesja LBL?', answer: 'Najpierw przeczytaj opis przebiegu i przygotuj pytania, które są naprawdę ważne. Następnie skontaktuj się z Instytutem Regresji przez formularz na tej stronie, telefon lub WhatsApp. Sesje LBL odbywają się online oraz stacjonarnie w Rzeszowie i trwają zwykle od 2,5 do 3,5 godziny.' }
 ];
 ---
 
-<BaseLayout title={title} description={description} path="/life-between-lives/" schema={[websiteSchema(), organizationSchema(), personSchema(), breadcrumbSchema(breadcrumbs), articleSchema('/life-between-lives/', title, description), faqSchema(pageFaq)]}>
+<BaseLayout title={title} description={description} path="/life-between-lives/" schema={[websiteSchema(), organizationSchema(), personSchema(), serviceSchema('/life-between-lives/'), breadcrumbSchema(breadcrumbs), articleSchema('/life-between-lives/', title, description), faqSchema(pageFaq)]}>
   <Breadcrumbs items={breadcrumbs} />
-  <PageIntro title="Life Between Lives i dr Michael Newton" text="Kontekst LBL dla osób, które chcą zrozumieć, skąd wzięło się to pojęcie, co może oznaczać w praktyce i jak podejść do tematu bez chaosu." />
-  <section class="section-space bg-warm-50" aria-labelledby="meaning-title"><div class="container-page grid gap-12 lg:grid-cols-[0.38fr_0.62fr]"><div><div class="gold-line"></div><h2 id="meaning-title" class="display-title mt-5 text-4xl text-ink-950 md:text-5xl">Skąd wzięło się pojęcie LBL?</h2></div><article class="prose-site"><p>Life Between Lives jest pojęciem rozpoznawalnym dzięki książkom dr. Michaela Newtona. Autor opisywał relacje osób pracujących w głębokim skupieniu z tematami, które interpretowały jako okres pomiędzy kolejnymi wcieleniami. Dla wielu czytelników były to historie o relacjach, wyborach, poczuciu celu i większym porządku osobistego doświadczenia.</p><p>To właśnie stąd wzięła się popularność skrótu LBL. Z czasem zaczął on funkcjonować także w szerszych rozmowach o regresji duchowej, gdzie obejmuje nie tylko konkretne opisy z książek, lecz również sposób zadawania pytań o własne życie i przeżycia wewnętrzne.</p><p>Jeśli chcesz sięgnąć do źródła, aktualne informacje o publikacjach i programach związanych z tym kierunkiem są dostępne na <a href={siteData.externalLinks.mni} rel="noopener noreferrer">stronie The Michael Newton Institute</a>.</p></article></div></section>
-  <section class="section-space bg-white" aria-labelledby="reading-title"><div class="container-page grid gap-12 lg:grid-cols-[0.42fr_0.58fr]"><div><div class="gold-line"></div><h2 id="reading-title" class="display-title mt-5 text-4xl text-ink-950 md:text-5xl">Jak czytać LBL z pożytkiem dla siebie?</h2></div><article class="prose-site"><p>Najbardziej pomocne jest potraktowanie LBL nie jak katalogu gotowych odpowiedzi, ale jak języka do rozmowy o sprawach, które trudno uchwycić na co dzień. Ktoś może odnaleźć w nim duchową mapę, a ktoś inny metaforę własnych emocji, relacji lub życiowych wyborów.</p><p>W obu przypadkach warto pozostać ciekawym i spokojnym. Obraz, który pojawia się w sesji, może być bardzo poruszający, ale nie musi być instrukcją działania. Dobra integracja polega na sprawdzeniu: co to doświadczenie mówi o mnie dzisiaj, czego potrzebuję i co chcę zrobić z tym w zwykłej codzienności.</p><p>Jeśli zastanawiasz się, czy do takiej pracy potrzebna jest wiara w reinkarnację, przeczytaj osobny materiał: <a href="/artykuly/czy-trzeba-wierzyc-w-poprzednie-wcielenia/">regresja a wiara w poprzednie wcielenia</a>.</p><p>Jeżeli interesuje Cię bardziej konkretny opis pracy, przejdź do porównania <a href="/regresja-poprzednich-wcielen/">PLR i LBL</a> albo do strony o <a href="/sesja/">przebiegu sesji regresji duchowej</a>.</p></article></div></section>
-  <section class="section-space bg-warm-50" aria-labelledby="questions-title"><div class="container-page"><div class="max-w-3xl"><div class="gold-line"></div><h2 id="questions-title" class="display-title mt-5 text-4xl text-ink-950 md:text-5xl">Pytania, które warto zadać przed sesją</h2></div><div class="mt-10 grid gap-5 md:grid-cols-3"><article class="decision-card p-6"><h3 class="text-xl font-bold text-ink-950">Z czym przychodzę?</h3><p class="mt-3 text-sm leading-7 text-slate-700">Wystarczy proste pytanie o relację, powtarzający się temat, decyzję lub wewnętrzne poczucie, że coś domaga się uwagi.</p></article><article class="decision-card p-6"><h3 class="text-xl font-bold text-ink-950">Czego nie oczekuję?</h3><p class="mt-3 text-sm leading-7 text-slate-700">Warto odpuścić presję na konkretną wizję, dowód albo natychmiastową zmianę. To ułatwia uczciwy kontakt z doświadczeniem.</p></article><article class="decision-card p-6"><h3 class="text-xl font-bold text-ink-950">Jak zadbam o czas po sesji?</h3><p class="mt-3 text-sm leading-7 text-slate-700">Dobrze zostawić sobie spokojny wieczór, notatnik i przestrzeń na odpoczynek. Sens nie zawsze pojawia się w pierwszej minucie.</p></article></div></div></section>
-  <CTASection title="Chcesz przejść od lektury do konkretnej rozmowy?" text="Konsultacja pozwala opowiedzieć, co przyciąga Cię w temacie LBL i ustalić, jaka forma sesji może mieć sens. Kontakt organizuje Instytut Regresji." />
+  <PageIntro
+    title="Life Between Lives — czym jest LBL?"
+    text="Pojęcie życia między wcieleniami stało się znane dzięki publikacjom dr. Michaela Newtona. Tutaj wyjaśniamy jego znaczenie, najczęstsze etapy doświadczenia oraz to, jak wygląda sesja LBL w praktyce."
+  />
+
+  <section class="border-b border-ink-950/10 bg-[#edf7fa] py-8" aria-labelledby="definition-title">
+    <div class="container-page grid gap-5 lg:grid-cols-[0.3fr_0.7fr]">
+      <h2 id="definition-title" class="text-lg font-bold text-ink-950">Life Between Lives w skrócie</h2>
+      <p class="max-w-4xl text-base leading-8 text-slate-700">Life Between Lives to praca regresyjna poświęcona doświadczeniu pomiędzy wcieleniami. Sesja może obejmować przejście poza zakończenie poprzedniego życia, spotkania z ważnymi duszami, przegląd doświadczeń, pytania o wybory i spojrzenie na obecne życie z szerszej perspektywy.</p>
+    </div>
+  </section>
+
+  <section class="section-space bg-warm-50" aria-labelledby="origin-title">
+    <div class="container-page grid gap-10 lg:grid-cols-[0.38fr_0.62fr] lg:gap-16">
+      <div><h2 id="origin-title" class="section-heading text-ink-950">Michael Newton i źródła pojęcia LBL</h2></div>
+      <article class="prose-site">
+        <p>
+          Dr Michael Newton był hipnoterapeutą i autorem książek, w których zebrał relacje osób opisujących okres pomiędzy
+          kolejnymi wcieleniami. Najbardziej rozpoznawalne publikacje porządkowały powtarzające się motywy: odejście z ciała,
+          spotkania z bliskimi duszami, kontakt z przewodnictwem, przegląd doświadczeń i wybory związane z kolejnym życiem.
+        </p>
+        <p>
+          To właśnie jego prace upowszechniły nazwę Life Between Lives i skrót LBL. Dla wielu czytelników były pierwszym
+          spotkaniem z możliwością spojrzenia na relacje, trudne doświadczenia i poczucie celu w szerszej, duchowej perspektywie.
+          Z czasem wokół tego podejścia powstały szkolenia, organizacje i różne sposoby prowadzenia sesji.
+        </p>
+        <p>
+          Informacje o dorobku Newtona i współczesnych programach można znaleźć na
+          <a href={siteData.externalLinks.mni} rel="noopener noreferrer">michaelnewton.org</a>. Na tej stronie skupiamy się
+          przede wszystkim na tym, czego osoba zainteresowana LBL potrzebuje przed własną sesją.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section-space bg-white" aria-labelledby="themes-title">
+    <div class="container-page">
+      <div class="max-w-3xl"><h2 id="themes-title" class="section-heading text-ink-950">Jakie tematy mogą pojawić się w LBL?</h2><p class="mt-5 lead-text">Nie każda sesja układa się identycznie, ale pewne obszary powtarzają się w relacjach uczestników i literaturze.</p></div>
+      <div class="mt-9 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+        <article class="decision-card p-6"><h3 class="text-xl font-bold text-ink-950">Relacje duszy</h3><p class="mt-3 text-sm leading-7 text-slate-700">Rozpoznawanie ważnych więzi, powtarzających się spotkań i roli konkretnych osób w obecnym życiu.</p></article>
+        <article class="decision-card p-6"><h3 class="text-xl font-bold text-ink-950">Poczucie celu</h3><p class="mt-3 text-sm leading-7 text-slate-700">Pytania o talenty, wybory, kierunek życia i doświadczenia, które mają szczególne znaczenie dla uczestnika.</p></article>
+        <article class="decision-card p-6"><h3 class="text-xl font-bold text-ink-950">Przegląd doświadczeń</h3><p class="mt-3 text-sm leading-7 text-slate-700">Spojrzenie na zakończone wcielenie oraz na to, czego dana historia może uczyć z dzisiejszej perspektywy.</p></article>
+        <article class="decision-card p-6"><h3 class="text-xl font-bold text-ink-950">Wybory i kolejne etapy</h3><p class="mt-3 text-sm leading-7 text-slate-700">Doświadczenia związane z planowaniem, decyzjami i przygotowaniem do dalszej drogi duszy.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-space bg-[#edf7fa]" aria-labelledby="practice-title">
+    <div class="container-page grid gap-10 lg:grid-cols-[0.4fr_0.6fr] lg:gap-16">
+      <div>
+        <p class="text-sm font-bold text-gold-700">Od pojęcia do doświadczenia</p>
+        <h2 id="practice-title" class="section-heading mt-3 text-ink-950">Sesja LBL w praktyce</h2>
+      </div>
+      <article class="prose-site">
+        <p>
+          Sesja zaczyna się od rozmowy o pytaniach i przygotowaniu. Następnie prowadzący pomaga stopniowo pogłębić skupienie,
+          przejść przez pojawiające się doświadczenia i utrzymać kierunek pracy. Uczestnik przez cały czas może mówić,
+          odpowiadać na pytania i opisywać obrazy, emocje albo odczucia.
+        </p>
+        <p>
+          W Instytucie Regresji spotkanie trwa zwykle 2,5–3,5 godziny i jest dostępne online lub stacjonarnie w Rzeszowie.
+          Po właściwej części zostaje czas na spokojny powrót i pierwsze omówienie. Pełny opis znajdziesz na stronie
+          <a href="/sesja/">sesja regresji LBL — przebieg i przygotowanie</a>.
+        </p>
+        <p>
+          Własne doświadczenie może być bardzo obrazowe, ale nie musi. Czasem ważniejsza okazuje się emocja, pojedyncze słowo,
+          odczucie znajomości albo zrozumienie, które układa się dopiero po sesji. Nie trzeba odtwarzać scen z książek, aby
+          praca była osobista i znacząca.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section-space bg-warm-50" aria-labelledby="questions-title">
+    <div class="container-page">
+      <div class="max-w-3xl"><h2 id="questions-title" class="section-heading text-ink-950">Pytania, które warto przygotować</h2></div>
+      <div class="mt-9 grid gap-5 md:grid-cols-3">
+        <article class="border-t-2 border-gold-500 pt-5"><h3 class="text-xl font-bold text-ink-950">Co wraca w moim życiu?</h3><p class="mt-3 text-sm leading-7 text-slate-700">Relacja, wybór, lęk, talent albo powtarzający się motyw mogą być dobrym punktem wyjścia do sesji.</p></article>
+        <article class="border-t-2 border-gold-500 pt-5"><h3 class="text-xl font-bold text-ink-950">Co chcę lepiej zrozumieć?</h3><p class="mt-3 text-sm leading-7 text-slate-700">Pytania otwarte zostawiają miejsce na doświadczenie, zamiast wymuszać jedną konkretną odpowiedź.</p></article>
+        <article class="border-t-2 border-gold-500 pt-5"><h3 class="text-xl font-bold text-ink-950">Jak zadbam o czas po sesji?</h3><p class="mt-3 text-sm leading-7 text-slate-700">Spokojny wieczór, notatki i odpoczynek pomagają zachować najważniejsze wątki oraz wrócić do nich później.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <CTASection title="Interesuje Cię własna sesja Life Between Lives?" text="Zapytaj Instytut Regresji o dostępny termin, przygotowanie i formę spotkania. Sesje LBL odbywają się online oraz stacjonarnie w Rzeszowie." />
   <FAQ items={pageFaq} title="FAQ o Life Between Lives" />
 </BaseLayout>

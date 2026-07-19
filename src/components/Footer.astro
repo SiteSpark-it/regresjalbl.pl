@@ -8,8 +8,8 @@ const year = new Date().getFullYear();
     <section aria-labelledby="footer-about">
       <h2 id="footer-about" class="display-title text-3xl text-ink-950">Regresja LBL</h2>
       <p class="mt-4 max-w-xl text-sm leading-7 text-slate-700">
-        Przewodnik po regresji LBL, pracy między wcieleniami i metodzie Brama Dusz LBL. Znajdziesz tu wyjaśnienia,
-        przygotowanie do sesji oraz drogę do spokojnej konsultacji.
+        Praktyczny przewodnik po regresji LBL i Life Between Lives oraz informacje o sesjach prowadzonych przez
+        Instytut Regresji — online i stacjonarnie w Rzeszowie.
       </p>
       <p class="mt-5 text-xs leading-6 text-slate-600">Treści mają charakter edukacyjny i rozwojowy. Sesja nie zastępuje pomocy medycznej ani psychoterapii klinicznej.</p>
     </section>
@@ -38,13 +38,13 @@ const year = new Date().getFullYear();
         <li><a class="hover:text-gold-700" href={siteData.contact.phoneHref}>{siteData.contact.phone}</a></li>
         <li><a class="hover:text-gold-700" href={siteData.contact.whatsappHref} rel="noopener noreferrer">WhatsApp: {siteData.contact.phone}</a></li>
         <li><a class="hover:text-gold-700" href={siteData.contact.emailHref}>{siteData.contact.email}</a></li>
-        <li><a class="hover:text-gold-700" href={siteData.cta.url} aria-label="Przejdź do konsultacji na regresjalbl.pl">Umów konsultację</a></li>
-        <li><a class="hover:text-gold-700" href={siteData.instituteLink.url} rel="noopener noreferrer">Instytut Regresji</a></li>
+        <li><a class="hover:text-gold-700" href={siteData.cta.url}>Zapytaj o sesję LBL</a></li>
+        <li><a class="hover:text-gold-700" href={siteData.instituteLink.lblUrl} rel="noopener noreferrer">Regresja LBL w Instytucie Regresji</a></li>
         <li><a class="hover:text-gold-700" href={siteData.externalLinks.mni} rel="noopener noreferrer">The Michael Newton Institute</a></li>
       </ul>
     </section>
   </div>
   <div class="border-t border-ink-950/10 py-5">
-    <p class="container-page text-xs text-slate-600">© {year} {siteData.name}. Informacje o sesjach i konsultacjach: Instytut Regresji.</p>
+    <p class="container-page text-xs text-slate-600">© {year} {siteData.name}. Sesje regresji LBL i kontakt prowadzi Instytut Regresji.</p>
   </div>
 </footer>

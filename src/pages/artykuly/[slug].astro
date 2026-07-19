@@ -87,8 +87,7 @@ const formattedDate = new Intl.DateTimeFormat('pl-PL', {
         <section class:list={['section-space', index % 2 === 1 && 'bg-white']} aria-labelledby={`section-${index}`}>
           <div class="container-page grid gap-10 lg:grid-cols-[0.34fr_0.66fr]">
             <div>
-              <div class="gold-line"></div>
-              <h2 id={`section-${index}`} class="display-title mt-5 text-3xl text-ink-950 md:text-4xl">{section.heading}</h2>
+              <h2 id={`section-${index}`} class="display-title text-3xl leading-tight text-ink-950 md:text-4xl">{section.heading}</h2>
             </div>
             <div class="prose-site article-prose">
               {section.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
@@ -99,9 +98,9 @@ const formattedDate = new Intl.DateTimeFormat('pl-PL', {
               )}
               {index === 1 && (
                 <aside class="mt-8 rounded-md border border-gold-600/25 bg-[#edf7fa] p-5" aria-label="Konsultacja">
-                  <p class="font-bold text-ink-950">Chcesz odnieść ten temat do własnej sytuacji?</p>
+                  <p class="font-bold text-ink-950">Chcesz zapytać o własną sesję LBL?</p>
                   <p class="mt-2 text-sm leading-7 text-slate-700">
-                    W konsultacji możesz opisać swoje pytanie bez rezerwowania pełnej sesji. Przejdź do
+                    Opisz krótko swój temat i preferowaną formę spotkania. Przejdź do
                     <a href="/sesja/#kontakt"> formularza na regresjalbl.pl</a>, zadzwoń pod
                     <a href={siteData.contact.phoneHref}> {siteData.contact.phone}</a> albo skorzystaj z WhatsAppa.
                   </p>
@@ -117,9 +116,8 @@ const formattedDate = new Intl.DateTimeFormat('pl-PL', {
   <section class="section-space bg-white" aria-labelledby="related-title">
     <div class="container-page">
       <div class="max-w-3xl">
-        <div class="gold-line"></div>
-        <h2 id="related-title" class="display-title mt-5 text-4xl text-ink-950 md:text-5xl">Przeczytaj także</h2>
-        <p class="mt-5 lead-text">Materiały, które rozwijają temat bez powtarzania tej samej odpowiedzi.</p>
+        <h2 id="related-title" class="section-heading text-ink-950">Przeczytaj także</h2>
+        <p class="mt-5 lead-text">Powiązane materiały o przygotowaniu, przebiegu i integracji po sesji.</p>
       </div>
       <div class="mt-8 grid gap-x-8 md:grid-cols-2">
         {relatedArticles.map((item) => (
@@ -133,15 +131,15 @@ const formattedDate = new Intl.DateTimeFormat('pl-PL', {
       </div>
       <p class="mt-8 text-sm leading-7 text-slate-700">
         Wróć do <a class="font-bold text-gold-700 hover:text-ink-950" href="/artykuly/">pełnej bazy wiedzy</a>,
-        poznaj <a class="font-bold text-gold-700 hover:text-ink-950" href="/brama-dusz-lbl/">metodę Brama Dusz LBL</a>
-        albo sprawdź <a class="font-bold text-gold-700 hover:text-ink-950" href="/sesja/">przebieg sesji regresji duchowej</a>.
+        poznaj <a class="font-bold text-gold-700 hover:text-ink-950" href="/life-between-lives/">Life Between Lives</a>
+        albo sprawdź <a class="font-bold text-gold-700 hover:text-ink-950" href="/sesja/">przebieg sesji regresji LBL</a>.
       </p>
     </div>
   </section>
 
   <FAQ items={article.faq} title={`Pytania związane z tematem: ${article.category}`} />
   <CTASection
-    title="Nie musisz rozstrzygać wszystkiego samodzielnie"
-    text="Jeśli po lekturze masz konkretne pytanie, napisz kilka zdań. Konsultacja pomoże sprawdzić formę spotkania, przygotowanie i to, czy regresja jest odpowiednim krokiem w Twojej sytuacji."
+    title="Masz pytanie przed sesją LBL?"
+    text="Napisz kilka zdań przez formularz na tej stronie. Instytut Regresji odpowie w sprawie formy spotkania, przygotowania i najbliższych terminów."
   />
 </BaseLayout>

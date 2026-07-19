@@ -6,13 +6,19 @@
   ogImage: '/images/regresja-lbl-brama.webp',
   language: 'pl-PL',
   cta: {
-    label: 'Umów konsultację',
+    label: 'Zapytaj o sesję LBL',
     url: '/sesja/#kontakt',
     href: '/sesja/#kontakt'
   },
   instituteLink: {
     label: 'Instytut Regresji',
-    url: 'https://instytutregresji.pl/'
+    url: 'https://instytutregresji.pl/',
+    lblUrl: 'https://instytutregresji.pl/regresja-lbl.html'
+  },
+  session: {
+    duration: '2,5–3,5 godziny',
+    format: 'online lub stacjonarnie w Rzeszowie',
+    price: 'od 1110 zł'
   },
   contact: {
     phone: '+48 455 448 119',
@@ -24,7 +30,7 @@
   author: {
     name: 'Maciej Masłanka',
     description:
-      'Maciej Masłanka pracuje z regresją duchową i regresją poprzednich wcieleń, studiuje psychologię w Warszawie oraz rozwija metodę Brama Dusz LBL, inspirowaną publikacjami dr. Michaela Newtona. Na tej stronie opisujemy jego styl pracy i praktyczne informacje potrzebne przed konsultacją.'
+      'Maciej Masłanka prowadzi sesje regresji LBL, regresji poprzednich wcieleń i regresji duchowej. Studiuje psychologię w Warszawie, ukończył szkolenia z regresji oraz hipnozy regresyjnej i rozwija własny format pracy Brama Dusz LBL.'
   },
   externalLinks: {
     mni: 'https://michaelnewton.org',
@@ -39,12 +45,13 @@
   },
   navLinks: [
     { href: '/', label: 'Regresja LBL' },
+    { href: '/sesja/', label: 'Sesja LBL' },
     { href: '/life-between-lives/', label: 'Life Between Lives' },
-    { href: '/brama-dusz-lbl/', label: 'Brama Dusz LBL' },
-    { href: '/sesja/', label: 'Sesja' },
+    { href: '/regresja-miedzy-wcieleniami/', label: 'Między wcieleniami' },
     { href: '/o-macieju/', label: 'Prowadzący' },
     { href: '/artykuly/', label: 'Baza wiedzy' },
-    { href: '/faq/', label: 'FAQ' }
+    { href: '/faq/', label: 'FAQ' },
+    { href: '/brama-dusz-lbl/', label: 'Brama Dusz LBL' }
   ],
   footerLinks: [
     { href: '/', label: 'Regresja LBL' },
@@ -53,7 +60,7 @@
     { href: '/regresja-miedzy-wcieleniami/', label: 'Regresja między wcieleniami' },
     { href: '/brama-dusz-lbl/', label: 'Brama Dusz LBL' },
     { href: '/o-macieju/', label: 'Polecany prowadzący' },
-    { href: '/sesja/', label: 'Sesja i konsultacja' },
+    { href: '/sesja/', label: 'Sesja regresji LBL' },
     { href: '/faq/', label: 'FAQ' }
   ],
 };
@@ -65,44 +72,44 @@ export interface FaqItem {
 
 export const homeFaq: FaqItem[] = [
   {
-    question: 'Czym jest Brama Dusz LBL?',
+    question: 'Czym jest regresja LBL?',
     answer:
-      'Brama Dusz LBL to autorska metoda regresji duchowej inspirowana publikacjami dr. Michaela Newtona oraz praktyką regresji i hipnozy regresyjnej. Sesja służy pracy z doświadczeniem wewnętrznym: obrazami, emocjami, symbolami i pytaniami o sens. Jej przebieg jest zawsze poprzedzony rozmową o intencji oraz granicach pracy.'
+      'Regresja LBL, czyli Life Between Lives, jest pogłębioną sesją poświęconą doświadczeniu życia między wcieleniami. Praca może obejmować poprzednie wcielenie, przejście poza jego zakończenie, relacje duszy, poczucie celu i pytania przygotowane przed spotkaniem. W Instytucie Regresji sesja obejmuje przygotowanie, właściwą pracę oraz spokojne omówienie doświadczenia.'
   },
   {
     question: 'Czy LBL jest tym samym co PLR?',
     answer:
-      'Nie do końca. PLR zwykle oznacza regresję poprzednich wcieleń, czyli pracę z obrazem konkretnej historii lub doświadczenia. LBL kieruje uwagę ku przestrzeni między wcieleniami, sensowi relacji, symbolom i szerszej perspektywie duchowej.'
+      'Nie. PLR zwykle oznacza regresję poprzednich wcieleń, czyli pracę z obrazem konkretnej historii, relacji lub doświadczenia. LBL prowadzi dalej, ku przestrzeni między wcieleniami, relacjom duszy, wyborom i szerszej perspektywie duchowej. W pełnej sesji LBL poprzednie wcielenie może być jednym z etapów drogi.'
   },
   {
     question: 'Czy muszę wierzyć w poprzednie wcielenia?',
     answer:
-      'Nie. Możesz traktować pojawiające się obrazy duchowo, symbolicznie, intuicyjnie albo po prostu jako materiał do refleksji. Nie trzeba przyjmować jednej interpretacji. Ważniejsze jest spokojne sprawdzenie, co dane doświadczenie mówi o Tobie i Twoim sposobie przeżywania świata.'
+      'Nie. Możesz traktować pojawiające się obrazy duchowo, symbolicznie, intuicyjnie albo jako materiał do refleksji. Nie trzeba przyjmować jednej interpretacji przed spotkaniem. Podczas sesji pracujesz z tym, co rzeczywiście się pojawia, a po niej samodzielnie oceniasz znaczenie doświadczenia dla obecnego życia.'
   },
   {
     question: 'Czy sesja może odbyć się online?',
     answer:
-      'Tak, część sesji rozwojowych może odbywać się online, jeśli uczestnik ma spokojne miejsce, stabilne połączenie i czuje się bezpiecznie. Forma sesji powinna być ustalona indywidualnie, bez presji i bez obietnic konkretnego efektu.'
+      'Tak. Sesje regresji LBL są dostępne online oraz stacjonarnie w Rzeszowie. Przy spotkaniu online potrzebne są prywatność, stabilne połączenie, wygodne miejsce i kilka godzin bez przerw. Przed terminem prowadzący omawia warunki techniczne oraz sposób przygotowania, aby w dniu sesji można było skupić się na samej pracy.'
   },
   {
     question: 'Na co zwrócić uwagę przy wyborze prowadzącego?',
     answer:
-      'Sprawdź doświadczenie, ukończone szkolenia, sposób kwalifikacji, warunki sesji i to, czy możesz swobodnie zadawać pytania. Dobry prowadzący jasno opisuje przebieg pracy, nie gwarantuje konkretnego efektu i potrafi powiedzieć, kiedy lepiej wybrać inną formę wsparcia.'
+      'Sprawdź doświadczenie, ukończone szkolenia, sposób przygotowania, czas sesji i to, czy możesz swobodnie zadawać pytania. Dobry prowadzący jasno opisuje przebieg pracy, nie gwarantuje konkretnego efektu i potrafi powiedzieć, kiedy lepiej wybrać inną formę wsparcia. Ważne są również zasady kontaktu oraz integracji po spotkaniu.'
   },
   {
     question: 'Ile trwa sesja regresji?',
     answer:
-      'Sesja regresji duchowej zwykle trwa dłużej niż krótka konsultacja. Obejmuje rozmowę wstępną, właściwą pracę i czas na spokojne domknięcie. Dokładny czas zależy od formy spotkania, gotowości uczestnika i zasad prowadzącego.'
+      'Standardowa sesja regresji LBL trwa zwykle od 2,5 do 3,5 godziny. Ten czas obejmuje krótkie przygotowanie, prowadzenie przez właściwe doświadczenie oraz spokojny powrót i pierwsze omówienie. Warto zostawić sobie również wolniejszą część dnia po spotkaniu, bez ważnych obowiązków i pośpiechu.'
   },
   {
     question: 'Czy to jest terapia albo diagnoza?',
     answer:
-      'Nie. Opisywana praca ma charakter rozwojowy i duchowy. Nie zastępuje diagnozy, pomocy medycznej, interwencji kryzysowej ani psychoterapii klinicznej. Jeżeli ktoś jest w trudnym stanie psychicznym, powinien skorzystać z odpowiedniego wsparcia specjalistycznego.'
+      'Nie. Opisywana praca ma charakter rozwojowy i duchowy. Nie służy diagnozowaniu chorób i nie zastępuje pomocy medycznej, interwencji kryzysowej ani psychoterapii klinicznej. Jeżeli ktoś jest w ostrym kryzysie lub potrzebuje leczenia, właściwym pierwszym krokiem jest kontakt z odpowiednim specjalistą, a nie sesja regresji.'
   },
   {
     question: 'Co, jeśli nic nie zobaczę?',
     answer:
-      'To możliwe i nie oznacza porażki. Nie każdy doświadcza sesji przez wyraźne obrazy. Czasem pojawiają się odczucia, skojarzenia, emocje, cisza albo pojedyncze symbole. Dobra sesja nie wymusza przeżyć i nie ocenia sposobu, w jaki ktoś doświadcza.'
+      'To możliwe i nie oznacza porażki. Nie każdy doświadcza sesji przez wyraźne obrazy. Czasem pojawiają się odczucia, skojarzenia, emocje, słowa, cisza albo pojedyncze symbole. Prowadzący może pracować z każdym z tych sposobów odbioru. Sesja nie powinna wymuszać wizji ani oceniać intensywności doświadczenia.'
   }
 ];
 
@@ -140,7 +147,7 @@ export const snippetAnswers = [
   {
     question: 'Ile trwa sesja regresji?',
     answer:
-      'Sesja regresji zwykle trwa dłużej niż krótka konsultacja, ponieważ obejmuje rozmowę, wejście w skupienie, właściwą pracę i spokojne domknięcie. Dokładny czas zależy od formy spotkania oraz gotowości uczestnika. Warto zarezerwować dzień bez pośpiechu.'
+      'Sesja regresji LBL trwa zwykle od 2,5 do 3,5 godziny. Obejmuje przygotowanie, wejście w stan skupienia, właściwą pracę i spokojne domknięcie. Warto zarezerwować sobie również czas po spotkaniu, aby bez pośpiechu zapisać wrażenia i odpocząć.'
   }
 ];
 
@@ -183,7 +190,7 @@ export const peopleAlsoAsk = [
   {
     question: 'Ile kosztuje sesja regresji duchowej?',
     answer:
-      'Cena sesji zależy od formy spotkania, czasu pracy, przygotowania i zasad danego prowadzącego. Najuczciwiej ustalić aktualne informacje w kontakcie przed decyzją. Sama cena nie powinna być jedynym kryterium; ważne są też granice, język i doświadczenie prowadzącego.'
+      'Cena sesji regresji LBL w Instytucie Regresji zaczyna się od 1110 zł. Ostateczny wariant zależy od wybranej formy i zakresu spotkania, dlatego aktualną kwotę oraz dostępność terminu najlepiej potwierdzić przed rezerwacją. W pierwszej wiadomości możesz od razu zapytać o koszt, formę online lub spotkanie w Rzeszowie.'
   },
   {
     question: 'Jak przygotować pytania do sesji regresji?',
@@ -224,16 +231,16 @@ export const peopleAlsoAsk = [
 
 export const serviceCards = [
   {
-    title: 'Life Between Lives',
+    title: 'Sesja regresji LBL',
     description:
-      'Kontekst LBL, publikacje dr. Michaela Newtona i praktyczne wyjaśnienie, jak czytać ten kierunek pracy.',
-    href: '/life-between-lives/'
+      'Przebieg, czas, przygotowanie, spotkanie online lub w Rzeszowie oraz bezpośredni kontakt w sprawie terminu.',
+    href: '/sesja/'
   },
   {
-    title: 'Regresja między wcieleniami',
+    title: 'Life Between Lives',
     description:
-      'Spokojne omówienie pracy z doświadczeniem przestrzeni między wcieleniami, symbolami, sensem i integracją.',
-    href: '/regresja-miedzy-wcieleniami/'
+      'Znaczenie LBL, publikacje dr. Michaela Newtona i praktyczne wyjaśnienie pracy z życiem między wcieleniami.',
+    href: '/life-between-lives/'
   },
   {
     title: 'Brama Dusz LBL',
@@ -259,7 +266,7 @@ export const articleCards = [
     meta: 'porównanie'
   },
   {
-    title: 'Brama Dusz LBL jako metoda autorska',
+    title: 'Brama Dusz LBL — osobny format pracy',
     description:
       'Jak wygląda autorska metoda pracy: przygotowanie, prowadzenie sesji i spokojna integracja doświadczenia.',
     href: '/brama-dusz-lbl/',

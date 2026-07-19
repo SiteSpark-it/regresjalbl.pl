@@ -8,13 +8,13 @@ import ConsultationPath from '../components/ConsultationPath.astro';
 import { siteData } from '../content/siteData';
 import { articleSchema, breadcrumbSchema, faqSchema, organizationSchema, personSchema, websiteSchema } from '../content/schema';
 
-const title = 'Maciej Masłanka — regresja duchowa i Brama Dusz LBL';
-const description = 'Poznaj styl pracy Macieja Masłanki: regresja duchowa, regresja poprzednich wcieleń, przygotowanie do sesji i konsultacja w Instytucie Regresji.';
+const title = 'Maciej Masłanka — sesje regresji LBL i regresja duchowa';
+const description = 'Maciej Masłanka prowadzi sesje regresji LBL, regresji poprzednich wcieleń i regresji duchowej. Poznaj jego przygotowanie, styl pracy i kontakt.';
 const breadcrumbs = [{ href: '/o-macieju/', label: 'Maciej Masłanka' }];
 const pageFaq = [
   {
     question: 'Z czym pracuje Maciej Masłanka?',
-    answer: 'Maciej pracuje z regresją duchową, regresją poprzednich wcieleń oraz autorską metodą Brama Dusz LBL. W centrum spotkania są pytania uczestnika, obrazy i emocje pojawiające się w stanie skupienia, a także spokojne omówienie doświadczenia po sesji. Praca ma charakter rozwojowy i duchowy.'
+    answer: 'Maciej prowadzi sesje regresji LBL, regresji poprzednich wcieleń i regresji duchowej. Pracuje z pytaniami uczestnika, obrazami, emocjami i odczuciami pojawiającymi się w pogłębionym skupieniu. Rozwija również osobny format Brama Dusz LBL. Każde spotkanie obejmuje przygotowanie, właściwą pracę i czas na omówienie doświadczenia.'
   },
   {
     question: 'Jakie przygotowanie ma prowadzący?',
@@ -22,20 +22,20 @@ const pageFaq = [
   },
   {
     question: 'Gdzie umówić konsultację?',
-    answer: 'Konsultację można rozpocząć na tej stronie przez formularz kontaktowy. Organizacyjnie kontakt oraz ustalenie dostępności prowadzi Instytut Regresji: telefonicznie, przez WhatsApp lub e-mail. Krótka rozmowa pomaga sprawdzić formę spotkania, przygotowanie i najbliższy możliwy termin.'
+    answer: 'Zapytanie o sesję można wysłać przez formularz na tej stronie. Kontakt i rezerwację prowadzi Instytut Regresji: telefonicznie, przez WhatsApp lub e-mail. W pierwszej wiadomości wystarczy podać, czy interesuje Cię sesja LBL online czy w Rzeszowie, opisać temat w kilku zdaniach i wskazać wygodny sposób odpowiedzi.'
   }
 ];
 ---
 
 <BaseLayout title={title} description={description} path="/o-macieju/" schema={[websiteSchema(), organizationSchema(), personSchema(), breadcrumbSchema(breadcrumbs), articleSchema('/o-macieju/', title, description), faqSchema(pageFaq)]}>
   <Breadcrumbs items={breadcrumbs} />
-  <PageIntro title="Maciej Masłanka — prowadzący regresję duchową" text="Konkretne informacje o sposobie pracy, przygotowaniu i tym, czego można oczekiwać przed pierwszą rozmową. Bez budowania legendy: liczą się uważność, jasne granice i spokojne prowadzenie." />
+  <PageIntro title="Maciej Masłanka — prowadzący sesje regresji LBL" text="Prowadzi regresję między wcieleniami, regresję poprzednich wcieleń i sesje duchowe. Tutaj znajdziesz informacje o jego przygotowaniu, sposobie pracy i doświadczeniu osoby, która korzystała z prowadzonej przez niego sesji." />
 
   <section class="section-space bg-warm-50" aria-labelledby="approach-title">
     <div class="container-page grid gap-12 lg:grid-cols-[0.38fr_0.62fr]">
-      <div><div class="gold-line"></div><h2 id="approach-title" class="display-title mt-5 text-4xl text-ink-950 md:text-5xl">Styl pracy, który daje przestrzeń</h2></div>
+      <div><h2 id="approach-title" class="section-heading text-ink-950">Jak prowadzi sesje LBL?</h2></div>
       <article class="prose-site">
-        <p>Maciej Masłanka pracuje z osobami, które chcą przyjrzeć się ważnym dla siebie pytaniom poprzez regresję duchową, regresję poprzednich wcieleń lub pracę między wcieleniami. Nie zaczyna od gotowej odpowiedzi. Najpierw jest rozmowa o intencji, o tym, co dziś jest ważne, oraz o granicach, które dają poczucie bezpieczeństwa.</p>
+        <p>Maciej Masłanka pracuje z osobami, które chcą przyjrzeć się ważnym pytaniom poprzez regresję LBL, regresję poprzednich wcieleń lub regresję duchową. Sesję rozpoczyna rozmowa o intencji, pytaniach i warunkach spotkania. Dzięki temu właściwa praca ma wyraźny kierunek, ale nie jest zamknięta w sztywnym scenariuszu.</p>
         <p>W czasie sesji nie ma obowiązku „zobaczenia” spektakularnej historii. Doświadczenie może przyjść przez obrazy, emocje, odczucia w ciele, pojedyncze słowa albo ciszę. Prowadzenie ma pomagać uczestnikowi zostać przy tym, co rzeczywiście się pojawia, a nie dopasować przeżycie do oczekiwanego scenariusza.</p>
         <p>Po sesji jest miejsce na omówienie. To ważna część pracy, bo pozwala oddzielić osobiste znaczenie doświadczenia od pochopnych wniosków i zobaczyć, co warto zabrać do codziennego życia.</p>
       </article>
@@ -44,7 +44,7 @@ const pageFaq = [
 
   <section class="section-space bg-white" aria-labelledby="experience-title">
     <div class="container-page grid gap-10 md:grid-cols-3">
-      <div class="md:col-span-3 max-w-3xl"><div class="gold-line"></div><h2 id="experience-title" class="display-title mt-5 text-4xl text-ink-950 md:text-5xl">Doświadczenie i rozwój warsztatu</h2></div>
+      <div class="md:col-span-3 max-w-3xl"><h2 id="experience-title" class="section-heading text-ink-950">Przygotowanie i rozwój warsztatu</h2></div>
       <article class="decision-card p-6"><h3 class="text-xl font-bold text-ink-950">Regresja i hipnoza regresyjna</h3><p class="mt-3 text-sm leading-7 text-slate-700">Ukończone szkolenia stanowią podstawę praktyki. W pracy liczy się jednak również tempo dostosowane do osoby, a nie schemat powtarzany mechanicznie.</p></article>
       <article class="decision-card p-6"><h3 class="text-xl font-bold text-ink-950">Psychologia jako perspektywa</h3><p class="mt-3 text-sm leading-7 text-slate-700">Studia psychologiczne w Warszawie wspierają bardziej uważne rozumienie emocji, granic oraz procesu integracji po intensywnym doświadczeniu.</p></article>
       <article class="decision-card p-6"><h3 class="text-xl font-bold text-ink-950">Dalszy rozwój</h3><p class="mt-3 text-sm leading-7 text-slate-700">Warsztat jest rozwijany dalej. Uczciwa konsultacja obejmuje też odpowiedź na pytanie, czy ten rodzaj pracy jest właściwy w Twojej sytuacji.</p></article>
@@ -54,12 +54,11 @@ const pageFaq = [
   <section class="section-space bg-[#edf7fa]" aria-labelledby="recommendation-title">
     <div class="container-page grid gap-12 lg:grid-cols-[0.38fr_0.62fr]">
       <div>
-        <div class="gold-line"></div>
-        <h2 id="recommendation-title" class="display-title mt-5 text-4xl text-ink-950 md:text-5xl">Dlaczego ta strona poleca Macieja?</h2>
+        <h2 id="recommendation-title" class="section-heading text-ink-950">Dlaczego ta strona poleca Macieja?</h2>
       </div>
       <article class="prose-site">
-        <p>Regresjalbl.pl powstała z perspektywy osoby, która korzystała z sesji prowadzonej przez Macieja Masłankę. Powodem rekomendacji nie jest obietnica konkretnego efektu, lecz sposób pracy: spokojne tempo, brak presji na spektakularne obrazy i pozostawienie uczestnikowi prawa do własnej interpretacji.</p>
-        <p>To osobista rekomendacja, nie uniwersalna gwarancja. Dlatego strona pokazuje również pytania, które warto zadać przed wyborem prowadzącego, opisuje granice pracy i umożliwia rozpoczęcie od konsultacji zamiast natychmiastowego zapisu na pełną sesję.</p>
+        <p>Regresjalbl.pl powstała z perspektywy osoby, która korzystała z sesji prowadzonej przez Macieja Masłankę. W tym doświadczeniu ważne były spokojne tempo, jasna komunikacja, brak presji na tworzenie spektakularnych obrazów oraz przestrzeń do samodzielnego rozumienia tego, co pojawiło się w sesji.</p>
+        <p>Dlatego strona pokazuje nie tylko samą ofertę, lecz także przygotowanie, przebieg i pytania, które warto zadać prowadzącemu. Rekomendacja ma pomóc podjąć własną decyzję na podstawie konkretów, a nie wizerunku osoby, która zna wszystkie odpowiedzi.</p>
         <p>Jeśli chcesz ocenić ten wybór samodzielnie, przeczytaj przewodnik <a href="/artykuly/jak-wybrac-prowadzacego-regresje/">jak wybrać prowadzącego regresję</a> i zadaj własne pytania podczas pierwszego kontaktu.</p>
       </article>
     </div>
@@ -67,14 +66,14 @@ const pageFaq = [
 
   <section class="section-space bg-warm-50" aria-labelledby="consultation-path-title">
     <div class="container-page grid gap-12 lg:grid-cols-[0.42fr_0.58fr]">
-      <div><div class="gold-line"></div><h2 id="consultation-path-title" class="display-title mt-5 text-4xl text-ink-950 md:text-5xl">Jak wygląda pierwszy kontakt?</h2></div>
+      <div><h2 id="consultation-path-title" class="section-heading text-ink-950">Jak wygląda pierwszy kontakt?</h2></div>
       <article class="prose-site">
         <p>Nie trzeba od razu opowiadać całej historii. Wystarczy kilka zdań o tym, czego szukasz: pracy z relacją, powtarzającym się tematem, pytaniem o sens albo zwykłej potrzebie sprawdzenia, czy regresja jest dla Ciebie.</p>
-        <p>Po wysłaniu formularza organizacją konsultacji zajmuje się <a href={siteData.instituteLink.url} rel="noopener noreferrer">Instytut Regresji</a>. Możesz też zadzwonić pod <a href={siteData.contact.phoneHref}>{siteData.contact.phone}</a> lub napisać na <a href={siteData.contact.emailHref}>{siteData.contact.email}</a>. To rozmowa informacyjna, bez zobowiązania do pełnej sesji.</p>
+        <p>Po wysłaniu formularza kontakt i rezerwację prowadzi <a href={siteData.instituteLink.lblUrl} rel="noopener noreferrer">Instytut Regresji</a>. Możesz też zadzwonić pod <a href={siteData.contact.phoneHref}>{siteData.contact.phone}</a>, napisać przez WhatsApp albo wysłać wiadomość na <a href={siteData.contact.emailHref}>{siteData.contact.email}</a>. Otrzymasz informacje o formie, przygotowaniu i dostępnych terminach.</p>
       </article>
     </div>
   </section>
-  <ConsultationPath title="Najprościej zacząć od krótkiej rozmowy" />
-  <CTASection title="Sprawdź w rozmowie, czy ten sposób pracy jest dla Ciebie" text="Napisz krótko, z jakim pytaniem przychodzisz. Konsultacja pozwala omówić formę spotkania, przygotowanie oraz dostępność terminu, bez presji na decyzję." />
+  <ConsultationPath title="Jak umówić sesję z Maciejem?" />
+  <CTASection title="Zapytaj o sesję regresji LBL" text="Napisz, czy interesuje Cię spotkanie online czy w Rzeszowie i z jakim pytaniem przychodzisz. Instytut Regresji odpowie w sprawie przygotowania oraz dostępnych terminów." />
   <FAQ items={pageFaq} title="FAQ o prowadzącym i konsultacji" />
 </BaseLayout>

@@ -10,12 +10,12 @@ import LogoMark from './LogoMark.astro';
   >
     Przejdź do treści
   </a>
-  <div class="container-page flex min-h-16 items-center justify-between gap-4 py-3">
+  <div class="container-page flex min-h-[4.25rem] items-center justify-between gap-3 py-2">
     <a href="/" class="flex items-center gap-3 no-underline" aria-label="Regresja LBL - strona główna">
-      <LogoMark class="h-11 w-11 shrink-0 drop-shadow-sm" title="Regresja LBL" />
+      <LogoMark class="h-10 w-10 shrink-0 drop-shadow-sm" title="Regresja LBL" />
       <span class="leading-tight">
         <span class="block text-sm font-bold uppercase tracking-[0.14em] text-ink-950">Regresja LBL</span>
-        <span class="block text-xs text-slate-600">edukacja i konsultacja</span>
+        <span class="block text-xs text-slate-600">Life Between Lives</span>
       </span>
     </a>
 
@@ -24,7 +24,7 @@ import LogoMark from './LogoMark.astro';
     </nav>
 
     <div class="hidden items-center gap-3 xl:flex">
-      <a class="button-primary" href={siteData.cta.url} aria-label="Przejdź do konsultacji na regresjalbl.pl">Umów konsultację</a>
+      <a class="button-primary" href={siteData.cta.url}>Zapytaj o sesję LBL</a>
     </div>
 
     <details class="group relative xl:hidden">
@@ -34,7 +34,7 @@ import LogoMark from './LogoMark.astro';
       <nav class="absolute right-0 mt-3 w-72 rounded-md border border-ink-950/10 bg-mist p-3 shadow-soft" aria-label="Menu mobilne">
         <div class="grid gap-1">
           {siteData.navLinks.map((link) => <a class="rounded-md px-3 py-3 text-sm text-ink-900 hover:bg-gold-500/12" href={link.href}>{link.label}</a>)}
-          <a class="button-primary mt-2" href={siteData.cta.url} aria-label="Przejdź do konsultacji na regresjalbl.pl">Umów konsultację</a>
+          <a class="button-primary mt-2" href={siteData.cta.url}>Zapytaj o sesję LBL</a>
           <a class="button-secondary mt-1" href={siteData.contact.whatsappHref} rel="noopener noreferrer">WhatsApp</a>
         </div>
       </nav>

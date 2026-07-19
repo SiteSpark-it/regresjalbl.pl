@@ -78,7 +78,7 @@ export const knowledgeArticles: KnowledgeArticle[] = [
         paragraphs: [
           'Brak gotowego pytania nie jest przeszkodą. Czasem osoba wie tylko, że pewien temat wraca, że czuje niewyjaśnione napięcie albo że ciekawi ją praca między wcieleniami. To wystarczy, żeby rozpocząć rozmowę. Prowadzący może pomóc oddzielić sedno od wielu pobocznych wątków.',
           'Przed konsultacją możesz zapisać trzy krótkie zdania: co obecnie zajmuje najwięcej uwagi, co już próbowałeś zrozumieć i czego nie chcesz podczas sesji przekraczać. Granice są równie ważne jak cel. Ułatwiają spokojne prowadzenie i dają jasność obu stronom.',
-          'Jeżeli chcesz zobaczyć cały proces, przeczytaj również opis tego, jak wygląda przygotowanie i przebieg sesji regresji duchowej. Dopiero potem zdecyduj, czy chcesz omówić własne pytania w konsultacji.'
+          'Jeżeli chcesz zobaczyć cały proces, przeczytaj opis przygotowania i przebiegu sesji regresji LBL. Znajdziesz tam również czas spotkania, formę online i stacjonarną oraz formularz do kontaktu w sprawie terminu.'
         ]
       }
     ],
@@ -460,7 +460,7 @@ export const knowledgeArticles: KnowledgeArticle[] = [
         heading: 'Dlaczego na tej stronie polecany jest Maciej Masłanka?',
         paragraphs: [
           'Regresjalbl.pl ma charakter edukacyjny i rekomendacyjny. Opisuje sposób pracy Macieja Masłanki z perspektywy osoby, która uczestniczyła w sesji i uznała spokojne prowadzenie, brak presji na obrazy oraz miejsce na późniejsze omówienie za warte polecenia.',
-          'Na stronie o prowadzącym znajdziesz informacje o jego pracy z regresją duchową i poprzednimi wcieleniami, ukończonych szkoleniach z regresji i hipnozy regresyjnej, studiach psychologicznych w Warszawie oraz rozwijaniu metody Brama Dusz LBL inspirowanej publikacjami dr. Michaela Newtona.',
+          'Na stronie o prowadzącym znajdziesz informacje o jego pracy z regresją LBL, regresją poprzednich wcieleń i regresją duchową, ukończonych szkoleniach z regresji i hipnozy regresyjnej oraz studiach psychologicznych w Warszawie. Osobno opisany jest również rozwijany przez niego format Brama Dusz LBL.',
           'Ostateczna decyzja nadal należy do Ciebie. Dlatego pierwszym krokiem jest konsultacja: możliwość zadania własnych pytań i sprawdzenia, czy sposób rozmowy daje Ci wystarczającą jasność.'
         ]
       }

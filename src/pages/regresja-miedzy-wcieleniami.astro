@@ -1,30 +1,30 @@
-﻿---
+---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import CTASection from '../components/CTASection.astro';
 import FAQ from '../components/FAQ.astro';
 import PageIntro from '../components/PageIntro.astro';
-import { articleSchema, breadcrumbSchema, faqSchema, organizationSchema, personSchema, websiteSchema } from '../content/schema';
+import { articleSchema, breadcrumbSchema, faqSchema, organizationSchema, personSchema, serviceSchema, websiteSchema } from '../content/schema';
 
-const title = 'Regresja między wcieleniami — LBL, sens i integracja';
-const description =
-  'Regresja między wcieleniami wyjaśniona spokojnie: czym różni się od PLR, jak rozumieć symbole i czym jest integracja duchowa.';
+const title = 'Regresja między wcieleniami LBL — jak wygląda sesja';
+const description = 'Regresja między wcieleniami LBL: czym jest życie pomiędzy wcieleniami, jakie tematy pojawiają się w sesji, jak wygląda przebieg i integracja.';
 const breadcrumbs = [{ href: '/regresja-miedzy-wcieleniami/', label: 'Regresja między wcieleniami' }];
 const pageFaq = [
   {
     question: 'Czym jest regresja między wcieleniami?',
-    answer:
-      'Regresja między wcieleniami to praca z doświadczeniem opisywanym jako przestrzeń pomiędzy wcieleniami. Może obejmować symbole, poczucie celu, relacje duszy i integrację znaczeń. Nie wymaga traktowania każdego obrazu jako literalnego faktu.'
+    answer: 'Regresja między wcieleniami to sesja LBL poświęcona doświadczeniu życia pomiędzy wcieleniami. Może prowadzić przez zakończenie poprzedniego życia do pytań o relacje duszy, przewodnictwo, wybory i poczucie celu. Praca odbywa się w stanie pogłębionego skupienia, przy stałym kontakcie słownym z prowadzącym.'
   },
   {
     question: 'Czy regresja między wcieleniami jest tym samym co LBL?',
-    answer:
-      'W praktyce te pojęcia bywają używane blisko siebie, ale warto zachować ostrożność. Life Between Lives odnosi się do konkretnego kontekstu publikacji i źródeł, a LBL bywa używane jako skrót opisowy. Regresja między wcieleniami może też oznaczać szerszy obszar pracy.'
+    answer: 'Tak. W praktyce określenia „regresja między wcieleniami”, „regresja LBL” i „Life Between Lives” opisują ten sam główny kierunek pracy: doświadczenie życia pomiędzy wcieleniami. Poszczególni prowadzący mogą różnić się sposobem przygotowania, prowadzenia i integracji, dlatego przed zapisem warto przeczytać konkretny opis sesji.'
   },
   {
-    question: 'Czy taka sesja jest dla każdego?',
-    answer:
-      'Nie zawsze. Sesja wymaga stabilności, gotowości do spokojnej pracy i uczciwej rozmowy o oczekiwaniach. Jeżeli ktoś jest w ostrym kryzysie, potrzebuje najpierw odpowiedniego wsparcia medycznego lub psychoterapeutycznego.'
+    question: 'Czy najpierw trzeba przejść regresję poprzedniego wcielenia?',
+    answer: 'W wielu sesjach LBL droga prowadzi przez doświadczenie poprzedniego wcielenia i jego zakończenie, ponieważ pomaga to zachować ciągłość opowieści. Nie oznacza to jednak, że każda osoba musi wcześniej rezerwować osobną sesję PLR. Dokładny przebieg i przygotowanie najlepiej omówić z prowadzącym przed terminem.'
+  },
+  {
+    question: 'Jak długo trwa regresja między wcieleniami?',
+    answer: 'Sesja regresji między wcieleniami w Instytucie Regresji trwa zwykle od 2,5 do 3,5 godziny. Czas obejmuje przygotowanie, pogłębienie skupienia, właściwą pracę LBL oraz spokojny powrót i omówienie. Spotkania są dostępne online i stacjonarnie w Rzeszowie.'
   }
 ];
 ---
@@ -33,60 +33,94 @@ const pageFaq = [
   title={title}
   description={description}
   path="/regresja-miedzy-wcieleniami/"
-  schema={[websiteSchema(), organizationSchema(), personSchema(), breadcrumbSchema(breadcrumbs), articleSchema('/regresja-miedzy-wcieleniami/', title, description), faqSchema(pageFaq)]}
+  schema={[websiteSchema(), organizationSchema(), personSchema(), serviceSchema('/regresja-miedzy-wcieleniami/'), breadcrumbSchema(breadcrumbs), articleSchema('/regresja-miedzy-wcieleniami/', title, description), faqSchema(pageFaq)]}
 >
   <Breadcrumbs items={breadcrumbs} />
   <PageIntro
-    title="Regresja między wcieleniami — LBL, sens i integracja"
-    text="Przewodnik po pracy z przestrzenią między wcieleniami: znaczenie symboli, różnice względem PLR oraz spokojna integracja po sesji."
+    title="Regresja między wcieleniami LBL"
+    text="Sesja prowadzi poza historię jednego życia, ku doświadczeniu przestrzeni między wcieleniami, relacjom duszy, wyborom i pytaniom o kierunek obecnego życia."
   />
-  <section class="section-space bg-warm-50">
-    <div class="container-page grid gap-12 lg:grid-cols-[0.4fr_0.6fr]">
-      <h2 class="display-title text-4xl text-ink-950">Między wcieleniami, czyli gdzie?</h2>
+
+  <section class="border-b border-ink-950/10 bg-[#edf7fa] py-8" aria-labelledby="answer-title">
+    <div class="container-page grid gap-5 lg:grid-cols-[0.3fr_0.7fr]">
+      <h2 id="answer-title" class="text-lg font-bold text-ink-950">Najkrótsza odpowiedź</h2>
+      <p class="max-w-4xl text-base leading-8 text-slate-700">Regresja między wcieleniami i LBL oznaczają pracę z doświadczeniem Life Between Lives. W sesji uwaga przechodzi od poprzedniego wcielenia do przestrzeni pomiędzy życiami, gdzie mogą pojawić się pytania o relacje, wybory, sens doświadczeń i kierunek dalszej drogi.</p>
+    </div>
+  </section>
+
+  <section class="section-space bg-warm-50" aria-labelledby="meaning-title">
+    <div class="container-page grid gap-10 lg:grid-cols-[0.4fr_0.6fr] lg:gap-16">
+      <h2 id="meaning-title" class="section-heading text-ink-950">Co oznacza „między wcieleniami”?</h2>
       <article class="prose-site">
         <p>
-          W języku regresji duchowej „między wcieleniami” oznacza przestrzeń, w której uczestnik może doświadczać symboli,
-          relacji, przewodnictwa, poczucia celu lub szerszej perspektywy na własne życie. Nie trzeba tego narzucać jako
-          obiektywnego opisu rzeczywistości.
+          W języku regresji LBL jest to etap doświadczenia po zakończeniu jednej historii życia, a przed kolejnym wcieleniem.
+          Uczestnicy opisują go na różne sposoby: jako przestrzeń światła, spotkanie z bliskimi duszami, rozmowę z przewodnictwem,
+          miejsce nauki albo stan szerszego rozumienia. Obrazy i kolejność nie muszą być takie same u każdej osoby.
         </p>
         <p>
-          Dla wielu osób ważniejsze jest to, czy takie doświadczenie pomaga spokojniej zrozumieć emocje, relacje i wybory.
-          Dlatego w tej pracy potrzebna jest delikatność, zwykły ludzki język i gotowość do integracji po sesji.
+          Prowadzący nie odczytuje za uczestnika znaczenia tych doświadczeń. Pomaga rozwijać to, co pojawia się naturalnie,
+          zadawać pytania przygotowane przed spotkaniem i utrzymać kontakt z najważniejszymi wątkami. Dzięki temu sesja ma
+          własny kierunek, ale nie zamienia się w odgrywanie gotowego scenariusza.
         </p>
         <p>
-          Nie każda sesja prowadzi do tego samego rodzaju przeżycia. U jednej osoby pojawi się wyraźny obraz, u innej emocja,
-          pojedynczy symbol lub po prostu poczucie spokoju. To nie jest konkurs na intensywność. Znaczenie ma to, czy po
-          spotkaniu potrafisz nazwać, co było dla Ciebie ważne i co chcesz dalej obserwować.
+          LBL może być przeżywane duchowo, a jednocześnie opisywane zwykłym językiem. Najbardziej użyteczne pytanie po sesji
+          nie brzmi „czy zobaczyłem wszystko poprawnie?”, lecz „co z tego doświadczenia jest ważne dla mojego życia teraz?”.
         </p>
       </article>
     </div>
   </section>
-  <section class="section-space bg-white" aria-labelledby="integration-title">
-    <div class="container-page grid gap-12 lg:grid-cols-[0.42fr_0.58fr]">
-      <div>
-        <div class="gold-line"></div>
-        <h2 id="integration-title" class="display-title mt-5 text-4xl text-ink-950 md:text-5xl">Integracja bez pośpiechu</h2>
+
+  <section class="section-space bg-white" aria-labelledby="areas-title">
+    <div class="container-page">
+      <div class="max-w-3xl"><h2 id="areas-title" class="section-heading text-ink-950">Najczęstsze obszary pracy</h2><p class="mt-5 lead-text">Pytania są osobiste, ale zwykle dotyczą kilku ważnych obszarów życia.</p></div>
+      <div class="mt-9 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+        <article class="decision-card p-6"><h3 class="text-xl font-bold text-ink-950">Relacje</h3><p class="mt-3 text-sm leading-7 text-slate-700">Znaczenie ważnych więzi, powtarzających się spotkań i emocji, które trudno wyjaśnić wyłącznie bieżącą historią.</p></article>
+        <article class="decision-card p-6"><h3 class="text-xl font-bold text-ink-950">Cel i kierunek</h3><p class="mt-3 text-sm leading-7 text-slate-700">Pytania o talenty, decyzje, odpowiedzialność i to, czemu warto poświęcić uwagę na obecnym etapie życia.</p></article>
+        <article class="decision-card p-6"><h3 class="text-xl font-bold text-ink-950">Powtarzające się motywy</h3><p class="mt-3 text-sm leading-7 text-slate-700">Sytuacje i wewnętrzne tematy, które pojawiają się mimo zmiany ludzi, miejsca albo okoliczności.</p></article>
+        <article class="decision-card p-6"><h3 class="text-xl font-bold text-ink-950">Perspektywa duchowa</h3><p class="mt-3 text-sm leading-7 text-slate-700">Potrzeba zobaczenia osobistej historii z szerszej perspektywy i znalezienia języka dla własnego doświadczenia.</p></article>
       </div>
+    </div>
+  </section>
+
+  <section class="section-space bg-[#edf7fa]" aria-labelledby="session-title">
+    <div class="container-page grid gap-10 lg:grid-cols-[0.38fr_0.62fr] lg:gap-16">
+      <div><h2 id="session-title" class="section-heading text-ink-950">Jak przebiega sesja między wcieleniami?</h2></div>
       <article class="prose-site">
         <p>
-          Integracja oznacza powrót do codzienności z większą uważnością, a nie natychmiastową zmianę całego życia. Po sesji
-          warto zapisać najważniejsze obrazy, odpocząć, nie podejmować gwałtownych decyzji i wrócić do tego, co było naprawdę istotne.
+          Najpierw odbywa się rozmowa o intencji i pytaniach. Później prowadzący stopniowo kieruje uwagę ku oddechowi,
+          wspomnieniom i wyobrażeniom, pomagając wejść w głębsze skupienie. Właściwa część może rozpocząć się od doświadczenia
+          poprzedniego życia, a następnie przejść poza jego zakończenie do przestrzeni LBL.
         </p>
         <p>
-          Taki sposób pracy chroni przed nadinterpretacją. Pozwala zostawić miejsce zarówno na duchowość, jak i na zdrowy dystans.
+          Uczestnik mówi podczas sesji i opisuje pojawiające się obrazy, słowa, emocje lub odczucia. Prowadzący dopytuje,
+          przypomina przygotowane pytania i pomaga nie zgubić ważnego wątku. Na zakończenie stopniowo wyprowadza ze skupienia,
+          a potem omawia najważniejsze elementy doświadczenia.
         </p>
         <p>
-          Pomaga też wrócić do codzienności w swoim tempie. Warto po spotkaniu zanotować najważniejsze wątki, porozmawiać o nich
-          dopiero wtedy, gdy jest na to przestrzeń, i nie podejmować pod wpływem chwili decyzji, których skutki są duże lub trudne
-          do odwrócenia.
-        </p>
-        <p>
-          Więcej praktycznych wskazówek znajdziesz w przewodniku o
-          <a href="/artykuly/integracja-po-sesji-regresji/">integracji po sesji regresji</a>.
+          Sesje w Instytucie Regresji trwają zwykle 2,5–3,5 godziny i odbywają się online albo w Rzeszowie. Szczegóły opisuje
+          strona <a href="/sesja/">sesja regresji LBL — czas, przebieg i przygotowanie</a>.
         </p>
       </article>
     </div>
   </section>
-  <CTASection title="Chcesz porozmawiać o sesji między wcieleniami?" />
+
+  <section class="section-space bg-warm-50" aria-labelledby="integration-title">
+    <div class="container-page grid gap-10 lg:grid-cols-[0.42fr_0.58fr] lg:gap-16">
+      <div><h2 id="integration-title" class="section-heading text-ink-950">Integracja po sesji</h2></div>
+      <article class="prose-site">
+        <p>
+          Integracja zaczyna się od zapisania tego, co było najważniejsze, zanim szczegóły się rozproszą. Nie trzeba od razu
+          wyjaśniać każdego symbolu. Część znaczeń staje się czytelna dopiero po kilku dniach, gdy emocje opadną i doświadczenie
+          spotka się z codziennymi sytuacjami.
+        </p>
+        <p>
+          Warto dać sobie spokojny wieczór, zadbać o sen i unikać gwałtownych decyzji podejmowanych pod wpływem intensywnego
+          przeżycia. Pomocny może być przewodnik o <a href="/artykuly/integracja-po-sesji-regresji/">integracji po sesji regresji</a>.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <CTASection title="Chcesz umówić regresję między wcieleniami?" text="Wyślij zapytanie o sesję LBL online lub w Rzeszowie. Instytut Regresji odpowie w sprawie przygotowania, ceny i najbliższych dostępnych terminów." />
   <FAQ items={pageFaq} title="FAQ o regresji między wcieleniami" />
 </BaseLayout>

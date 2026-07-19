@@ -13,7 +13,7 @@ export function websiteSchema() {
     url: siteData.domain,
     inLanguage: siteData.language,
     description:
-      'Edukacyjny przewodnik po regresji LBL, Life Between Lives, regresji między wcieleniami i metodzie Brama Dusz LBL.'
+      'Praktyczny przewodnik po regresji LBL i Life Between Lives oraz informacje o sesjach prowadzonych przez Instytut Regresji.'
   };
 }
 
@@ -23,12 +23,13 @@ export function personSchema() {
     '@type': 'Person',
     name: siteData.author.name,
     url: new URL('/o-macieju/', siteData.domain).toString(),
-    jobTitle: 'Prowadzący sesje regresji duchowej',
+    jobTitle: 'Prowadzący sesje regresji LBL i regresji duchowej',
     description: siteData.author.description,
     knowsAbout: [
       'regresja duchowa',
       'regresja poprzednich wcieleń',
       'regresja między wcieleniami',
+      'Life Between Lives',
       'hipnoza regresyjna',
       'integracja psychologiczno-duchowa'
     ],
@@ -44,18 +45,18 @@ export function organizationSchema() {
   return {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    name: siteData.name,
-    url: siteData.domain,
-    logo: new URL('/favicon.png', siteData.domain).toString(),
+    name: siteData.instituteLink.label,
+    url: siteData.instituteLink.url,
     email: siteData.contact.email,
     telephone: siteData.contact.phone,
     contactPoint: {
       '@type': 'ContactPoint',
-      contactType: 'customer service',
+      contactType: 'reservations',
       telephone: siteData.contact.phone,
       email: siteData.contact.email,
       availableLanguage: 'Polish'
-    }
+    },
+    sameAs: [siteData.instituteLink.lblUrl]
   };
 }
 
@@ -63,8 +64,47 @@ export function serviceSchema(path = '/') {
   return {
     '@context': 'https://schema.org',
     '@type': 'Service',
-    name: 'Autorska sesja regresji duchowej Brama Dusz LBL',
-    serviceType: 'Sesja rozwojowa i duchowa',
+    name: 'Regresja między wcieleniami LBL',
+    serviceType: 'Regresja Life Between Lives',
+    provider: {
+      '@type': 'Organization',
+      name: siteData.instituteLink.label,
+      url: siteData.instituteLink.lblUrl,
+      telephone: siteData.contact.phone,
+      email: siteData.contact.email
+    },
+    areaServed: {
+      '@type': 'Country',
+      name: 'Polska'
+    },
+    url: new URL(path, siteData.domain).toString(),
+    description:
+      'Pogłębiona sesja regresji LBL poświęcona doświadczeniu życia między wcieleniami, obejmująca przygotowanie, prowadzenie i integrację. Dostępna online oraz stacjonarnie w Rzeszowie.',
+    offers: {
+      '@type': 'Offer',
+      url: new URL('/sesja/#kontakt', siteData.domain).toString(),
+      priceCurrency: 'PLN',
+      price: '1110',
+      availability: 'https://schema.org/InStock'
+    },
+    availableChannel: {
+      '@type': 'ServiceChannel',
+      serviceUrl: new URL('/sesja/#kontakt', siteData.domain).toString(),
+      servicePhone: {
+        '@type': 'ContactPoint',
+        telephone: siteData.contact.phone,
+        contactType: 'consultation'
+      }
+    }
+  };
+}
+
+export function bramaServiceSchema(path = '/brama-dusz-lbl/') {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'Brama Dusz LBL',
+    serviceType: 'Autorska sesja regresji duchowej',
     provider: {
       '@type': 'Person',
       name: siteData.author.name,
@@ -76,19 +116,10 @@ export function serviceSchema(path = '/') {
     },
     url: new URL(path, siteData.domain).toString(),
     description:
-      'Autorska metoda regresji duchowej inspirowana publikacjami dr. Michaela Newtona, prowadzona jako praca rozwojowa i duchowa.',
+      'Autorski format regresji duchowej rozwijany przez Macieja Masłankę, inspirowany publikacjami dr. Michaela Newtona i własną praktyką prowadzenia sesji.',
     offers: {
       '@type': 'Offer',
       url: new URL('/sesja/#kontakt', siteData.domain).toString()
-    },
-    availableChannel: {
-      '@type': 'ServiceChannel',
-      serviceUrl: new URL('/sesja/#kontakt', siteData.domain).toString(),
-      servicePhone: {
-        '@type': 'ContactPoint',
-        telephone: siteData.contact.phone,
-        contactType: 'consultation'
-      }
     }
   };
 }

@@ -7,9 +7,9 @@ import PageIntro from '../components/PageIntro.astro';
 import { homeFaq, peopleAlsoAsk, siteData } from '../content/siteData';
 import { breadcrumbSchema, faqSchema, organizationSchema, personSchema, websiteSchema } from '../content/schema';
 
-const title = 'FAQ — regresja LBL, Life Between Lives i Brama Dusz LBL';
+const title = 'FAQ o regresji LBL — sesja, czas, online i przygotowanie';
 const description =
-  'Najczęstsze pytania o regresję LBL, Life Between Lives, PLR, sesje online, przygotowanie i autorską metodę Brama Dusz LBL.';
+  'Najczęstsze pytania o regresję LBL: czym jest Life Between Lives, ile trwa sesja, jak wygląda online, jak się przygotować i jak zapytać o termin.';
 const breadcrumbs = [{ href: '/faq/', label: 'FAQ' }];
 const allFaq = [...homeFaq, ...peopleAlsoAsk];
 const meaningFaq = [homeFaq[0], homeFaq[1], homeFaq[2], peopleAlsoAsk[0], peopleAlsoAsk[1], peopleAlsoAsk[2], peopleAlsoAsk[3], peopleAlsoAsk[4], peopleAlsoAsk[11]];
@@ -25,23 +25,23 @@ const decisionFaq = [homeFaq[4], homeFaq[6], peopleAlsoAsk[5], peopleAlsoAsk[7],
 >
   <Breadcrumbs items={breadcrumbs} />
   <PageIntro
-    title="FAQ — pytania o regresję LBL i Brama Dusz LBL"
-    text="Krótkie odpowiedzi na pytania, które zwykle pojawiają się przed pierwszym spokojnym wejściem w temat LBL, PLR i regresji między wcieleniami."
+    title="FAQ o regresji LBL"
+    text="Konkretne odpowiedzi o Life Between Lives, przebiegu sesji, czasie, przygotowaniu, spotkaniach online i wyborze prowadzącego."
   />
   <section class="section-space bg-white" aria-labelledby="guide-title">
     <div class="container-page grid gap-12 lg:grid-cols-[0.38fr_0.62fr]">
       <div>
-        <div class="gold-line"></div>
-        <h2 id="guide-title" class="display-title mt-5 text-4xl text-ink-950 md:text-5xl">Jak czytać te odpowiedzi?</h2>
+        <h2 id="guide-title" class="section-heading text-ink-950">Od czego zacząć?</h2>
       </div>
       <article class="prose-site">
         <p>
-          FAQ nie ma zastąpić rozmowy z prowadzącym. Ma pomóc Ci uporządkować język: czym różni się PLR od LBL,
-          jak wygląda sesja i jakie pytania warto zadać sobie przed podjęciem decyzji.
+          Jeśli dopiero poznajesz temat, zacznij od definicji LBL i porównania z regresją poprzednich wcieleń. Gdy rozważasz
+          spotkanie, przejdź do pytań o czas, przygotowanie, formę online i przebieg sesji. Odpowiedzi są krótkie, a każdy
+          ważniejszy temat prowadzi do pełnego przewodnika.
         </p>
         <p>
-          Jeśli po lekturze czujesz, że temat Cię dotyczy, możesz przejść do sekcji konsultacji na tej stronie. Organizacyjnie
-          sesje i kontakt prowadzi <a href={siteData.instituteLink.url} rel="noopener noreferrer">Instytut Regresji</a>.
+          Sesje regresji LBL oraz kontakt prowadzi <a href={siteData.instituteLink.lblUrl} rel="noopener noreferrer">Instytut Regresji</a>.
+          Zapytanie o termin możesz wysłać bezpośrednio przez <a href="/sesja/#kontakt">formularz na regresjalbl.pl</a>.
         </p>
       </article>
     </div>
@@ -64,5 +64,5 @@ const decisionFaq = [homeFaq[4], homeFaq[6], peopleAlsoAsk[5], peopleAlsoAsk[7],
     id="faq-decyzja"
     intro="Kiedy sesja może nie być właściwym krokiem, jak wybierać prowadzącego i dlaczego regresja nie zastępuje pomocy medycznej ani psychoterapii klinicznej."
   />
-  <CTASection title="Masz po lekturze własne pytania?" text="Nie musisz mieć wszystkiego poukładanego od razu. Jeśli chcesz spokojnie sprawdzić formę pracy, przejdź do konsultacji na tej stronie albo napisz na info@instytutregresji.pl." />
+  <CTASection title="Nie znalazłeś odpowiedzi na swoje pytanie?" text="Napisz przez formularz na tej stronie albo skontaktuj się z Instytutem Regresji. Możesz od razu zapytać o przebieg sesji LBL, formę online i najbliższy termin." />
 </BaseLayout>

@@ -16,14 +16,17 @@ const {
 } = Astro.props;
 ---
 
-<section class="section-space bg-white">
-  <div class="container-page">
-    <div class="gold-line"></div>
-    <h1 class="display-title mt-6 max-w-5xl text-balance text-[clamp(2.25rem,5.4vw,4.75rem)] text-ink-950">{title}</h1>
-    <p class="mt-6 max-w-3xl text-lg leading-8 text-slate-600 md:text-xl md:leading-9">{text}</p>
-    <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-      <a class="button-primary w-full text-center sm:w-auto" href={ctaHref} aria-label="Przejdź do konsultacji na regresjalbl.pl">{ctaLabel}</a>
-      <a class="button-quiet w-full text-center sm:w-auto" href="/faq/">Przeczytaj FAQ</a>
+<section class="page-intro border-b border-ink-950/10 bg-white">
+  <div class="container-page py-10 sm:py-12 lg:py-14">
+    <div class="grid items-end gap-7 lg:grid-cols-[minmax(0,1fr)_minmax(19rem,0.42fr)] lg:gap-12">
+      <div>
+        <h1 class="display-title max-w-5xl text-balance text-[clamp(2.2rem,4vw,3.8rem)] leading-[1.05] text-ink-950">{title}</h1>
+        <p class="mt-5 max-w-3xl text-pretty text-base leading-8 text-slate-700 sm:text-lg">{text}</p>
+      </div>
+      <div class="flex flex-col gap-3 sm:flex-row lg:justify-end">
+        <a class="button-primary w-full text-center sm:w-auto" href={ctaHref}>{ctaLabel}</a>
+        <a class="button-quiet w-full bg-warm-50/70 text-center sm:w-auto" href="/faq/">FAQ</a>
+      </div>
     </div>
   </div>
 </section>

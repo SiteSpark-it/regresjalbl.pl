@@ -12,7 +12,7 @@ const {
   items,
   title = 'FAQ',
   id = 'faq',
-  intro = 'Te odpowiedzi mają pomóc Ci spokojnie uporządkować temat. Nie zastępują konsultacji medycznej, psychoterapeutycznej ani diagnostycznej.'
+  intro = 'Zebraliśmy pytania, które najczęściej pojawiają się przed sesją LBL. Odpowiedzi rozwijają najważniejsze pojęcia, przygotowanie i praktyczny przebieg spotkania.'
 } = Astro.props;
 const titleId = `${id}-title`;
 ---
@@ -20,8 +20,7 @@ const titleId = `${id}-title`;
 <section class="faq-section section-space bg-warm-50" id={id} aria-labelledby={titleId}>
   <div class="container-page grid gap-10 lg:grid-cols-[0.36fr_0.64fr]">
     <div>
-      <div class="gold-line"></div>
-      <h2 id={titleId} class="display-title mt-5 text-4xl text-ink-950 md:text-5xl">{title}</h2>
+      <h2 id={titleId} class="section-heading text-ink-950">{title}</h2>
       <p class="mt-5 text-base leading-8 text-slate-600">{intro}</p>
     </div>
     <div class="grid gap-3">

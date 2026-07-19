@@ -8,7 +8,7 @@ import { articleSchema, breadcrumbSchema, faqSchema, organizationSchema, personS
 
 const title = 'Regresja poprzednich wcieleń a regresja LBL — różnice';
 const description =
-  'Czym różni się regresja poprzednich wcieleń od regresji LBL i pracy między wcieleniami? Spokojne porównanie celów, języka i granic.';
+  'Czym różni się regresja poprzednich wcieleń od regresji LBL? Porównanie przebiegu, pytań, celu sesji i pracy z życiem między wcieleniami.';
 const breadcrumbs = [{ href: '/regresja-poprzednich-wcielen/', label: 'Regresja poprzednich wcieleń' }];
 const pageFaq = [
   {
@@ -38,11 +38,11 @@ const pageFaq = [
   <Breadcrumbs items={breadcrumbs} />
   <PageIntro
     title="Regresja poprzednich wcieleń a regresja LBL"
-    text="Dwa bliskie, ale nieidentyczne sposoby pracy z obrazami, emocjami, symboliką i pytaniami o własną historię."
+    text="Regresja poprzednich wcieleń skupia się na historii jednego życia. LBL prowadzi dalej, ku doświadczeniu pomiędzy wcieleniami. Zobacz, czym różnią się przebieg, pytania i zakres obu sesji."
   />
   <section class="section-space bg-warm-50">
     <div class="container-page grid gap-12 lg:grid-cols-[0.45fr_0.55fr]">
-      <h2 class="display-title text-4xl text-ink-950">Regresja poprzednich wcieleń</h2>
+      <h2 class="section-heading text-ink-950">Na czym polega regresja poprzednich wcieleń?</h2>
       <article class="prose-site">
         <p>
           Regresja poprzednich wcieleń koncentruje się na obrazie, historii lub przeżyciu, które uczestnik interpretuje
@@ -63,8 +63,7 @@ const pageFaq = [
   <section class="section-space bg-white" aria-labelledby="differences-title">
     <div class="container-page">
       <div class="max-w-3xl">
-        <div class="gold-line"></div>
-        <h2 id="differences-title" class="display-title mt-5 text-4xl text-ink-950 md:text-5xl">PLR i LBL — najprostsze rozróżnienie</h2>
+        <h2 id="differences-title" class="section-heading text-ink-950">PLR i LBL — najprostsze rozróżnienie</h2>
       </div>
       <div class="mt-10 grid gap-5 md:grid-cols-2">
         <article class="rounded-md border border-ink-950/10 bg-warm-50 p-6">
@@ -84,13 +83,34 @@ const pageFaq = [
       </div>
     </div>
   </section>
-  <section class="section-space bg-warm-50" aria-labelledby="links-title">
-    <div class="container-page grid gap-12 lg:grid-cols-[0.38fr_0.62fr]">
-      <h2 id="links-title" class="display-title text-4xl text-ink-950 md:text-5xl">Co czytać dalej?</h2>
+  <section class="section-space bg-[#edf7fa]" aria-labelledby="choice-title">
+    <div class="container-page grid gap-10 lg:grid-cols-[0.38fr_0.62fr] lg:gap-16">
+      <h2 id="choice-title" class="section-heading text-ink-950">Którą sesję wybrać?</h2>
       <article class="prose-site">
         <p>
-          Jeżeli zaczynasz od poprzednich wcieleń, dobrym kolejnym krokiem jest zrozumienie pracy między wcieleniami i tego,
-          jak rozumieć pracę między wcieleniami i czego można oczekiwać od sesji.
+          Regresja poprzednich wcieleń może być właściwym wyborem, gdy Twoje pytanie dotyczy konkretnej relacji, lęku,
+          powracającej sceny albo silnego poczucia związku z określonym miejscem czy okresem. Taka sesja pozwala dłużej
+          pozostać przy jednej historii i dokładniej przyjrzeć się jej przebiegowi.
+        </p>
+        <p>
+          LBL lepiej odpowiada osobom, które chcą pójść szerzej: zobaczyć relacje duszy, pytania o cel, wybory przed wcieleniem
+          i doświadczenie przestrzeni pomiędzy życiami. W wielu sesjach droga do LBL przechodzi przez poprzednie wcielenie,
+          dlatego nie zawsze trzeba traktować PLR i LBL jak dwa całkowicie oddzielne spotkania.
+        </p>
+        <p>
+          Jeżeli nie wiesz, od czego zacząć, opisz swoje pytanie w formularzu. Instytut Regresji pomoże ustalić zakres spotkania
+          i wyjaśni, jak przygotować się do wybranej formy pracy.
+        </p>
+      </article>
+    </div>
+  </section>
+  <section class="section-space bg-warm-50" aria-labelledby="links-title">
+    <div class="container-page grid gap-12 lg:grid-cols-[0.38fr_0.62fr]">
+      <h2 id="links-title" class="section-heading text-ink-950">Co czytać dalej?</h2>
+      <article class="prose-site">
+        <p>
+          Jeżeli zaczynasz od poprzednich wcieleń, kolejnym krokiem może być poznanie pracy między wcieleniami i tego,
+          czego można oczekiwać od pełnej sesji LBL.
         </p>
         <ul>
           <li><a href="/regresja-miedzy-wcieleniami/">Regresja między wcieleniami</a> porządkuje temat przestrzeni pomiędzy wcieleniami.</li>
@@ -101,6 +121,6 @@ const pageFaq = [
       </article>
     </div>
   </section>
-  <CTASection title="Zobacz, jak może wyglądać sesja" />
+  <CTASection title="Zapytaj, która forma sesji odpowiada Twojemu pytaniu" text="Opisz krótko temat i napisz, czy interesuje Cię regresja poprzednich wcieleń czy pełna sesja LBL. Instytut Regresji odpowie w sprawie przygotowania i dostępnych terminów." />
   <FAQ items={pageFaq} title="FAQ o regresji poprzednich wcieleń" />
 </BaseLayout>
