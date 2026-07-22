@@ -1,0 +1,62 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import CTASection from '../components/CTASection.astro';
+import FAQ from '../components/FAQ.astro';
+import PageIntro from '../components/PageIntro.astro';
+import ConsultationPath from '../components/ConsultationPath.astro';
+import { articleSchema, classicLblServiceSchema, breadcrumbSchema, faqSchema, personSchema, websiteSchema } from '../content/schema';
+
+const title = 'Regresja LBL — klasyczna sesja Life Between Lives';
+const description = 'Regresja LBL jako klasyczna sesja Life Between Lives: przygotowanie, głęboki trans, relacje duszy, grupy dusz, droga duszy i integracja.';
+const breadcrumbs = [{ href: '/regresja-lbl/', label: 'Regresja LBL' }];
+const pageFaq = [
+  { question: 'Na czym polega klasyczna regresja LBL?', answer: 'Klasyczna regresja LBL prowadzi przez poprzednie wcielenie ku doświadczeniu życia między wcieleniami. W sesji mogą pojawić się relacje duszy, grupy dusz, przewodnictwo, przegląd doświadczeń i pytania o drogę duszy. Praca odbywa się w głębokim transie, przy stałym kontakcie słownym z prowadzącym.' },
+  { question: 'Czy w regresji LBL trzeba widzieć obrazy?', answer: 'Nie. Obrazy są częste, ale nie są jedyną formą doświadczenia. Mogą pojawiać się emocje, odczucia w ciele, symbole, słowa, cisza albo poczucie wiedzenia. Prowadzący pomaga utrzymać proces i zadawać pytania, ale nie powinien wymuszać gotowej wizji.' },
+  { question: 'Czy regresja LBL jest terapią?', answer: 'Nie. Sesja ma charakter rozwojowy i duchowy, nie jest diagnozą ani psychoterapią kliniczną. Może dotykać emocji i ważnych wspomnień, dlatego przed spotkaniem warto uczciwie omówić swoją sytuację. W ostrym kryzysie psychicznym właściwym pierwszym krokiem jest odpowiednia pomoc specjalistyczna.' }
+];
+---
+
+<BaseLayout title={title} description={description} path="/regresja-lbl/" schema={[websiteSchema(), personSchema(), classicLblServiceSchema('/regresja-lbl/'), breadcrumbSchema(breadcrumbs), articleSchema('/regresja-lbl/', title, description), faqSchema(pageFaq)]}>
+  <Breadcrumbs items={breadcrumbs} />
+  <PageIntro title="Regresja LBL — klasyczna sesja Life Between Lives" text="Strona wraca do głównego tematu: klasycznej regresji LBL, głębokiego transu, doświadczenia życia między wcieleniami, relacji duszy i spokojnej integracji po spotkaniu." ctaLabel="Zapytaj o sesję LBL" />
+
+  <section class="section-space bg-warm-50" aria-labelledby="method-title">
+    <div class="container-page grid gap-12 lg:grid-cols-[0.38fr_0.62fr]">
+      <div><h2 id="method-title" class="section-heading text-ink-950">Klasyczna praca LBL</h2></div>
+      <article class="prose-site">
+        <p>Regresja LBL jest pogłębioną sesją Life Between Lives. Jej celem nie jest krótka wizualizacja ani szybka odpowiedź, tylko spokojne przejście przez proces: przygotowanie, poprzednie wcielenie, moment przejścia, przestrzeń między wcieleniami oraz pytania, które uczestnik wnosi do sesji.</p>
+        <p>W klasycznym języku LBL mogą pojawić się relacje duszy, grupy dusz, przewodnictwo, przegląd doświadczeń, wybory przed wcieleniem i droga duszy. Każda sesja ma własny przebieg, dlatego prowadzenie nie polega na narzucaniu gotowych obrazów, lecz na utrzymaniu kierunku i kontakcie z tym, co rzeczywiście się pojawia.</p>
+        <p>Ten sposób pracy korzysta z hipnozy regresyjnej i głębokiego transu, ale uczestnik pozostaje w kontakcie słownym z prowadzącym. Może mówić, reagować, zgłaszać wątpliwości i zatrzymać proces. Dobra sesja nie odbiera sprawczości, tylko pomaga głębiej wejść w doświadczenie i potem spokojnie je uporządkować.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section-space bg-white" aria-labelledby="process-title">
+    <div class="container-page">
+      <div class="max-w-3xl"><h2 id="process-title" class="section-heading text-ink-950">Trzy filary sesji LBL</h2><p class="mt-5 lead-text">Najlepsza sesja ma wyraźną strukturę: przygotowanie, głęboki trans i integrację. Każdy etap wpływa na jakość całego spotkania.</p></div>
+      <div class="mt-10 grid gap-5 md:grid-cols-3">
+        <article class="decision-card p-6"><span class="text-sm font-bold text-gold-700">01</span><h3 class="mt-3 text-xl font-bold text-ink-950">Intencja i pytania</h3><p class="mt-3 text-sm leading-7 text-slate-700">Na początku porządkowane są tematy, oczekiwania i granice. Intencja daje kierunek, ale nie zamienia sesji w scenariusz do odegrania.</p></article>
+        <article class="decision-card p-6"><span class="text-sm font-bold text-gold-700">02</span><h3 class="mt-3 text-xl font-bold text-ink-950">Głęboki trans</h3><p class="mt-3 text-sm leading-7 text-slate-700">Prowadzenie pomaga wejść w głębszy stan skupienia i przejść przez pojawiające się obrazy, odczucia, relacje duszy oraz wątki życia między wcieleniami.</p></article>
+        <article class="decision-card p-6"><span class="text-sm font-bold text-gold-700">03</span><h3 class="mt-3 text-xl font-bold text-ink-950">Integracja</h3><p class="mt-3 text-sm leading-7 text-slate-700">Po powrocie jest czas na nazwanie wrażeń, zapisanie najważniejszych wątków i spokojne sprawdzenie, co warto obserwować po sesji.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-space bg-warm-50" aria-labelledby="choice-title">
+    <div class="container-page grid gap-12 lg:grid-cols-[0.42fr_0.58fr]">
+      <div><h2 id="choice-title" class="section-heading text-ink-950">Dla kogo LBL może mieć sens?</h2></div>
+      <article class="prose-site">
+        <p>Regresja LBL może być dobrym wyborem dla osoby, która chce wejść głębiej niż w pojedynczą historię poprzedniego wcielenia. Często przychodzą osoby z pytaniami o relacje, powtarzające się motywy, poczucie celu, drogę duszy albo szersze rozumienie obecnego życia.</p>
+        <p>Warto odłożyć sesję, gdy ktoś jest w silnym kryzysie, pod wpływem substancji, w bardzo intensywnym rozregulowaniu lub potrzebuje interwencji medycznej. Krótka konsultacja przed zapisem służy temu, żeby dobrać dobry moment i formę spotkania.</p>
+        <p>Jeśli chcesz najpierw uporządkować pojęcia, przeczytaj też <a href="/life-between-lives/">przewodnik po Life Between Lives</a> oraz porównanie <a href="/regresja-poprzednich-wcielen/">regresji poprzednich wcieleń i LBL</a>.</p>
+      </article>
+    </div>
+  </section>
+  <ConsultationPath
+    title="Jak zapytać o sesję LBL?"
+    text="W pierwszej wiadomości wystarczy opisać temat i preferowaną formę spotkania. Konsultacja służy wyjaśnieniu przebiegu, przygotowania, ceny i dostępnych terminów klasycznej regresji LBL."
+  />
+  <CTASection title="Zapytaj o regresję LBL" text="Napisz, z czym przychodzisz i czy interesuje Cię spotkanie online czy stacjonarne. Otrzymasz informacje o przygotowaniu, przebiegu i dostępnych terminach." ctaLabel="Zapytaj o sesję LBL" />
+  <FAQ items={pageFaq} title="FAQ o klasycznej regresji LBL" />
+</BaseLayout>

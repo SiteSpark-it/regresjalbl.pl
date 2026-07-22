@@ -133,7 +133,7 @@ export const knowledgeArticles: KnowledgeArticle[] = [
       {
         heading: 'Trzy sposoby rozumienia obrazów z regresji',
         paragraphs: [
-          'Duchowa interpretacja traktuje doświadczenie jako możliwy kontakt z historią duszy lub wcześniejszym wcieleniem. Interpretacja symboliczna widzi w nim opowieść, przez którą psychika pokazuje emocje i relacje. Trzecie podejście pozostaje otwarte: nie nadaje od razu etykiety, ale obserwuje, jaki sens pojawia się później.',
+          'Duchowa interpretacja traktuje doświadczenie jako możliwy kontakt z wcześniejszym wcieleniem lub szerszą historią wewnętrzną. Interpretacja symboliczna widzi w nim opowieść, przez którą psychika pokazuje emocje i relacje. Trzecie podejście pozostaje otwarte: nie nadaje od razu etykiety, ale obserwuje, jaki sens pojawia się później.',
           'Nie trzeba wybierać raz na zawsze. Ta sama osoba może jeden obraz odbierać duchowo, a inny jako metaforę. Odpowiedzialne prowadzenie zostawia uczestnikowi prawo do takiej decyzji i nie używa autorytetu, żeby narzucić interpretację.',
           'Najbardziej praktyczne pytanie brzmi: co to doświadczenie porusza we mnie dzisiaj? Jeżeli pomaga nazwać emocję, zobaczyć granicę lub lepiej rozumieć relację, może mieć wartość niezależnie od tego, jak ostatecznie je nazwiesz.'
         ]
@@ -451,7 +451,7 @@ export const knowledgeArticles: KnowledgeArticle[] = [
       {
         heading: 'Sygnały, które powinny zatrzymać',
         paragraphs: [
-          'Ostrożność jest potrzebna, gdy ktoś gwarantuje uzdrowienie, pewny kontakt z określoną istotą, rozwiązanie wszystkich problemów albo jednoznaczną diagnozę na podstawie obrazu z sesji. Regresja rozwojowa i duchowa nie zastępuje leczenia ani psychoterapii klinicznej.',
+          'Ostrożność jest potrzebna, gdy ktoś obiecuje pewny efekt, gotową odpowiedź na każdy problem albo jednoznaczną diagnozę na podstawie obrazu z sesji. Regresja rozwojowa i duchowa nie zastępuje leczenia ani psychoterapii klinicznej.',
           'Niepokojące jest także narzucanie interpretacji: prowadzący mówi uczestnikowi, kim był, kto jest jego „przeznaczoną” osobą albo jaką decyzję musi podjąć. Wewnętrzne doświadczenie należy do uczestnika. Pytania mogą pomagać je badać, ale autorytet prowadzącego nie powinien zamieniać się w wyrocznię.',
           'Presja na natychmiastową wpłatę, ukrywanie ceny do ostatniej chwili lub zawstydzanie za wątpliwości również nie budują dobrych warunków.'
         ]
@@ -460,7 +460,7 @@ export const knowledgeArticles: KnowledgeArticle[] = [
         heading: 'Dlaczego na tej stronie polecany jest Maciej Masłanka?',
         paragraphs: [
           'Regresjalbl.pl ma charakter edukacyjny i rekomendacyjny. Opisuje sposób pracy Macieja Masłanki z perspektywy osoby, która uczestniczyła w sesji i uznała spokojne prowadzenie, brak presji na obrazy oraz miejsce na późniejsze omówienie za warte polecenia.',
-          'Na stronie o prowadzącym znajdziesz informacje o jego pracy z regresją LBL, regresją poprzednich wcieleń i regresją duchową, ukończonych szkoleniach z regresji i hipnozy regresyjnej oraz studiach psychologicznych w Warszawie. Osobno opisany jest również rozwijany przez niego format Brama Dusz LBL.',
+          'Na stronie o prowadzącym znajdziesz informacje o jego pracy z regresją LBL, regresją poprzednich wcieleń i regresją duchową, ukończonych szkoleniach z regresji oraz hipnozy regresyjnej, a także studiach psychologicznych w Warszawie. Osobno opisany jest klasyczny przebieg sesji LBL.',
           'Ostateczna decyzja nadal należy do Ciebie. Dlatego pierwszym krokiem jest konsultacja: możliwość zadania własnych pytań i sprawdzenia, czy sposób rozmowy daje Ci wystarczającą jasność.'
         ]
       }

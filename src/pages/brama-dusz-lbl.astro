@@ -1,62 +1,18 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Breadcrumbs from '../components/Breadcrumbs.astro';
-import CTASection from '../components/CTASection.astro';
-import FAQ from '../components/FAQ.astro';
-import PageIntro from '../components/PageIntro.astro';
-import ConsultationPath from '../components/ConsultationPath.astro';
-import { articleSchema, bramaServiceSchema, breadcrumbSchema, faqSchema, personSchema, websiteSchema } from '../content/schema';
 
-const title = 'Brama Dusz LBL — autorska metoda regresji duchowej';
-const description = 'Brama Dusz LBL to autorska metoda regresji duchowej: przygotowanie, przebieg sesji, praca z obrazami i spokojna integracja doświadczenia.';
-const breadcrumbs = [{ href: '/brama-dusz-lbl/', label: 'Brama Dusz LBL' }];
-const pageFaq = [
-  { question: 'Na czym polega Brama Dusz LBL?', answer: 'Brama Dusz LBL to autorska metoda regresji duchowej inspirowana publikacjami dr. Michaela Newtona, praktyką regresji i hipnozy regresyjnej. Łączy rozmowę o intencji, spokojne wejście w skupienie, pracę z tym, co się pojawia, oraz czas na nazwanie znaczeń po sesji. Nie wymaga jednej wiary ani gotowego obrazu.' },
-  { question: 'Jakie doświadczenia mogą pojawić się w sesji?', answer: 'Mogą pojawić się obrazy, emocje, odczucia w ciele, symbole, słowa lub poczucie ciszy. Nie ma poprawnego sposobu przeżywania sesji. Prowadzenie nie polega na narzucaniu wizji, lecz na zadawaniu pytań i pomaganiu uczestnikowi pozostać w kontakcie z własnym doświadczeniem.' },
-  { question: 'Czy Brama Dusz LBL jest terapią?', answer: 'Nie. To sesja rozwojowa i duchowa, nie diagnoza ani psychoterapia kliniczna. Może dotykać emocji i ważnych wspomnień, dlatego przed spotkaniem warto uczciwie omówić swoją sytuację. W ostrym kryzysie psychicznym właściwym pierwszym krokiem jest odpowiednia pomoc specjalistyczna.' }
-];
+const title = 'Przekierowanie — Regresja LBL';
+const description = 'Ten adres został zastąpiony stroną o klasycznej regresji LBL.';
 ---
 
-<BaseLayout title={title} description={description} path="/brama-dusz-lbl/" schema={[websiteSchema(), personSchema(), bramaServiceSchema('/brama-dusz-lbl/'), breadcrumbSchema(breadcrumbs), articleSchema('/brama-dusz-lbl/', title, description), faqSchema(pageFaq)]}>
-  <Breadcrumbs items={breadcrumbs} />
-  <PageIntro title="Brama Dusz LBL — autorska metoda regresji duchowej" text="Osobny format pracy rozwijany przez Macieja Masłankę. Łączy przygotowanie, pogłębione skupienie, pracę z doświadczeniem wewnętrznym i spokojną integrację po sesji." ctaLabel="Zapytaj o Brama Dusz LBL" />
-
-  <section class="section-space bg-warm-50" aria-labelledby="method-title">
-    <div class="container-page grid gap-12 lg:grid-cols-[0.38fr_0.62fr]">
-      <div><h2 id="method-title" class="section-heading text-ink-950">Metoda zbudowana wokół Twojego pytania</h2></div>
-      <article class="prose-site">
-        <p>Brama Dusz LBL jest autorską metodą regresji duchowej inspirowaną publikacjami dr. Michaela Newtona. Jej punktem wyjścia nie jest obietnica niezwykłego przeżycia, lecz pytanie, z którym przychodzi konkretna osoba. Czasem dotyczy ono relacji, poczucia kierunku, powtarzającego się motywu albo sprawy, której trudno nadać słowa.</p>
-        <p>W sesji można pracować z doświadczeniem interpretowanym jako poprzednie wcielenie, przestrzeń między wcieleniami lub symboliczna opowieść wewnętrzna. Nie trzeba z góry rozstrzygać, która interpretacja jest „jedyna prawdziwa”. Ważniejsze jest to, czy doświadczenie pomaga zobaczyć siebie, swoje wybory i relacje z większą uważnością.</p>
-        <p>Metoda korzysta z języka duchowości, ale zostawia miejsce na zdrowy dystans. Symbol nie musi być faktem historycznym, żeby coś ważnego poruszyć. Jednocześnie żaden obraz nie powinien być traktowany jako rozkaz ani podstawa do gwałtownych decyzji po spotkaniu.</p>
-      </article>
-    </div>
-  </section>
-
-  <section class="section-space bg-white" aria-labelledby="process-title">
+<BaseLayout title={title} description={description} path="/brama-dusz-lbl/" noindex={true}>
+  <section class="section-space bg-warm-50">
     <div class="container-page">
-      <div class="max-w-3xl"><h2 id="process-title" class="section-heading text-ink-950">Trzy etapy dobrej sesji</h2><p class="mt-5 lead-text">Najbardziej wartościowa praca nie zaczyna się od transu i nie kończy wraz z nim. Każdy etap ma swoje zadanie.</p></div>
-      <div class="mt-10 grid gap-5 md:grid-cols-3">
-        <article class="decision-card p-6"><span class="text-sm font-bold text-gold-700">01</span><h3 class="mt-3 text-xl font-bold text-ink-950">Rozmowa i intencja</h3><p class="mt-3 text-sm leading-7 text-slate-700">Na początku ustalane są pytania, oczekiwania i granice. Nie trzeba mieć idealnie sformułowanej intencji, ale warto powiedzieć, czego nie chce się przekraczać.</p></article>
-        <article class="decision-card p-6"><span class="text-sm font-bold text-gold-700">02</span><h3 class="mt-3 text-xl font-bold text-ink-950">Uważne prowadzenie</h3><p class="mt-3 text-sm leading-7 text-slate-700">Prowadzący pomaga wejść w stan skupienia i towarzyszy temu, co się pojawia. Pytania są wskazówką, nie scenariuszem, który trzeba odegrać.</p></article>
-        <article class="decision-card p-6"><span class="text-sm font-bold text-gold-700">03</span><h3 class="mt-3 text-xl font-bold text-ink-950">Integracja</h3><p class="mt-3 text-sm leading-7 text-slate-700">Po powrocie jest czas na nazwanie wrażeń oraz oddzielenie tego, co poruszające, od tego, co warto dalej spokojnie obserwować w życiu.</p></article>
-      </div>
+      <h1 class="section-heading text-ink-950">Regresja LBL</h1>
+      <p class="mt-5 text-base leading-8 text-slate-700">
+        Ten adres został przeniesiony. Przejdź do strony:
+        <a class="font-bold text-gold-700 hover:text-ink-950" href="/regresja-lbl/">klasyczna regresja LBL</a>.
+      </p>
     </div>
   </section>
-
-  <section class="section-space bg-warm-50" aria-labelledby="choice-title">
-    <div class="container-page grid gap-12 lg:grid-cols-[0.42fr_0.58fr]">
-      <div><h2 id="choice-title" class="section-heading text-ink-950">Dla kogo ten kierunek może mieć sens?</h2></div>
-      <article class="prose-site">
-        <p>Ta forma pracy może być dobrym wyborem dla osoby, która ma przestrzeń na spokojne spotkanie, nie oczekuje diagnozy ani szybkiego rozwiązania i chce podejść do własnego doświadczenia z ciekawością. Nie trzeba być ekspertem od duchowości ani wierzyć w jedną konkretną wizję świata.</p>
-        <p>Warto odłożyć sesję, gdy ktoś jest w silnym kryzysie, pod wpływem substancji, w bardzo intensywnym rozregulowaniu lub potrzebuje interwencji medycznej. Krótka konsultacja przed zapisem służy właśnie temu, żeby ocenić formę i moment bez udawania, że jedna metoda jest dla wszystkich.</p>
-        <p>Jeśli chcesz najpierw uporządkować pojęcia, przeczytaj też <a href="/life-between-lives/">przewodnik po Life Between Lives</a> oraz porównanie <a href="/regresja-poprzednich-wcielen/">regresji poprzednich wcieleń i LBL</a>.</p>
-      </article>
-    </div>
-  </section>
-  <ConsultationPath
-    title="Jak sprawdzić metodę bez deklarowania się na pełną sesję?"
-    text="W pierwszej wiadomości wystarczy opisać temat i preferowaną formę spotkania. Konsultacja służy wyjaśnieniu przebiegu, przygotowania i granic metody Brama Dusz LBL."
-  />
-  <CTASection title="Zapytaj o Brama Dusz LBL" text="Napisz, z czym przychodzisz i czy interesuje Cię spotkanie online czy stacjonarne. Otrzymasz informacje o przygotowaniu, przebiegu i dostępnych terminach." ctaLabel="Zapytaj o Brama Dusz LBL" />
-  <FAQ items={pageFaq} title="FAQ o metodzie Brama Dusz LBL" />
 </BaseLayout>

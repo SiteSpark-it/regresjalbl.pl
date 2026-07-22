@@ -3,6 +3,7 @@ ErrorDocument 404 /404.html
 
 <IfModule mod_rewrite.c>
   RewriteEngine On
+  RewriteRule ^brama-dusz-lbl/?$ https://regresjalbl.pl/regresja-lbl/ [L,R=301]
   RewriteCond %{HTTPS} !=on [OR]
   RewriteCond %{HTTP_HOST} ^www\.regresjalbl\.pl$ [NC]
   RewriteRule ^ https://regresjalbl.pl%{REQUEST_URI} [L,R=301]

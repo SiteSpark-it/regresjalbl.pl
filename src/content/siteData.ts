@@ -30,7 +30,7 @@
   author: {
     name: 'Maciej Masłanka',
     description:
-      'Maciej Masłanka prowadzi sesje regresji LBL, regresji poprzednich wcieleń i regresji duchowej. Studiuje psychologię w Warszawie, ukończył szkolenia z regresji oraz hipnozy regresyjnej i rozwija własny format pracy Brama Dusz LBL.'
+      'Maciej Masłanka prowadzi sesje regresji LBL, regresji poprzednich wcieleń i regresji duchowej. Studiuje psychologię w Warszawie, ukończył szkolenia z regresji oraz hipnozy regresyjnej i rozwija warsztat klasycznej pracy LBL.'
   },
   externalLinks: {
     mni: 'https://michaelnewton.org',
@@ -51,14 +51,14 @@
     { href: '/o-macieju/', label: 'Prowadzący' },
     { href: '/artykuly/', label: 'Baza wiedzy' },
     { href: '/faq/', label: 'FAQ' },
-    { href: '/brama-dusz-lbl/', label: 'Brama Dusz LBL' }
+    { href: '/regresja-lbl/', label: 'Klasyczne LBL' }
   ],
   footerLinks: [
     { href: '/', label: 'Regresja LBL' },
     { href: '/life-between-lives/', label: 'Life Between Lives i Michael Newton' },
     { href: '/regresja-poprzednich-wcielen/', label: 'Regresja poprzednich wcieleń' },
     { href: '/regresja-miedzy-wcieleniami/', label: 'Regresja między wcieleniami' },
-    { href: '/brama-dusz-lbl/', label: 'Brama Dusz LBL' },
+    { href: '/regresja-lbl/', label: 'Klasyczne LBL' },
     { href: '/o-macieju/', label: 'Polecany prowadzący' },
     { href: '/sesja/', label: 'Sesja regresji LBL' },
     { href: '/faq/', label: 'FAQ' }
@@ -168,9 +168,9 @@ export const peopleAlsoAsk = [
       'Regresja między wcieleniami kieruje uwagę ku doświadczeniu opisywanemu jako życie pomiędzy wcieleniami. W sesji mogą pojawiać się symbole, poczucie celu, relacje duszy i pytania o wybory. Odpowiedzialna praca nie wymusza przeżyć i nie obiecuje konkretnego efektu.'
   },
   {
-    question: 'Czym różni się Life Between Lives od metody Brama Dusz LBL?',
+    question: 'Czym jest klasyczna regresja LBL?',
     answer:
-      'Life Between Lives opisuje obszar doświadczeń między wcieleniami znany z publikacji dr. Michaela Newtona. Brama Dusz LBL jest autorską metodą, która czerpie z tego kierunku inspirację, ale ma własny sposób prowadzenia, przygotowania oraz integracji po sesji.'
+      'Klasyczna regresja LBL prowadzi uwagę przez poprzednie wcielenie ku doświadczeniu życia między wcieleniami. Może obejmować relacje duszy, grupy dusz, przewodnictwo, przegląd doświadczeń i pytania o kierunek obecnego życia. Najważniejsze są spokojne przygotowanie, głęboki trans, stały kontakt z prowadzącym i czas na integrację.'
   },
   {
     question: 'Kim był dr Michael Newton w kontekście LBL?',
@@ -243,10 +243,10 @@ export const serviceCards = [
     href: '/life-between-lives/'
   },
   {
-    title: 'Brama Dusz LBL',
+    title: 'Klasyczna regresja LBL',
     description:
-      'Autorska metoda regresji duchowej inspirowana publikacjami dr. Michaela Newtona, z przygotowaniem i integracją.',
-    href: '/brama-dusz-lbl/'
+      'Klasyczna sesja LBL: głęboki trans, praca z życiem między wcieleniami, relacjami duszy i spokojną integracją.',
+    href: '/regresja-lbl/'
   }
 ];
 
@@ -266,11 +266,11 @@ export const articleCards = [
     meta: 'porównanie'
   },
   {
-    title: 'Brama Dusz LBL — osobny format pracy',
+    title: 'Klasyczna regresja LBL',
     description:
-      'Jak wygląda autorska metoda pracy: przygotowanie, prowadzenie sesji i spokojna integracja doświadczenia.',
-    href: '/brama-dusz-lbl/',
-    meta: 'metoda'
+      'Jak wygląda przygotowanie, głęboki trans, prowadzenie sesji Life Between Lives i spokojna integracja doświadczenia.',
+    href: '/regresja-lbl/',
+    meta: 'sesja LBL'
   },
   {
     title: 'Jak przygotować się do sesji',

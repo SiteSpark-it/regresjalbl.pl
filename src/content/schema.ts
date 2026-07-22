@@ -99,12 +99,12 @@ export function serviceSchema(path = '/') {
   };
 }
 
-export function bramaServiceSchema(path = '/brama-dusz-lbl/') {
+export function classicLblServiceSchema(path = '/regresja-lbl/') {
   return {
     '@context': 'https://schema.org',
     '@type': 'Service',
-    name: 'Brama Dusz LBL',
-    serviceType: 'Autorska sesja regresji duchowej',
+    name: 'Regresja LBL',
+    serviceType: 'Regresja Life Between Lives',
     provider: {
       '@type': 'Person',
       name: siteData.author.name,
@@ -116,7 +116,7 @@ export function bramaServiceSchema(path = '/brama-dusz-lbl/') {
     },
     url: new URL(path, siteData.domain).toString(),
     description:
-      'Autorski format regresji duchowej rozwijany przez Macieja Masłankę, inspirowany publikacjami dr. Michaela Newtona i własną praktyką prowadzenia sesji.',
+      'Sesja regresji LBL prowadzona w głębokim transie, obejmująca przygotowanie, pracę z życiem między wcieleniami i spokojną integrację doświadczenia.',
     offers: {
       '@type': 'Offer',
       url: new URL('/sesja/#kontakt', siteData.domain).toString()

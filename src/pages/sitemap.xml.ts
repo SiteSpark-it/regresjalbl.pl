@@ -9,7 +9,7 @@ const staticPages = [
   { path: '/life-between-lives/', priority: '0.9', changefreq: 'monthly', lastmod: '2026-07-19' },
   { path: '/regresja-miedzy-wcieleniami/', priority: '0.9', changefreq: 'monthly', lastmod: '2026-07-19' },
   { path: '/regresja-poprzednich-wcielen/', priority: '0.8', changefreq: 'monthly', lastmod: '2026-07-19' },
-  { path: '/brama-dusz-lbl/', priority: '0.7', changefreq: 'monthly', lastmod: '2026-07-19' },
+  { path: '/regresja-lbl/', priority: '0.8', changefreq: 'monthly', lastmod: '2026-07-22' },
   { path: '/o-macieju/', priority: '0.8', changefreq: 'monthly', lastmod: '2026-07-19' },
   { path: '/sesja/', priority: '0.9', changefreq: 'weekly', lastmod: '2026-07-19' },
   { path: '/artykuly/', priority: '0.8', changefreq: 'weekly', lastmod: '2026-07-19' },
